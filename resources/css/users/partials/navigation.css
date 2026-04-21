@@ -1,0 +1,194 @@
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 0;
+}
+
+/* Typography & Logo */
+.logo-text {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+}
+
+.nav-link {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #4a4a4a !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+/* Mega Dropdown Revamp */
+.mega-menu {
+    width: 550px;
+    left: 10%;
+    /* Adjust based on alignment */
+    border-radius: 20px !important;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 10px !important;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mega-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    color: #adb5bd;
+    margin-bottom: 1.2rem;
+}
+
+.mega-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.mega-link:hover {
+    background: #f8f9fa;
+    color: #0d6efd;
+}
+
+.kr-badge {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #888;
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.bg-soft-blue {
+    background-color: #f0f7ff;
+}
+
+/* Interactive Pill Button */
+.btn-pill {
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-pill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop Hover Logic */
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        animation: floatUp 0.3s ease forwards;
+    }
+}
+
+@keyframes floatUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .mega-menu {
+        width: 100%;
+        left: 0;
+        border-radius: 0 !important;
+    }
+}
+/* 1. The Main Dropdown Menu */
+.dropdown-modern {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px !important;
+    padding: 10px !important;
+    min-width: 220px;
+    margin-top: 10px !important;
+    /* Spacing from the nav-link */
+}
+
+/* 2. Individual Items */
+.dropdown-item {
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #475569 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9 !important;
+    color: #0d6efd !important;
+    transform: translateX(5px);
+    /* Subtle slide effect on hover */
+}
+
+/* 3. The Korean Tags (Muted & Professional) */
+.kr-tag {
+    font-size: 0.75rem;
+    background: #f1f5f9;
+    color: #94a3b8;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover .kr-tag {
+    background: #e0e7ff;
+    color: #6366f1;
+}
+
+/* 4. Entry Animation */
+.animated-menu {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 5. Active/Focus State Removal (Clean Look) */
+.dropdown-item:active {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+.dropdown-item:active .kr-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}

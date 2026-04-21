@@ -1,0 +1,256 @@
+
+/* Background & Layout */
+.app-bg {
+    background-color: #fcfcfd;
+    min-height: 100vh;
+}
+.nav-container {
+    padding: 20px;
+}
+/* Animation for items entering/leaving */
+.list-enter-active,
+.list-leave-active,
+.list-move {
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+}
+
+/* Ensures items don't 'snap' when others leave */
+.list-leave-active {
+    position: absolute;
+}
+
+/* 3. Button Group: The Glassmorphism Card */
+.button-group {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Button Styling */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Space between icon and text */
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    /* Dark gray text */
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* 5. Icon Size */
+.nav-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* 6. Hover & Active States */
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.nav-btn:active {
+    transform: scale(0.96);
+    background-color: #ffffff;
+}
+
+/* 7. Active Button (Pre-selected) */
+.nav-btn.active {
+    background-color: #ffffff;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.kr-title {
+    font-weight: 800;
+    color: #1e293b;
+    font-size: 1.8rem;
+}
+/* Modern Sidebar */
+.modern-sidebar {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    position: sticky;
+    top: 20px;
+}
+
+.nav-item-btn {
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-item-btn.active {
+    background: #f1f5f9;
+    color: #4f46e5;
+}
+
+/* Minimalist Card */
+.vocab-card {
+    background: white;
+    border-radius: 20px;
+    height: 100%;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.vocab-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.img-container {
+    height: 200px;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.korean-text {
+    font-size: 1.75rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+.romanization-text {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.english-meaning {
+    color: #475569;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+/* Pronounce Button */
+.btn-pronounce {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    color: #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-pronounce:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+/* Badges */
+.meta-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.meta-badge.level {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.meta-badge.diff {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+/* Minimal Pagination */
+.pagination-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pg-action {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background: white;
+    transition: all 0.2s;
+}
+
+.pg-action:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.pg-info {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.game-btn {
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+

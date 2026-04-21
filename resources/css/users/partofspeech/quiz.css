@@ -1,0 +1,219 @@
+/* Background & Layout */
+.app-bg {
+    background-color: #fcfcfd;
+    min-height: 100vh;
+}
+
+.nav-container {
+    padding: 20px;
+}
+
+/* Animation for items entering/leaving */
+.list-enter-active,
+.list-leave-active,
+.list-move {
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+}
+
+/* Ensures items don't 'snap' when others leave */
+.list-leave-active {
+    position: absolute;
+}
+
+/* 3. Button Group: The Glassmorphism Card */
+.button-group {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Button Styling */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Space between icon and text */
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    /* Dark gray text */
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* 5. Icon Size */
+.nav-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* 6. Hover & Active States */
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.nav-btn:active {
+    transform: scale(0.96);
+    background-color: #ffffff;
+}
+
+/* 7. Active Button (Pre-selected) */
+.nav-btn.active {
+    background-color: #ffffff;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.kr-title {
+    font-weight: 800;
+    color: #1e293b;
+    font-size: 1.8rem;
+}
+
+/* Modern Sidebar */
+
+
+.nav-item-btn {
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-item-btn.active {
+    background: #f1f5f9;
+    color: #4f46e5;
+}
+
+/* Minimalist Card */
+
+.timer-box {
+    background: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 2px solid #eee;
+    transition: 0.3s all ease;
+}
+
+.quiz-card {
+    border-radius: 2rem;
+}
+
+.choice-btn {
+    border-radius: 1.2rem;
+    border-width: 2px;
+    transition: 0.2s ease;
+}
+
+.choice-circle {
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.shake {
+    animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(3deg);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scale-up {
+    transform: scale(1.03);
+}
+
+.alert-success-custom {
+    background-color: #d1e7dd;
+    border-color: #198754 !important;
+}
+
+.alert-danger-custom {
+    background-color: #f8d7da;
+    border-color: #dc3545 !important;
+}
+
+.choice-btn {
+    transition: all 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+.animate-slide-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
