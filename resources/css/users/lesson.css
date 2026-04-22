@@ -314,4 +314,307 @@
     width: 35px;
     height: 35px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}/* Custom styling for the greeting card */
+.card-body-greeting {
+    background: rgba(255, 255, 255, 0.7); /* Translucent White */
+    backdrop-filter: blur(15px);          /* Glassmorphism Blur */
+    border-radius: 24px;                  /* Modern Extra-Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient Text for a premium feel */
+.text-gradient {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Hover effect */
+.card-body-greeting:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08) !important;
+}
+/* Glassmorphism Card Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 28px;
+    /* Extra rounded for a modern feel */
+    transition: all 0.3s ease;
+}
+
+.glass-effect:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Floating Icon Styling */
+.icon-wrapper {
+    position: relative;
+    /* Keeps the wrapper a square regardless of width */
+    aspect-ratio: 1 / 1;
+
+    background: linear-gradient(145deg, #ffffff, #f5f7ff);
+    border-radius: 24px;
+    /* Modern Soft UI Roundedness */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Soft Neumorphic Shadow */
+    box-shadow:
+        8px 8px 16px rgba(0, 0, 0, 0.04),
+        -4px -4px 12px rgba(255, 255, 255, 0.8);
+
+    transition: all 0.4s ease-in-out;
+}
+
+/* Glassmorphism Overlay for depth */
+.glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.greeting-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image fills the square without stretching */
+    border-radius: 18px;
+    z-index: 1;
+}
+
+/* Interaction: Lift and Glow */
+.card-greeting-content:hover .icon-wrapper {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.1);
+    border-color: rgba(13, 110, 253, 0.2);
+}
+
+/* Text Polish */
+.hangul-text {
+    letter-spacing: -0.5px;
+}
+
+.tracking-wider {
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+}
+
+/* Modern Audio Button */
+.btn-audio {
+    background: #eef2ff;
+    color: #4f46e5;
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-audio:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+.btn-audio:active {
+    transform: scale(0.96);
+}/* Container Glassmorphism */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Gradient Header */
+.text-gradient {
+    background: linear-gradient(135deg, #212529 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Individual Usage Cards */
+.usage-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.usage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Icon Backgrounds */
+.usage-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 1.5rem;
+}
+
+.bg-soft-primary {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.bg-soft-danger {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
+.bg-soft-info {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.bg-soft-success {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* Card Container */
+.practice-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.practice-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Step Badge Indicator */
+.step-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4f46e5;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+/* Icons */
+.practice-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Highlighting the Tip Card */
+.tip-card {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    border: none;
+}
+
+/* Gradient Header */
+.text-gradient {
+    background: linear-gradient(90deg, #1e293b, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.reminder-banner {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    border-radius: 30px;
+    color: white;
+}
+
+/* Floating Heart Icon Animation */
+.heart-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    animation: heartPulse 2s infinite ease-in-out;
+}
+
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Modern Decorative Elements */
+.blur-circle-1 {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.blur-circle-2 {
+    position: absolute;
+    bottom: -30px;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
+/* Layout Utility */
+.z-index-1 {
+    z-index: 1;
+}
+
+.opacity-90 {
+    opacity: 0.9;
 }

@@ -49,8 +49,8 @@
                         <div class="row align-items-center mb-4">
                             <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                 <h1 class="display-5 fw-bold text-dark tracking-tight">Hello, K-Learner! 👋</h1>
-                                <p class="lead text-muted mb-0">Ready to master Hangul today? Let's start with the
-                                    basics.</p>
+                                <p class="lead text-muted mb-0">Ready to master the Korean language? Let’s start with
+                                    the basics.</p>
                             </div>
 
                             <div class="col-12 col-lg-6">
@@ -210,7 +210,7 @@
                                <transition-group name="fade-slide" tag="div" class="row g-3"
                                     v-if="activeMainSection === 'pronunciation'">   
 
-                                    <div class="pronunciation-guide-container h-50">
+                                    <div class="pronunciation-guide-container h-100">
 
                                         <div class="row align-items-stretch g-4">
 
@@ -218,7 +218,7 @@
                                             <div class="col-lg-4">
 
                                                 <div
-                                                    class="card h-50 border-0 shadow-sm rounded-4 bg-primary text-white overflow-hidden">
+                                                    class="card h-100 border-0 shadow-sm rounded-4 bg-primary text-white overflow-hidden">
 
                                                     <div class="card-body p-4 position-relative">
 
@@ -236,25 +236,18 @@
 
                                                         <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
 
-                                                            <li class="d-flex align-items-start gap-3">
+                                                            <li class="d-flex align-items-start gap-3" v-for="pronunciationtip in pronunciationTips">
                                                                 <div class="bg-white rounded-circle p-1 text-primary">
                                                                     <i class="bi bi-check2"></i>
                                                                 </div>
                                                                 <div>
-                                                                    <strong>Tenseness:</strong> Tighten your throat for
-                                                                    double consonants.
-                                                                </div>
+                                                                    <strong>{{ pronunciationtip.title }}:</strong> {{ pronunciationtip.description}} <p>Example: {{ pronunciationtip.example}}</p>
+                                                                    </div> 
                                                             </li>
 
-                                                            <li class="d-flex align-items-start gap-3">
-                                                                <div class="bg-white rounded-circle p-1 text-primary">
-                                                                    <i class="bi bi-check2"></i>
-                                                                </div>
-                                                                <div>
-                                                                    <strong>No Puff:</strong> Basic consonants like 'ㅂ'
-                                                                    shouldn't have air puff.
-                                                                </div>
-                                                            </li>
+                                                          
+                                                           
+                                                          
 
                                                         </ul>
 
@@ -329,6 +322,276 @@
 
                                     </div>
 
+                                </transition-group>
+                                <transition-group name="fade-slide" tag="div" class="row g-3"
+                                    v-if="activeMainSection === 'greetings'">
+                            <div class="row align-items-stretch g-4">
+                                 <div class="col-lg-4">
+      
+                                    <div
+                                        class="card h-100 border-0 shadow-sm rounded-4 bg-primary text-white overflow-hidden">
+
+                                        <div class="card-body p-4 position-relative">
+
+                                            <div
+                                                class="opacity-25 position-absolute end-0 bottom-0 display-1 fw-bold mb-n4 me-n3">
+                                                🗣️
+                                            </div>
+
+                                                  <h3 class="fw-bold mb-3"><i class="bi bi-hand-index-thumb"></i>
+                                                        Greeting Tips</h3>
+
+                                                    <p class="small opacity-75">
+                                                        Learn how Koreans greet each other in real life—simple, natural,
+                                                        and easy to follow.
+                                                    </p>
+
+    
+
+                                            <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
+
+                                                <li class="d-flex align-items-start gap-3"
+                                                    v-for="greeting in greetings">
+                                                  
+                                                           <div>
+                                                                <i :class="greeting.icon"></i>
+                                                                <span class="ms-2">{{ greeting.text }}</span>
+                                                            </div>
+      
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        </div>
+                                        </div>
+                                       <div class="col-lg-8">
+                                        
+                                            <div
+                                                class="card-body-greeting p-5 shadow-sm border-0 position-relative overflow-hidden">
+                                                <div
+                                                    class="border-1 position-absolute top-0 start-0 w-100 h-100 z-0">
+                                                </div>
+
+                                                <div class="position-relative z-1">
+                                                    <h1 class="display-5 fw-bold mb-3 text-gradient">
+                                                        What is a Greeting?
+                                                    </h1>
+                                                    <p class="lead text-secondary lh-base">
+                                                        A greeting is more than just words it's the gateway to a
+                                                        conversation.
+                                                        In Korean culture, greetings carry deep significance, reflecting
+                                                        <span class=" fw-semibold">respect</span>,
+                                                        <span class=" fw-semibold">politeness</span>, and
+                                                        <span class=" fw-semibold">friendliness</span>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <div class="row g-4">
+                                                    <div class="col-lg-6 col-xl-4"
+                                                        v-for="greetingcontent in greetingscontent"
+                                                        :key="greetingcontent.id">
+                                                        <div
+                                                            class="card-greeting-content glass-effect p-3 shadow-sm border-0 h-100">
+                                                            <div class="row align-items-center g-0">
+
+                                        
+                                                                <div class=" ps-3 text-start">
+                                                                   <div class="icon-wrapper shadow-sm w-100 h-100">
+                                                                        <div class="glass-overlay"></div>
+                                                                        <img :src="greetingcontent.image"
+                                                                            alt="Greeting Illustration"
+                                                                            class="img-fluid greeting-image">
+                                                                    </div>
+                                                                    <h1
+                                                                        class="h4 fw-bold text-primary mb-1 hangul-text">
+                                                                        {{ greetingcontent.korean }}</h1>
+                                                                    <h2
+                                                                        class="h6 text-muted fw-normal mb-2 text-uppercase tracking-wider small">
+                                                                        {{ greetingcontent.meaning }}
+                                                                    </h2>
+                                                                    <p class="x-small text-secondary mb-3 lh-sm">
+                                                                        {{ greetingcontent.usage }}
+                                                                    </p>
+
+                                                                    <button @click="greetingVoice(greetingcontent.sound)"
+                                                                        class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2">
+                                                                        <i class="bi bi-volume-up-fill"></i>
+                                                                        <span>Listen</span>
+                                                                    </button>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="usage-container p-4 p-md-5 glass-effect border-0">
+                                                    <div class="text-center mb-5">
+                                                        <h1 class="display-6 fw-bold text-gradient mb-2">When to Use?
+                                                        </h1>
+                                                        <p class="text-secondary">Understanding Korean social levels and
+                                                            etiquette</p>
+                                                    </div>
+
+                                                    <div class="row g-4">
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <div class="usage-card shadow-sm h-100">
+                                                                <div class="usage-icon bg-soft-danger">
+                                                                    <i class="bi bi-person-workspace"></i>
+                                                                </div>
+                                                                <h3 class="h6 fw-bold mt-3">Teachers & Elders</h3>
+                                                                <p class="small text-muted mb-0">Always use honorifics
+                                                                    and full polite speech.</p>
+                                                                <span class="badge rounded-pill bg-danger mt-2">Highly
+                                                                    Formal</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <div class="usage-card shadow-sm h-100">
+                                                                <div class="usage-icon bg-soft-primary">
+                                                                    <i class="bi bi-people-fill"></i>
+                                                                </div>
+                                                                <h3 class="h6 fw-bold mt-3">Strangers</h3>
+                                                                <p class="small text-muted mb-0">Default to
+                                                                    <strong>안녕하세요</strong> for safety.</p>
+                                                                <span class="badge rounded-pill bg-primary mt-2">Polite
+                                                                    (Jondaemal)</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <div class="usage-card shadow-sm h-100">
+                                                                <div class="usage-icon bg-soft-info">
+                                                                    <i class="bi bi-briefcase-fill"></i>
+                                                                </div>
+                                                                <h3 class="h6 fw-bold mt-3">Business Settings</h3>
+                                                                <p class="small text-muted mb-0">Use formal endings even
+                                                                    with colleagues.</p>
+                                                                <span
+                                                                    class="badge rounded-pill bg-info mt-2">Professional</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-3">
+                                                            <div class="usage-card shadow-sm h-100">
+                                                                <div class="usage-icon bg-soft-success">
+                                                                    <i class="bi bi-chat-heart-fill"></i>
+                                                                </div>
+                                                                <h3 class="h6 fw-bold mt-3">Close Friends</h3>
+                                                                <p class="small text-muted mb-0">Casual
+                                                                    <strong>안녕</strong> is acceptable here.</p>
+                                                                <span
+                                                                    class="badge rounded-pill bg-success mt-2">Informal
+                                                                    (Banmal)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="practice-section p-4 p-md-5 glass-effect border-0 mt-5">
+                                                    <div class="text-center mb-5">
+                                                        <h2 class="display-6 fw-bold text-gradient">How to Practice</h2>
+                                                        <p class="text-secondary">Follow these steps to master Korean
+                                                            greetings naturally.</p>
+                                                    </div>
+
+                                                    <div class="row g-4 justify-content-center">
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="practice-card shadow-sm">
+                                                                <div class="step-badge">1</div>
+                                                                <div class="practice-icon">
+                                                                    <i class="bi bi-ear-fill text-primary"></i>
+                                                                </div>
+                                                                <h4 class="h5 fw-bold">Listen First</h4>
+                                                                <p class="small text-muted">Focus on the intonation and
+                                                                    pronunciation before you try to speak.</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="practice-card shadow-sm">
+                                                                <div class="step-badge">2</div>
+                                                                <div class="practice-icon">
+                                                                    <i class="bi bi-mic-fill text-danger"></i>
+                                                                </div>
+                                                                <h4 class="h5 fw-bold">Shadow It</h4>
+                                                                <p class="small text-muted">Repeat the words out loud
+                                                                    every day to build muscle memory.</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="practice-card shadow-sm">
+                                                                <div class="step-badge">3</div>
+                                                                <div class="practice-icon">
+                                                                    <i class="bi bi-speedometer2 text-warning"></i>
+                                                                </div>
+                                                                <h4 class="h5 fw-bold">Pace Control</h4>
+                                                                <p class="small text-muted">Start slowly for accuracy,
+                                                                    then gradually increase your speed.</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="practice-card shadow-sm border-primary-subtle">
+                                                                <div class="step-badge">4</div>
+                                                                <div class="practice-icon">
+                                                                    <i class="bi bi-chat-dots-fill text-info"></i>
+                                                                </div>
+                                                                <h4 class="h5 fw-bold">Real World</h4>
+                                                                <p class="small text-muted">Use these greetings in real
+                                                                    situations to gain true confidence.</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="practice-card tip-card h-100">
+                                                                <div class="practice-icon">
+                                                                    <i class="bi bi-heart-pulse-fill text-white"></i>
+                                                                </div>
+                                                                <h4 class="h5 fw-bold text-white">Don't Worry!</h4>
+                                                                <p class="small text-white opacity-75">Mistakes are
+                                                                    proof you're learning. Keep trying!</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                     </div>
+                                       <div class="col-12 mt-5">
+                                            <div
+                                                class="reminder-banner p-4 p-md-5 overflow-hidden position-relative border-0 shadow-lg">
+                                                <div class="blur-circle-1"></div>
+                                                <div class="blur-circle-2"></div>
+
+                                                <div class="row align-items-center position-relative z-index-1">
+                                                    <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                                                        <div class="heart-wrapper shadow">
+                                                            <i class="bi bi-heart-fill text-white fs-1"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="fw-bold text-white mb-2">Confidence starts here.</h3>
+                                                        <p class="lead text-white opacity-90 mb-0">
+                                                            Mastering greetings is your first major milestone in
+                                                            speaking Korean fluently.
+                                                            Remember, <span class="fw-bold border-bottom border-2">small
+                                                                daily steps</span> lead to massive improvements over
+                                                            time.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </transition-group>
+                                <transition-group name="fade-slide" tag="div" class="row g-3"
+                                    v-if="activeMainSection === 'grammar'">
+                                    grammar
+                                </transition-group>
+                                <transition-group name="fade-slide" tag="div" class="row g-3"
+                                    v-if="activeMainSection === 'verb'">
+                                    verb
                                 </transition-group>
                                <div class="bottom-sheet" v-if="isListening">
                                     <div class="handle"></div>
@@ -448,6 +711,11 @@
 
 <script>
 import navigation from './partials/navigation.vue';
+import hangulData from './data/koreanalphabet.js';
+import pronunciationTips from './data/pronunciationTips.js';
+import pronunciationRules from './data/pronunciationRules.js';
+import greetings from './data/greetingstip.js';
+import greetingContent from './data/greetingscontent.js'
 export default {
     components: {
         navigation
@@ -468,235 +736,14 @@ export default {
             correctSpeak: 0,
             spokenText: 'Im Listening.....',
             sections: ['consonants', 'vowels', 'doubleConsonants', 'otherconsonants'],
-
-            vowels: [
-                { char: 'ㅏ', sound: 'a', description: 'Like "ah" in father.', example: 'FATHER' },
-                { char: 'ㅑ', sound: 'ya', description: 'Like "yah" in yard.', example: 'YARD' },
-                { char: 'ㅓ', sound: 'eo', description: 'Like "u" in up.', example: 'UP' },
-                { char: 'ㅕ', sound: 'yeo', description: 'Like "yo" in young.', example: 'YOUNG' },
-                { char: 'ㅗ', sound: 'o', description: 'Like "o" in home.', example: 'HOME' },
-                { char: 'ㅛ', sound: 'yo', description: 'Like "yo" in yoga.', example: 'YOGA' },
-                { char: 'ㅜ', sound: 'u', description: 'Like "oo" in moon.', example: 'MOON' },
-                { char: 'ㅠ', sound: 'yu', description: 'Like "yu" in youth.', example: 'YOUTH' },
-                { char: 'ㅡ', sound: 'eu', description: 'Like "u" in pull.', example: 'PULL' },
-                { char: 'ㅣ', sound: 'i', description: 'Like "ee" in meet.', example: 'MEET' }
-            ],
-
-            consonants: [
-                {
-                    char: 'ㄱ',
-                    sound: 'g/k',
-                    description: 'Soft "k" or "g" sound.',
-                    example: 'GUN',
-                    image: '/hangulalphabetimages/g.png',
-                    instruction: 'Draw a short horizontal line first, then a vertical line going down from the right end.'
-                },
-                {
-                    char: 'ㄴ',
-                    sound: 'n',
-                    description: 'Like "n" in nose.',
-                    example: 'NOSE',
-                    image: '/hangulalphabetimages/n.png',
-                },
-                {
-                    char: 'ㄷ',
-                    sound: 'd/t',
-                    description: 'Soft "t" or "d" sound.',
-                    example: 'DOG',
-                    image: '/hangulalphabetimages/d.png',
-                },
-                {
-                    char: 'ㄹ',
-                    sound: 'r/l',
-                    description: 'Between "r" and "l".',
-                    example: 'RATTLE',
-                    image: '/hangulalphabetimages/r.png',
-                },
-                {
-                    char: 'ㅁ',
-                    sound: 'm',
-                    description: 'Like "m" in mouth.',
-                    example: 'MOUTH',
-                    image: '/hangulalphabetimages/m.png',
-                },
-                {
-                    char: 'ㅂ',
-                    sound: 'b/p',
-                    description: 'Soft "b" or "p" sound.',
-                    example: 'BUCKET',
-                    image: '/hangulalphabetimages/b.png',
-                },
-                {
-                    char: 'ㅇ',
-                    sound: 'ng',
-                    description: 'Silent prefix; "ng" suffix.',
-                    example: 'SING',
-                    image: '/hangulalphabetimages/ng.png',
-                },
-                {
-                    char: 'ㅅ',
-                    sound: 's',
-                    description: 'Like "s" in soul.',
-                    example: 'SOUL',
-                    image: '/hangulalphabetimages/s.png',
-                },
-                {
-                    char: 'ㅈ',
-                    sound: 'j',
-                    description: 'Like "j" in jump.',
-                    example: 'JUMP',
-                    image: '/hangulalphabetimages/j.png',
-                },
-                {
-                    char: 'ㅊ',
-                    sound: 'ch',
-                    description: 'Strong "ch" sound like in chair.',
-                    example: 'CHAIR',
-                    image: '/hangulalphabetimages/ch.png',
-                },
-                {
-                    char: 'ㅋ',
-                    sound: 'k',
-                    description: 'Strong aspirated "k" sound.',
-                    example: 'KITE',
-                    image: '/hangulalphabetimages/k.png',
-                },
-                {
-                    char: 'ㅌ',
-                    sound: 't',
-                    description: 'Strong aspirated "t" sound.',
-                    example: 'TOP',
-                    image: '/hangulalphabetimages/t.png',
-                },
-                {
-                    char: 'ㅍ',
-                    sound: 'p',
-                    description: 'Strong aspirated "p" sound.',
-                    example: 'PEN',
-                    image: '/hangulalphabetimages/p.png',
-                },
-                {
-                    char: 'ㅎ',
-                    sound: 'h',
-                    description: 'Soft breath "h" sound.',
-                    example: 'HOPE',
-                    image: '/hangulalphabetimages/h.png',
-                }
-            ],
-            doubleConsonants: [
-                { char: 'ㄲ', sound: 'kk', description: 'Tense "k" sound.', example: 'SKILL' },
-                { char: 'ㄸ', sound: 'tt', description: 'Tense "t" sound.', example: 'STOP' },
-                { char: 'ㅃ', sound: 'pp', description: 'Tense "p" sound.', example: 'SPY' },
-                { char: 'ㅆ', sound: 'ss', description: 'Tense "s" sound.', example: 'SEA' },
-                { char: 'ㅉ', sound: 'jj', description: 'Tense "j" sound.', example: 'MESSAGE (the "ge")' }
-            ],
-
-            otherConsonants: [
-                { char: 'ㅐ', sound: 'ae', description: 'Like "a" in care.', example: 'CARE' },
-                { char: 'ㅒ', sound: 'yae', description: 'Like "ya" in yankee.', example: 'YANKEE' },
-                { char: 'ㅔ', sound: 'e', description: 'Like "e" in bed.', example: 'BED' },
-                { char: 'ㅖ', sound: 'ye', description: 'Like "ye" in yes.', example: 'YES' },
-                { char: 'ㅘ', sound: 'wa', description: 'Like "wa" in water.', example: 'WATER' },
-                { char: 'ㅙ', sound: 'wae', description: 'Like "wa" in wax.', example: 'WAX' },
-                { char: 'ㅚ', sound: 'oe', description: 'Like "we" in wet.', example: 'WET' },
-                { char: 'ㅝ', sound: 'wo', description: 'Like "wo" in won.', example: 'WON' },
-                { char: 'ㅞ', sound: 'we', description: 'Like "we" in wedding.', example: 'WEDDING' },
-                { char: 'ㅟ', sound: 'wi', description: 'Like "wee" in week.', example: 'WEEK' },
-                { char: 'ㅢ', sound: 'ui', description: 'Combined "eu" and "i".', example: 'UI' }
-            ],
-
-            pronunciationRules: [
-                {
-                    id: 1,
-                    title: "Tenseness",
-                    type: "warning",
-                    rule: "Double consonants are pronounced with a tight, strong sound from the throat.",
-                    exampleFrom: "학교",
-                    exampleTo: "학꾜 (hak-kyo)",
-                    speak: "학교"
-                },
-                {
-                    id: 2,
-                    title: "No Puff (Aspiration Control)",
-                    type: "info",
-                    rule: "Basic consonants like ㅂ, ㄷ, ㄱ, ㅈ, ㅅ are pronounced without strong air release.",
-                    exampleFrom: "바다",
-                    exampleTo: "ba-da",
-                    speak: "바다"
-                },
-                {
-                    id: 3,
-                    title: "Liaison (Linking)",
-                    type: "success",
-                    rule: "When a syllable ends in a consonant and the next starts with ㅇ, the consonant moves forward.",
-                    exampleFrom: "먹어요",
-                    exampleTo: "머거요 (meo-geo-yo)",
-                    speak: "먹어요"
-                },
-                {
-                    id: 4,
-                    title: "Nasalization",
-                    type: "warning",
-                    rule: "When ㄱ, ㄷ, ㅂ meet ㄴ or ㅁ, the sound becomes nasal (m/n/ng flow).",
-                    exampleFrom: "합니다",
-                    exampleTo: "함니다 (ham-ni-da)",
-                    speak: "합니다"
-                },
-                {
-                    id: 5,
-                    title: "Tensification",
-                    type: "warning",
-                    rule: "Two consonants together can make a tense double sound.",
-                    exampleFrom: "국밥",
-                    exampleTo: "국빱 (guk-bbap)",
-                    speak: "국밥"
-                },
-                {
-                    id: 6,
-                    title: "Batchim Rules",
-                    type: "info",
-                    rule: "Final consonants are simplified or pronounced differently depending on position.",
-                    exampleFrom: "읽다",
-                    exampleTo: "익따 (ik-tta)",
-                    speak: "읽다"
-                },
-                {
-                    id: 7,
-                    title: "Assimilation",
-                    type: "info",
-                    rule: "Consonants change to make pronunciation smoother and easier to flow.",
-                    exampleFrom: "국물",
-                    exampleTo: "궁물 (gung-mul)",
-                    speak: "국물"
-                },
-                {
-                    id: 8,
-                    title: "Liquidization",
-                    type: "info",
-                    rule: "When ㄴ and ㄹ meet, or ㄹ and ㄴ meet, it becomes a double ㄹ sound.",
-                    exampleFrom: "신라",
-                    exampleTo: "실라 (sil-la)",
-                    speak: "신라"
-                },
-                {
-                    id: 9,
-                    title: "Aspiration Rule",
-                    type: "warning",
-                    rule: "When ㅎ meets another consonant, the sound becomes stronger or changes.",
-                    exampleFrom: "좋다",
-                    exampleTo: "조타 (jo-ta)",
-                    speak: "좋다"
-                },
-                {
-                    id: 10,
-                    title: "Final Sound Neutralization",
-                    type: "info",
-                    rule: "Only specific consonant sounds are pronounced at the end of a syllable.",
-                    exampleFrom: "닭",
-                    exampleTo: "닥 (dak)",
-                    speak: "닭"
-                }
-            ],
+            vowels: hangulData.vowels,
+            consonants: hangulData.consonants,
+            doubleConsonants: hangulData.doubleConsonants,
+            otherConsonants: hangulData.otherConsonants,
+            pronunciationTips: pronunciationTips.pronunciationTipsData,
+            pronunciationRules: pronunciationRules.pronunciationRules,
+            greetings: greetings.Greeting,
+            greetingscontent: greetingContent.GreetingContent,
 
         }
     },
@@ -824,8 +871,13 @@ export default {
             }, 30000);
 
             this.recognition = recognition;
+        },
+        greetingVoice(file) {
+            const audio = new Audio(`/sounds/greetings/${file}`);
+            audio.play();
         }
     },
+    
     mounted() {
         document.title = "Korean Learning Platform - activeMainSection";
     },
