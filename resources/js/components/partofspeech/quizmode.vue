@@ -123,11 +123,11 @@ import navigation from '../partials/navigation.vue';
 import axios from 'axios';
 
 const SOUND_URLS = {
-    tick: 'https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3',
-    correct: 'https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3',
-    wrong: 'https://assets.mixkit.co/active_storage/sfx/2959/2959-preview.mp3',
-    timeout: 'https://assets.mixkit.co/active_storage/sfx/2021/2021-preview.mp3',
-    gameover: 'https://assets.mixkit.co/active_storage/sfx/2020/2020-preview.mp3'
+    tick: '/sounds/gamevisualsound/freesound_community-short-beep-countdown-81121.mp3',
+    correct: '/sounds/gamevisualsound/chrisiex1-correct-156911.mp3',
+    wrong: '/sounds/gamevisualsound/wrong.mp3',
+    timeout: '/sounds/gamevisualsound/correct.mp3',
+    gameover: '/sounds/gamevisualsound/audley_fergine-game-over-classic-206486.mp3'
 };
 
 export default {
@@ -172,7 +172,7 @@ export default {
             this.timerInterval = setInterval(() => {
                 if (this.timer > 0) {
                     this.timer--;
-                    if (this.timer <= 3 && this.timer > 0) this.playSound('tick');
+                    if (this.timer <= 5 && this.timer >= 0) this.playSound('tick');
                 } else {
                     this.handleTimeout();
                 }
@@ -214,10 +214,6 @@ export default {
 
             const selected = choiceLetter.toLowerCase();
             this.selectedChoice = selected;
-
-            console.log("Selected:", selected);
-            console.log("Question Data:", this.questionData);
-
             // ✅ FIXED MAP (IMPORTANT CHANGE HERE)
             const map = {
                 a: this.questionData.choice_a,
@@ -227,9 +223,6 @@ export default {
             };
 
             const selectedText = map[selected];
-
-            console.log("Selected Text:", selectedText);
-            console.log("DB Answer:", this.questionData.correct_answer);
 
             // safety check
             if (!selectedText) {

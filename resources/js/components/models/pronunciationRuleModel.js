@@ -3,6 +3,7 @@ export default class pronunciationTipsModel {
     this.id = id
     this.title = title
     this.type = type
+    this.rule = rule;
     this.exampleFrom = exampleFrom
     this.exampleTo = exampleTo
     this.speak = speak

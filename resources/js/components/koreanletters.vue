@@ -245,13 +245,8 @@ export default {
         },
         nextQuestion() {
             this.feedback = '';
-            // Gi-combine tanan para daghan choices sa game
             const pool = [...this.basicLetters, ...this.basicVowels, ...this.doubleLetters, ...this.doubleVowels];
-
-            // Pagpili og random nga letra para sa pangutana
             this.currentQuestion = pool[Math.floor(Math.random() * pool.length)];
-
-            // Pag-generate og 4 ka options
             let options = [this.currentQuestion.en];
             while (options.length < 4) {
                 let randomOption = pool[Math.floor(Math.random() * pool.length)].en;
@@ -268,12 +263,17 @@ export default {
             if (selected === this.currentQuestion.en) {
                 this.score += 10;
                 this.feedback = 'correct-state';
+
+                // 🎉 success sound
+                new Audio('/sounds/gamevisualsound/chrisiex1-correct-156911.mp3').play();
                 setTimeout(this.nextQuestion, 600);
             } else {
                 this.lives--;
                 this.feedback = 'wrong-state';
-                // Shake effect reset
-                setTimeout(() => { this.feedback = ''; }, 500);
+                new Audio('/sounds/gamevisualsound/wrong.mp3').play();
+                setTimeout(() => {
+                    this.feedback = '';
+                }, 500);
             }
         }
     },

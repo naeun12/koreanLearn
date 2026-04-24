@@ -13,7 +13,7 @@ import adverb from './components/partofspeech/adverbs.vue'
 import particles from './components/partofspeech/particle.vue'
 import pronouns from './components/partofspeech/pronoun.vue'
 import quiz from './components/partofspeech/quizmode.vue'
-import lesson from './components/lesson.vue'
+import lesson from './components/lessons/firstlessonMain.vue'
 
 const homepageContainer = document.querySelector('#homepage')
 if (homepageContainer) {

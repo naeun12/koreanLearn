@@ -218,7 +218,7 @@
                                             <div class="col-lg-4">
 
                                                 <div
-                                                    class="card h-100 border-0 shadow-sm rounded-4 bg-primary text-white overflow-hidden">
+                                                    class="card h-100 border-0 shadow-sm rounded-4 sidebar-tips text-white overflow-hidden">
 
                                                     <div class="card-body p-4 position-relative">
 
@@ -329,7 +329,7 @@
                                  <div class="col-lg-4">
       
                                     <div
-                                        class="card h-100 border-0 shadow-sm rounded-4 bg-primary text-white overflow-hidden">
+                                        class="card h-100 border-0 shadow-sm rounded-4 sidebar-tips text-white overflow-hidden">
 
                                         <div class="card-body p-4 position-relative">
 
@@ -397,7 +397,7 @@
 
                                         
                                                                 <div class=" ps-3 text-start">
-                                                                   <div class="icon-wrapper shadow-sm w-100 h-100">
+                                                                   <div class="icon-wrapper shadow-sm w-100 h-100 mb-4">
                                                                         <div class="glass-overlay"></div>
                                                                         <img :src="greetingcontent.image"
                                                                             alt="Greeting Illustration"
@@ -429,7 +429,7 @@
                                                     <div class="text-center mb-5">
                                                         <h1 class="display-6 fw-bold text-gradient mb-2">When to Use?
                                                         </h1>
-                                                        <p class="text-secondary">Understanding Korean social levels and
+                                                        <p class="text-secondary">Understanding Korean social fullGameData and
                                                             etiquette</p>
                                                     </div>
 
@@ -584,6 +584,56 @@
                                             </div>
                                         </div>
                                     </div>
+                                 
+                                    <div class="fixed-bottom p-3 d-flex justify-content-center" >
+                                        <button
+                                            class="btn btn-practice-bottom w-100 d-flex align-items-center justify-content-center shadow-sm"                                             data-bs-toggle="modal" data-bs-target="#gameModal">
+                                            <i class="bi bi-pencil-square me-2"></i>
+                                            <span>Practice Now</span>
+                                        </button>
+                                    </div>
+                                    
+                                  <div class="modal fade" id="gameModal" tabindex="-1" ref="gameModal">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content glass-modal">
+
+                                                <div class="modal-body text-center p-4" v-if="currentLevel">
+                                                   
+
+                                                   
+
+                                                    <h4 class="fw-bold mb-1">{{ currentLevel.korean }}</h4>
+                                                    <p class="text-primary fw-medium mb-3">{{ currentLevel.english }}
+                                                    </p>
+                                                    <p class="text-muted small mb-4 px-3">{{ currentLevel.description }}
+                                                    </p>
+
+                                                    <div class="voice-section mb-4">
+                                                        <div class="mic-wrapper">
+                                                            <button @click="toggleMic" class="btn-mic shadow"
+                                                                :class="{ 'is-listening': isRecording, 'is-correct': isCorrect }">
+                                                                <i
+                                                                    :class="isRecording ? 'bi bi-mic-fill' : 'bi bi-mic'"></i>
+                                                            </button>
+                                                            <div v-if="isRecording" class="pulse-ring"></div>
+                                                        </div>
+                                                        <p class="mt-3 transcript-preview">{{ transcript || '...' }}</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="modal-footer border-0 justify-content-center pb-4">
+                                                    <button @click="prevLevel" class="btn btn-light rounded-pill px-4"
+                                                        :disabled="currentIndex === 0">Back</button>
+
+                                                    <button @click="handleNavigation"
+                                                        class="btn btn-primary rounded-pill px-4 shadow-sm"
+                                                        :disabled="!isCorrect">
+                                                        {{ currentIndex === 2 ? 'Finish' : 'Next' }}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </transition-group>
                                 <transition-group name="fade-slide" tag="div" class="row g-3"
                                     v-if="activeMainSection === 'grammar'">
@@ -716,6 +766,7 @@ import pronunciationTips from './data/pronunciationTips.js';
 import pronunciationRules from './data/pronunciationRules.js';
 import greetings from './data/greetingstip.js';
 import greetingContent from './data/greetingscontent.js'
+import GameData from './data/greetinggame.js'
 export default {
     components: {
         navigation
@@ -744,6 +795,13 @@ export default {
             pronunciationRules: pronunciationRules.pronunciationRules,
             greetings: greetings.Greeting,
             greetingscontent: greetingContent.GreetingContent,
+            fullList: GameData.GreetingGame, // Dito papasok yung 7 items mo
+            currentIndex: 0,
+            isRecording: false,
+            transcript: '',
+            isCorrect: false,
+            recognition: null
+            
 
         }
     },
@@ -801,8 +859,6 @@ export default {
             this.finalResult = "";
             this.isspeakCorrect = false;
             this.correctSpeak = 0;
-
-
             const SpeechRecognition =
                 window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -817,26 +873,21 @@ export default {
             recognition.continuous = true;
             recognition.interimResults = true;
             recognition.maxAlternatives = 1;
-
             recognition.start();
-
             recognition.onresult = (event) => {
                 let text = "";
                 this.isspeakCorrect = false;
                 this.correctSpeak = 0;
-
-
                 for (let i = event.resultIndex; i < event.results.length; i++) {
                     text += event.results[i][0].transcript;
                 }
-
                 this.spokenText = text;
-
                 // 🔥 IF / ELSE CHECK
                 if (text.includes(speak)) {
                     console.log("🟢 CORRECT:", text);
                     this.isspeakCorrect = true;
                     this.correctSpeak += 1;
+                    new Audio('/sounds/gamevisualsound/chrisiex1-correct-156911.mp3').play();
                 } else {
                     console.log("🔴 WRONG:", text, "Expected:", speak);
                 }
@@ -855,10 +906,14 @@ export default {
                     if (this.spokenText.includes(speak)) {
                         console.log("✅ FINAL RESULT: Correct pronunciation!");
                         this.speakCorrect = true;
+                                        new Audio('/sounds/gamevisualsound/audley_fergine-game-over-classic-206486.mp3').play();
+
+
                     } else {
                         this.speakCorrect = false;
                         this.isFinalResult = true;
                         this.finalResult = speak;
+
                     }
 
                 } else {
@@ -868,6 +923,7 @@ export default {
                 }
 
                 console.log("⛔ Stopped after 20 seconds");
+
             }, 30000);
 
             this.recognition = recognition;
@@ -875,13 +931,91 @@ export default {
         greetingVoice(file) {
             const audio = new Audio(`/sounds/greetings/${file}`);
             audio.play();
+        },
+        toggleMic() {
+            if (this.isRecording) {
+                this.recognition.stop();
+            } else {
+                this.isCorrect = false;
+                this.transcript = '';
+                this.isRecording = true;
+                this.recognition.start();
+            }
+        },
+        checkSpeech() {
+            // Inihahambing ang boses sa correctResponse ng model mo
+            const voiceInput = this.transcript.replace(/\s/g, '');
+            const target = this.currentLevel.correctResponse.replace(/\s/g, '');
+
+            if (voiceInput === target) {
+                this.isCorrect = true;
+                this.playAudio(this.currentLevel.audio);
+            }
+        },
+        playAudio(file) {
+            const audio = new Audio(`/audio/${file}`);
+            audio.play();
+        },
+        handleNavigation() {
+            if (this.currentIndex < 2) {
+                this.currentIndex++;
+                this.resetState();
+            } else {
+                alert("Practice Complete!");
+                // Isara ang modal or i-reset ang game
+            }
+        },
+        prevLevel() {
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+                this.resetState();
+            }
+        },
+        resetState() {
+            this.isCorrect = false;
+            this.transcript = '';
         }
+       
+        
     },
     
     mounted() {
-        document.title = "Korean Learning Platform - activeMainSection";
+        document.title = "Korean Learning Platform - Lesson 1";
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRec) {
+            this.recognition = new SpeechRec();
+            this.recognition.lang = 'ko-KR';
+
+            this.recognition.onresult = (event) => {
+                this.transcript = event.results[0][0].transcript;
+                this.checkSpeech();
+            };
+
+            // Importante: Kapag nag-end ang mic pero hindi pa 'Correct', 
+            // i-restart natin para tuloy-tuloy ang pakikinig.
+            this.recognition.onend = () => {
+                if (this.isRecording && !this.isCorrect) {
+                    this.recognition.start();
+                } else {
+                    this.isRecording = false;
+                }
+            };
+        }
+
+        // Listener para sa Bootstrap Modal - 'shown.bs.modal' 
+        // Ibig sabihin, pagka-open na pagka-open ng modal, mag-start ang mic.
+        const modalEl = document.getElementById('gameModal');
+        modalEl.addEventListener('shown.bs.modal', () => {
+            this.startAutomaticMic();
+        });
+
+        // Patayin ang mic pag sinara ang modal
+        modalEl.addEventListener('hide.bs.modal', () => {
+            this.stopMic();
+        });
     },
     computed: {
+        
     currentIndex() {
         return this.sections.indexOf(this.currentSection);
     },
@@ -890,8 +1024,8 @@ export default {
     },
     canGoForward() {
         return this.currentIndex < this.sections.length - 1;
-        },
-        sectionTitle() {
+     },
+    sectionTitle() {
             switch (this.currentSection) {
                 case 'vowels':
                     return 'Basic Vowels';
@@ -905,6 +1039,16 @@ export default {
                     return 'Hangul activeMainSection';
             }
         },
+        gameLevels() {
+            return this.fullList.slice(0, 3);
+        },
+        currentLevel() {
+            return this.gameLevels[this.currentIndex];
+        }
+    
+
+       
+
 
 },
 }
