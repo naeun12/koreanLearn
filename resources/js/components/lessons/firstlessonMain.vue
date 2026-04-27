@@ -108,7 +108,7 @@
                                 </transition-group>
                                 <transition-group name="fade-slide" tag="div" class="row g-3"
                                     v-if="activeMainSection === 'grammar'">
-                                    grammar
+                                    <lessonGrammar></lessonGrammar>
                                 </transition-group>
                                 <transition-group name="fade-slide" tag="div" class="row g-3"
                                     v-if="activeMainSection === 'verb'">
@@ -131,13 +131,15 @@ import alphabetAssets from '../lessons/lessonalphabet.vue'
 import pronouncationAssets from '../lessons/lessonpronounce.vue'
 import greetingAssets from '../lessons/lessongreetings.vue'
 import koreanalphabet from '../data/koreanalphabet.js';
+import lessonGrammar from './lessongrammar.vue';
 
 export default {
     components: {
         navigation,
         alphabetAssets,
         pronouncationAssets,
-        greetingAssets
+        greetingAssets,
+        lessonGrammar
     },
     data() {
         return {

@@ -5,13 +5,13 @@ export default class greetinggameModel {
         description,
         audio,
         image = null,
-        correctResponse = null
+        explaination = null,
     ) {
         this.korean = korean;
         this.english = english;
         this.description = description;
         this.audio = audio;
         this.image = image;
-        this.correctResponse = correctResponse; 
+        this.explaination = explaination;
     }
 }

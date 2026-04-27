@@ -299,14 +299,65 @@
                         <span class="mt-3 small fw-bold text-muted text-uppercase tracking-wider">
                             {{ isListening ? 'Listening...' : 'Tap to Speak' }}
                         </span>
+                       <div v-if="isListening || liveTranscript" class="mt-4 d-flex justify-content-center">
+                            <div
+                                class="live-transcript-pill shadow-sm d-flex align-items-center px-4 py-2 border border-info rounded-pill bg-light">
 
-                        <p v-if="userTranscript" class="mt-2 small text-primary italic">
-                            Heard: "{{ userTranscript }}"
-                        </p>
+                                <div class="mic-container me-3">
+                                    <div class="pulse-ring"></div>
+                                    <i class="bi bi-mic-fill text-danger fs-5"></i>
+                                </div>
 
-                        <p v-if="feedbackText" :class="isCorrect ? 'text-success' : 'text-danger'">
-                            {{ feedbackText }}
-                        </p>
+                                <p class="mb-0 text-dark fw-medium">
+                                    <span v-if="!liveTranscript" class="text-muted opacity-75">Speak now...</span>
+                                    <span v-else class="typing-effect">{{ liveTranscript }}</span>
+                                </p>
+                            </div>
+                        </div>
+                       
+                       <div v-if="userTranscript"
+                            class="explanation-card mt-4 p-4 shadow-sm border-0 rounded-4 animate__animated animate__fadeIn">
+
+                            <div class="transcript-box mb-3 d-flex align-items-center">
+                                <i class="bi bi-mic-fill me-2 text-primary opacity-75"></i>
+                                <p class="mb-0 small text-muted fst-italic">
+                                    I heard: <span class="text-dark fw-medium">"{{ userTranscript }}"</span>
+                                </p>
+                            </div>
+
+                            <hr class="my-3 opacity-10">
+
+                            <div class="explanation-content">
+                                <div class="explanation-header d-flex align-items-center mb-2">
+                                    <div class="icon-badge me-2">
+                                        <i class="bi bi-lightbulb-fill text-warning"></i>
+                                    </div>
+                                    <h6 class="mb-0 fw-bold text-uppercase letter-spacing-1">Did you know?</h6>
+                                </div>
+
+                                <p class="explanation-text text-secondary lh-base mb-4">
+                                    {{ currentQuestion.explaination }}
+                                </p>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div v-if="feedbackText">
+                                    <span
+                                        :class="isCorrect ? 'badge bg-success-soft text-success' : 'badge bg-danger-soft text-danger'"
+                                        class="p-2 px-3 rounded-pill">
+                                        <i :class="isCorrect ? 'bi bi-check-circle-fill' : 'bi bi-x-circle-fill'"
+                                            class="me-1"></i>
+                                        {{ feedbackText }}
+                                    </span>
+                                </div>
+
+                                <button @click="btnQuestionNext"
+                                    class="btn btn-primary rounded-pill px-4 py-2 shadow-sm d-flex align-items-center">
+                                    <span>Next Question</span>
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -380,6 +431,7 @@ export default {
             userTranscript: '',
             isCorrect: false,
             feedbackText: '',
+            liveTranscript: '',
             stages: 4,
             stagesCount: 4,
             score: 0,
@@ -522,90 +574,90 @@ export default {
 
             const recognition = new Recognition();
 
-            // 🇰🇷 Korean speech only
+            // 🇰🇷 Korean only
             recognition.lang = 'ko-KR';
-            recognition.interimResults = false;
+
+            // 🔥 LIVE ENABLED
+            recognition.interimResults = true;
             recognition.continuous = false;
 
             this.isListening = true;
             this.userTranscript = '';
+            this.liveTranscript = '';
             this.feedbackText = '';
 
             recognition.onresult = (event) => {
 
-                if (!this.isListening) return;
+                let interimTranscript = '';
+                let finalTranscript = '';
 
-                const result = event.results?.[0]?.[0]?.transcript?.trim() || '';
-                this.userTranscript = result;
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    const transcript = event.results[i][0].transcript;
 
-                // 🎯 GET CORRECT ANSWER (your data uses "image")
-                const target =
-                    this.currentQuestion.image ||
-                    this.currentQuestion.korean ||
-                    this.currentQuestion.answer ||
-                    '';
-
-                if (!target) {
-                    console.warn("❌ No target found:", this.currentQuestion);
-                    this.feedbackText = "⚠️ No correct answer set";
-                    recognition.stop();
-                    return;
+                    if (event.results[i].isFinal) {
+                        finalTranscript += transcript;
+                    } else {
+                        interimTranscript += transcript;
+                    }
                 }
 
-                // 🧹 CLEAN TEXT
-                const cleanResult = this.cleanText(result);
-                const cleanTarget = this.cleanText(target);
+                // 🔥 LIVE TEXT
+                this.liveTranscript = interimTranscript || finalTranscript;
 
-                // 📊 SCORE CALCULATION
-                const similarity = this.calculateSimilarity(cleanResult, cleanTarget);
-                const grade = Math.round(similarity * 100);
-
-                // 🔍 MATCH LOGIC
-                const exactMatch = cleanResult === cleanTarget;
-                const includesMatch =
-                    cleanResult.includes(cleanTarget) ||
-                    cleanTarget.includes(cleanResult);
-
-                const passed =
-                    cleanResult === cleanTarget ||
-                    cleanResult.includes(cleanTarget) ||
-                    similarity >= 0.75;
-                // 📦 STORE GRADE
-                this.totalGrades.push({
-                    heard: result,
-                    target: target,
-                    grade: grade
-                });
                 // =========================
-                // ✅ CORRECT
+                // FINAL CHECK ONLY
                 // =========================
-                if (passed) {
+                if (finalTranscript) {
 
-                    this.isCorrect = true;
-                    this.feedbackText = `✅ Correct! (${grade}%)`;
-                    this.playSound('correct');
+                    if (!this.isListening) return;
 
-                    recognition.stop();
-                    this.handleSuccess();
+                    const result = finalTranscript.trim();
 
-                }
-                // =========================
-                // ❌ WRONG
-                // =========================
-                else {
+                    const target =
+                        this.currentQuestion.image ||
+                        this.currentQuestion.korean ||
+                        this.currentQuestion.answer ||
+                        '';
 
-                    this.isCorrect = false;
-                    this.feedbackText = `❌ Wrong! (${grade}%)`;
-                    this.playSound('wrong');
+                    if (!target) {
+                        this.feedbackText = "⚠️ No correct answer set";
+                        recognition.stop();
+                        return;
+                    }
+
+                    const cleanResult = this.cleanText(result);
+                    const cleanTarget = this.cleanText(target);
+
+                    const similarity = this.calculateSimilarity(cleanResult, cleanTarget);
+                    const grade = Math.round(similarity * 100);
+
+                    const passed =
+                        cleanResult === cleanTarget ||
+                        cleanResult.includes(cleanTarget) ||
+                        similarity >= 0.75;
+
+                    this.totalGrades.push({
+                        heard: result,
+                        target: target,
+                        grade: grade
+                    });
+
+                    // move LIVE → FINAL
+                    this.userTranscript = result;
+
+                    if (passed) {
+                        this.isCorrect = true;
+                        this.feedbackText = `✅ Correct! (${grade}%)`;
+                        this.playSound('correct');
+                        this.handleSuccess();
+                    } else {
+                        this.isCorrect = false;
+                        this.feedbackText = `❌ Wrong! (${grade}%)`;
+                        this.playSound('wrong');
+                    }
 
                     recognition.stop();
                     this.isListening = false;
-
-                    setTimeout(() => {
-                        this.feedbackText = '';
-                        this.userTranscript = '';
-                        this.nextQuestion();
-                    }, 1200);
                 }
             };
 
@@ -613,6 +665,7 @@ export default {
                 this.isListening = false;
                 recognition.stop();
             };
+
             recognition.onerror = (event) => {
                 console.error("Speech Error:", event.error);
                 this.isListening = false;
@@ -626,31 +679,32 @@ export default {
             this.isCorrect = true;
 
             this.score++;
+        },
+        btnQuestionNext() { 
+            
+            this.isCorrect = false;
+            this.userTranscript = '';
+            this.feedbackText = '';
+            this.liveTranscript = '';
             this.currentIndex++;
+            
 
-            setTimeout(() => {
+            // 🏁 FINAL CHECK
+            if (this.currentIndex >= this.stagesCount) {
 
-                this.isCorrect = false;
-                this.userTranscript = '';
-                this.feedbackText = '';
-                // 🏁 FINAL CHECK
-                if (this.currentIndex >= this.stagesCount) {
+                const sum = this.totalGrades.reduce((acc, item) => {
+                    return acc + (item.grade || 0);
+                }, 0);
 
-                    const sum = this.totalGrades.reduce((acc, item) => {
-                        return acc + (item.grade || 0);
-                    }, 0);
+                this.finalScore = Math.round(sum / (this.totalGrades.length || 1));
 
-                    this.finalScore = Math.round(sum / (this.totalGrades.length || 1));
 
-                    
 
-                    this.showFinal = true;
-                    this.openPronouncationModal = false;
-                    // ❌ REMOVE AUTO RESTART (IMPORTANT)
-                    return;
-                }
-
-            }, 1200);
+                this.showFinal = true;
+                this.openPronouncationModal = false;
+                // ❌ REMOVE AUTO RESTART (IMPORTANT)
+                return;
+            }
         },
         nextQuestion() {
             this.currentIndex++;

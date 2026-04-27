@@ -75,9 +75,10 @@
                             </div>
                             <!-- 🔊 TRY TO SPEAK -->
                             <button
-                                class="modern-btn-minimal w-100 mt-2 d-flex align-items-center justify-content-center gap-2"
+                                class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
                                 @click="playSound(tip.speak)">
-                                🔊 Play Sound
+                                <i class="bi bi-volume-up-fill"></i>
+                                Listen
                             </button>
 
                             <div class="button-wrapper">
