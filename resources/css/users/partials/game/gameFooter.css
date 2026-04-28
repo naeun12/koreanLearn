@@ -1,0 +1,27 @@
+.practice-banner {
+    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
+    border-radius: 28px;
+    padding: 2.5rem;
+    border: none;
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.3);
+}
+
+.btn-quiz {
+    background: #ffffff;
+    color: #000000 !important;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-quiz:hover {
+    transform: scale(1.05);
+    background: #f1f5f9;
+}
+
+.bg-dark-map-style {
+    background-color: #4f46e5;
+}

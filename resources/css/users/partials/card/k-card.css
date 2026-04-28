@@ -1,0 +1,39 @@
+.k-card {
+    background: #ffffff;
+    /* Reduced opacity on border for a cleaner look */
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    color: #1a1a1a;
+    /* Softened black for better readability */
+    width: 100%;
+    padding: 32px;
+    /* Increased padding for better "breathing" room */
+    border-top: 5px solid #4f46e5;
+
+    /* Smooth transition for everything */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.k-card:hover {
+    /* Lift the card up slightly */
+    transform: translateY(-8px);
+    /* Soft, deep shadow instead of a harsh dark one */
+    box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(79, 70, 229, 0.5);
+}
+
+/* Optional: Add a subtle accent circle in the background */
+.k-card::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(79, 70, 229, 0.03);
+    border-radius: 50%;
+    z-index: 0;
+}

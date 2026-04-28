@@ -1,0 +1,36 @@
+.example-sentences {
+    /* Layout */
+    margin-left: auto;
+    /* Pushes button to the right */
+    padding: 8px 20px;
+
+    /* Aesthetic */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+
+    /* Typography */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    /* Interaction */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    outline: none;
+}
+.example-sentences:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.example-sentences:active {
+    transform: translateY(0) scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,170 @@
+
+
+
+
+
+
+/*to be continued...*/
+.lesson-card {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 3rem;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.ambient-glow {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 0;
+}
+
+.fw-black {
+    font-weight: 900 !important;
+}
+
+.text-primary-color {
+    color: #0d6efd !important;
+}
+
+.bg-primary-solid {
+    background-color: #0d6efd !important;
+}
+
+.lesson-title {
+    letter-spacing: -2.5px;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: #212529;
+}
+
+.lesson-subtitle {
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.max-w-700 {
+    max-width: 700px;
+}
+
+.header-icon-box {
+    width: 60px;
+    height: 60px;
+    background: #212529;
+    color: white;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logic-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid transparent;
+}
+
+.consonant-case {
+    background: #f8faff;
+    border-color: rgba(13, 110, 253, 0.1);
+}
+
+.vowel-case {
+    background: #fffcf8;
+    border-color: rgba(255, 193, 7, 0.1);
+}
+
+.logic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.badge-custom {
+    padding: 0.5rem 1rem;
+    border-radius: 50rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-consonant {
+    background: rgba(13, 110, 253, 0.08);
+    color: #0d6efd;
+    border-color: rgba(13, 110, 253, 0.1);
+}
+
+.badge-vowel {
+    background: rgba(255, 193, 7, 0.08);
+    color: #ffc107;
+    border-color: rgba(255, 193, 7, 0.1);
+}
+
+.formula-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dee2e6;
+}
+
+.result-chip {
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.chip-label {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.lesson-footer {
+    background: linear-gradient(135deg, #4f46e5 0%, #0d6efd 100%);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.footer-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: #4f46e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.btn-cta {
+    background: linear-gradient(135deg, #4f46e5 0%, #0d6efd 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    align-items: center;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+}
+
+.transition-all {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}

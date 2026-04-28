@@ -84,13 +84,7 @@
                             <div class="button-wrapper">
                                 <button class="btn-minimal-speak" @click="tryToSpeak(tip.speak)">
                                     <div class="icon-circle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-                                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07">
-                                            </path>
-                                        </svg>
+                                        <i class="bi bi-volume-up-fill"></i>
                                     </div>
                                     <span>Try to Speak</span>
                                 </button>
@@ -105,172 +99,258 @@
             </div>
 
         </div>
-
-    </div>
-    <div class="bottom-sheet" v-if="isListening">
-        <div class="handle"></div>
-        <div class="speech-content">
-            <span class="status-badge">Listening...</span>
-
-            <div class="result-wrapper">
-                <div class="hangul-display">{{ spokenText ||
-                    '...' }}<transition name="success-pop">
-                        <div v-if="isspeakCorrect" class="feedback-toast success">
-                            <div class="icon-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <div class="text-group">
-                                <span class="label-main">Perfect!</span>
-                                <span class="label-sub">Accurate pronunciation</span>
-                            </div>
-                        </div>
-                    </transition>
-                </div>
-                <transition name="error-shake">
-                    <div v-if="isFinalResult" class="feedback-toast error">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <div class="text-group">
-                            <span class="label-main">Correct Pronouncation!
-                                {{ finalResult }}</span>
-                            <span class="label-sub">Try Again</span>
-                        </div>
+       <div id="gameModal" tabindex="-1" aria-hidden="true"
+            class="modal d-flex justify-content-center align-items-center" v-if="openPronouncationModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content custom-plain-modal">
+                   <div class="modal-header border-0 pb-0">
+                        <h6 class="modal-title text-uppercase fw-bold text-muted small"> <i
+                                class="bi bi-stars me-2"></i>Korean Pronouncation </h6>
+                        <button type="button" @click="closePronounceModal" class="btn-close" >
+                        </button>
                     </div>
-                </transition>
+                    <div class="modal-body p-4">
+                        <div class="d-flex flex-column align-items-center py-3">
+                           <div :class="['speak-btn', { 'is-listening': !isListening }]"
+                                @click="!isListening && startSpeech()"
+                                :style="isListening ? 'pointer-events: none; opacity: 0.6;' : 'cursor: pointer;'">
+                                <div class="voice-waves">
+                                    <span v-for="i in 5" :key="i"></span>
+                                </div>
+                            </div>
+                            <span class="mt-3 small fw-bold text-muted text-uppercase tracking-wider">
+                                {{ isListening ? 'Listening...' : 'Tap to Speak' }}
+                            </span>
+                            <div v-if="isListening || liveTranscript" class="mt-4 d-flex justify-content-center">
+                                <div
+                                    class="live-transcript-pill shadow-sm d-flex align-items-center px-4 py-2 border border-info rounded-pill bg-light">
+
+                                    <div class="mic-container me-3">
+                                        <div class="pulse-ring"></div>
+                                        <i class="bi bi-mic-fill text-danger fs-5"></i>
+                                    </div>
+
+                                    <p class="mb-0 text-dark fw-medium">
+                                        <span v-if="!liveTranscript" class="text-muted opacity-75">Speak now...</span>
+                                        <span v-else class="typing-effect">{{ liveTranscript }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                           <div v-if="userTranscript"
+                                class="explanation-card mt-4 p-4 shadow-sm border-0 rounded-4 animate__animated animate__fadeIn">
+
+                                <div class="transcript-box mb-3 d-flex align-items-center">
+                                    <i class="bi bi-mic-fill me-2 text-primary opacity-75"></i>
+                                    <p class="mb-0 small text-muted fst-italic">
+                                        I heard: <span class="text-dark fw-medium">"{{ userTranscript }}"</span>
+                                    </p>
+                                    <div v-if="feedbackTextVisible">
+                                        <p class="mb-0 small ms-3 fw-bold"
+                                            :class="feedbackText.includes('Correct') ? 'text-success' : 'text-danger'">
+                                            {{ feedbackText }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+  
+                    </div>
+
+                </div>
+
+                </div>
+
             </div>
 
-            <button class="close-btn" @click="isListening = false">Done</button>
         </div>
     </div>
+    
+    
 </template>
 <script>
-import pronunciationTips from '../data/pronunciationTips.js';
-import pronunciationRules from '../data/pronunciationRules.js';
-export default { 
-    data() { 
-        return { 
+import pronunciationTips from '../data/pronunciationTips.js'
+import pronunciationRules from '../data/pronunciationRules.js'
+
+export default {
+    data() {
+        return {
             pronunciationTips: pronunciationTips.pronunciationTipsData,
             pronunciationRules: pronunciationRules.pronunciationRules,
-            isFinalResult: false,
-            isspeakCorrect: false,
-            speakCorrect: '',
-            correctSpeak: 0,
-            spokenText: 'Im Listening.....',
-            isListening: 0,
-            finalResult: '',   
+
+            openPronouncationModal: false,
+            answer: "",
+
+            isListening: false,
+            liveTranscript: "",
+            userTranscript: "",
+            feedbackText: "",
+            feedbackTextVisible: false,
+            recognition: null
         }
     },
-    methods:
-    { 
+
+    methods: {
+
         enableAutoSpeech() {
-            console.log("User interacted, starting speech...");
-            this.startSpeak();
+            this.startSpeech()
         },
+
         playSound(text) {
-            if (!text) return;
+            if (!text) return
 
-            const utterance = new SpeechSynthesisUtterance(text);
+            const utterance = new SpeechSynthesisUtterance(text)
+            utterance.lang = "ko-KR"
+            utterance.pitch = 1
+            utterance.rate = 0.9
 
-            // Korean voice
-            utterance.lang = "ko-KR";
-
-            // AI-like tuning
-            utterance.pitch = 1;
-            utterance.rate = 0.9;
-
-            console.log("🔊 Playing:", text);
-
-            window.speechSynthesis.cancel();
-            window.speechSynthesis.speak(utterance);
+            window.speechSynthesis.cancel()
+            window.speechSynthesis.speak(utterance)
         },
-        tryToSpeak(speak) {
-            this.isListening = true;
-            this.spokenText = "";
-            this.isFinalResult = false;
-            this.finalResult = "";
-            this.isspeakCorrect = false;
-            this.correctSpeak = 0;
-            const SpeechRecognition =
-                window.SpeechRecognition || window.webkitSpeechRecognition;
 
-            if (!SpeechRecognition) {
-                alert("Speech recognition not supported");
-                return;
+        tryToSpeak(text) {
+            this.openPronouncationModal = true
+            this.answer = text
+        },
+
+        calculateSimilarity(a, b) {
+            let longer = a.length > b.length ? a : b
+            let shorter = a.length > b.length ? b : a
+
+            let matches = 0
+
+            for (let i = 0; i < shorter.length; i++) {
+                if (longer.includes(shorter[i])) {
+                    matches++
+                }
             }
 
-            const recognition = new SpeechRecognition();
+            return matches / (shorter.length || 1)
+        },
 
-            recognition.lang = "ko-KR";
-            recognition.continuous = true;
-            recognition.interimResults = true;
-            recognition.maxAlternatives = 1;
-            recognition.start();
+        cleanText(text) {
+            return text
+                .toLowerCase()
+                .replace(/\s+/g, '')
+                .trim()
+        },
+
+        // =========================
+        // FIXED START SPEECH
+        // =========================
+        startSpeech() {
+
+            const Recognition =
+                window.SpeechRecognition ||
+                window.webkitSpeechRecognition
+
+            if (!Recognition) {
+                alert("Browser not supported")
+                return
+            }
+
+            if (this.recognition) {
+                this.recognition.stop()
+            }
+
+            const recognition = new Recognition()
+            this.recognition = recognition
+
+            recognition.lang = 'ko-KR'
+
+            // 🔥 Better for short words
+            recognition.interimResults = true
+            recognition.continuous = true
+            recognition.maxAlternatives = 5
+
+            this.isListening = true
+            this.liveTranscript = ""
+            this.userTranscript = ""
+            this.feedbackText = ""
+            this.feedbackTextVisible = false
+
+            let finalText = ""
+
             recognition.onresult = (event) => {
-                let text = "";
-                this.isspeakCorrect = false;
-                this.correctSpeak = 0;
+
+                let interimTranscript = ""
+
                 for (let i = event.resultIndex; i < event.results.length; i++) {
-                    text += event.results[i][0].transcript;
-                }
-                this.spokenText = text;
-                // 🔥 IF / ELSE CHECK
-                if (text.includes(speak)) {
-                    console.log("🟢 CORRECT:", text);
-                    this.isspeakCorrect = true;
-                    this.correctSpeak += 1;
-                    new Audio('/sounds/gamevisualsound/chrisiex1-correct-156911.mp3').play();
-                } else {
-                    console.log("🔴 WRONG:", text, "Expected:", speak);
-                }
-            };
 
-            recognition.onerror = (err) => {
-                console.error("🔴 Speech error:", err.error);
-            };
+                    const transcript = event.results[i][0].transcript.trim()
 
-            // ⏱️ AUTO STOP AFTER 20 SECONDS
-            setTimeout(() => {
-                recognition.stop();
-                // FINAL CHECK BEFORE STOP
-                if (this.spokenText && this.spokenText.length > 1) {
-
-                    if (this.spokenText.includes(speak)) {
-                        console.log("✅ FINAL RESULT: Correct pronunciation!");
-                        this.speakCorrect = true;
-                        new Audio('/sounds/gamevisualsound/audley_fergine-game-over-classic-206486.mp3').play();
-
-
+                    if (event.results[i].isFinal) {
+                        finalText += transcript + " "
                     } else {
-                        this.speakCorrect = false;
-                        this.isFinalResult = true;
-                        this.finalResult = speak;
+                        interimTranscript += transcript + " "
+                    }
+                }
 
+                this.liveTranscript = interimTranscript || finalText
+
+                // if naka detect bisag short word
+                if (finalText.trim().length > 0) {
+
+                    const result = finalText.trim()
+                    const target = this.answer
+
+                    this.userTranscript = result
+
+                    const cleanResult = this.cleanText(result)
+                    const cleanTarget = this.cleanText(target)
+
+                    const similarity =
+                        this.calculateSimilarity(cleanResult, cleanTarget)
+
+                    const grade = Math.round(similarity * 100)
+
+                    const passed =
+                        cleanResult === cleanTarget ||
+                        cleanTarget.includes(cleanResult) ||
+                        cleanResult.includes(cleanTarget) ||
+                        similarity >= 0.60   // lowered for short words
+
+                    if (passed) {
+                        this.feedbackText = `✅ Correct (${grade}%)`
+                    } else {
+                        this.feedbackText = `❌ Wrong (${grade}%)`
                     }
 
-                } else {
-                    this.speakCorrect = false;
-                    this.isFinalResult = true;
-                    this.finalResult = speak;
+                    this.feedbackTextVisible = true
+
+                    recognition.stop()
                 }
+            }
 
-                console.log("⛔ Stopped after 20 seconds");
+            recognition.onerror = (event) => {
+                console.log("Mic Error:", event.error)
+                this.isListening = false
+            }
 
-            }, 30000);
+            recognition.onend = () => {
+                this.isListening = false
+            }
 
-            this.recognition = recognition;
+            recognition.start()
+
+            // auto stop after 5 sec
+            setTimeout(() => {
+                if (this.isListening) {
+                    recognition.stop()
+                }
+            }, 5000)
         },
-      
+        closePronounceModal() {
+            this.openPronouncationModal = false
+            this.isListening = false
+            this.liveTranscript = ""
+            this.userTranscript = ""
+            this.feedbackText = ""
+
+            if (this.recognition) {
+                this.recognition.stop()
+            }
+        }
     }
+  
 }
 </script>
 <style scoped src="../../../css/users/assets/lessons/lessonpronounce.css">

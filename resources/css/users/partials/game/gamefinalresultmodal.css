@@ -1,343 +1,146 @@
-.modal-overlay {
+/* Backdrop - Gi-blur ang luyo para focus sa modal */
+.result-modal-backdrop {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 1050;
   padding: 20px;
 }
 
-/* 🧊 Modern White Card */
-.modal-card {
+/* Modal Content Box */
+.result-modal-content {
   background: #ffffff;
-  width: 100%;
-  max-width: 450px;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  max-height: 90vh;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* 🖋️ Header */
-.modal-header {
-  padding: 24px 24px 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.modal-header h2 {
-  color: #000000;
-  /* Extra */
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin: 0;
+/* Header & Badges */
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
-/* 📈 Scrollable Body */
-.modal-body {
-  padding: 20px 24px;
-  overflow-y: auto;
-  scrollbar-width: thin;
+.status-badge.pass {
+  background: #d1fae5;
+  color: #059669;
 }
 
-/* 🎯 Hero Score Section */
-.score-circle {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px;
+.status-badge.retry {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Score Circle Visualization */
+.score-circle-glow {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  background: radial-gradient(circle, #f8fafc 0%, #f1f5f9 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%);
-  /* Primary */
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), inset 0 0 0 8px #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.percentage {
-  color: #ffffff;
-  /* Secondary */
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-.summary-text {
-  text-align: center;
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 24px;
-}
-
-/* 📝 Modern Grade Item Cards */
-.grade-pill {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 12px;
-  transition: transform 0.2s;
-}
-
-.grade-pill:hover {
-  transform: scale(1.02);
-}
-
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.item-label {
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  color: #64748b;
-}
-
-.item-score {
-  font-weight: 800;
-  color: #4f46e5;
-}
-
-.speech-details {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.heard-text {
-  color: #ef4444;
-}
-
-/* Red for what they said */
-.target-text {
-  color: #10b981;
-  font-weight: 600;
-}
-
-/* Green for the goal */
-
-/* 🔘 Primary Button */
-.modal-footer {
-  padding: 20px 24px 24px;
-}
-
-.btn-primary {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 16px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
-  /* Secondary */
-  background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
-  /* Primary */
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
-  filter: brightness(1.1);
-}
-/* Para sa alignment sa icons ug text */
-.detail-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-  font-size: 0.9rem;
-}
-
-.detail-row .label {
-  font-weight: 600;
-  margin-right: 8px;
-  color: #444;
-}
-
-.me-2 {
-  margin-right: 0.5rem !important;
-}
-
-.me-1 {
-  margin-right: 0.25rem !important;
-}
-
-/* Icon Colors */
-.text-danger {
-  color: #dc3545 !important;
-}
-
-.text-success {
-  color: #198754 !important;
-}
-
-/* Custom Scrollbar para sa modal body (Modern look) */
-.modal-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
-/* --- New Animation Styles --- */
-
-/* 1. Modal Entry Animation (Zoom In + Fade In) */
-.animated-modal {
-  animation: modalPoof 0.5s ease-out forwards;
+/* Glow effect depende sa score */
+.score-visualization {
   position: relative;
-  /* Para sa positioning sa torotot */
 }
 
-@keyframes modalPoof {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-
-  70% {
-    transform: scale(1.05);
-    /* Slight bounce */
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* 2. Torotot (Megaphone) Styles & Animation */
-.torotot-left,
-.torotot-right {
+.score-visualization::after {
+  content: '';
   position: absolute;
-  top: -20px;
-  font-size: 2.5rem;
-  color: #f59e0b;
-  /* Warning/Gold color */
-  opacity: 0;
-  z-index: 10;
-animation: torototBlast 0.4s cubic-bezier(.2, .8, .2, 1) forwards;
-  /* Naay gamay delay */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(13, 110, 253, 0.15) 0%, transparent 70%);
+  z-index: -1;
 }
 
-.torotot-left {
-  left: 20px;
-  transform: rotate(-30deg);
+.score-content {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
 }
 
-.torotot-right {
-  right: 20px;
-  transform: rotate(30deg) scaleX(-1);
-  /* Ginkilid sa pikas */
+.score-main {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
 }
 
-@keyframes torototBlast {
-  0% {
-    transform: translate(0, 10px) rotate(-30deg) scale(0.5);
+.score-divider {
+  width: 2px;
+  height: 30px;
+  background: #cbd5e1;
+  transform: rotate(20deg);
+}
+
+.score-total {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* Retry Button Premium */
+.btn-retry-premium {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-retry-premium:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-retry-premium:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes modalPop {
+  from {
     opacity: 0;
+    transform: scale(0.9) translateY(20px);
   }
 
-  50% {
+  to {
     opacity: 1;
-  }
-
-  100% {
-    transform: translate(-10px, -20px) rotate(-20deg) scale(1.2);
-    opacity: 0;
-    /* Mopawong ra dayon */
+    transform: scale(1) translateY(0);
   }
 }
 
-/* Update sa Trophy icon sa header */
-.text-warning {
-  color: #f59e0b !important;
-}
-
-/* Gi-retain nako ang imong previous general styles diri... */
-.modal-overlay {
-  /* ... existing ... */
-}
-
-.modal-card {
-  /* ... existing ... */
-}
-/* --- New Animation Styles --- */
-
-/* 1. Modal Entry Animation (Zoom In + Fade In) */
-.animated-modal {
-  animation: modalPoof 0.35s cubic-bezier(.2, .9, .2, 1) forwards;
-}
-
-@keyframes modalPoof {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-
-  70% {
-    transform: scale(1.05);
-    /* Slight bounce */
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* 2. Torotot (Megaphone) Styles & Animation */
-.torotot-left,
-.torotot-right {
-  position: absolute;
-  top: -20px;
-  font-size: 2.5rem;
-  color: #f59e0b;
-  /* Warning/Gold color */
-  opacity: 0;
-  z-index: 10;
-animation: torototBlast 0.5s ease-out forwards;
-  /* Naay gamay delay */
-}
-
-.torotot-left {
-  left: 20px;
-  transform: rotate(-30deg);
-}
-
-.torotot-right {
-  right: 20px;
-  transform: rotate(30deg) scaleX(-1);
-  /* Ginkilid sa pikas */
-}
-
-@keyframes torototBlast {
-  0% {
-    transform: translate(0, 10px) rotate(-30deg) scale(0.5);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-10px, -20px) rotate(-20deg) scale(1.2);
-    opacity: 0;
-    /* Mopawong ra dayon */
-  }
-}
-
-/* Update sa Trophy icon sa header */
-.text-warning {
-  color: #f59e0b !important;
+.ls-1 {
+  letter-spacing: 1px;
 }

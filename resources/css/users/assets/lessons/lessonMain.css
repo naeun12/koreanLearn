@@ -121,6 +121,56 @@
 .tracking-tight {
     letter-spacing: -0.03em;
 }
+/* Add a smooth transition for the dropdown entry */
+.dropdown-menu {
+    display: block;
+    /* Override v-if initial snap */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border: none;
+    border-radius: 12px;
+    /* Softer corners */
+}
 
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Custom Item Hover Effect */
+.dropdown-item {
+    padding: 0.6rem 1rem;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+    /* Primary brand color */
+}
+
+/* Category Label Styling */
+.dropdown-header-custom {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: #a0aec0;
+    padding: 0.5rem 1rem 0.2rem;
+    text-align: left;
+}
+
+/* Active State for the Main Button */
+.k-nav-item.active .dropdown-toggle {
+    color: #007bff;
+    font-weight: bold;
+}
+body{
+    width: 100%;
+}
 
 

@@ -1,0 +1,399 @@
+
+/* Typography */
+.fw-black {
+    font-weight: 900;
+}
+
+/* Modal Background Behavior */
+.modal.show {
+    display: block;
+    z-index: 1060;
+}
+
+/* Answer Slot Design */
+.answer-zone {
+    background-color: #f8fafc;
+    border-color: #cbd5e1 ;
+    min-height: 110px;
+    transition: all 0.3s ease;
+}
+
+/* Interactive Pill Buttons */
+.word-pill {
+    background: #4f46e5;
+    color: white;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.word-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: var(--bs-primary) ;
+}
+
+/* Animations */
+.animate-pop {
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.animate-word {
+    animation: wordPop 0.2s ease-out;
+}
+
+@keyframes wordPop {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Utilities */
+.rounded-5 {
+    border-radius: 1.75rem ;
+}
+
+.rounded-4 {
+    border-radius: 1rem ;
+}
+.btn-check-answer {
+    /* Mogamit og 'background' para sa gradients */
+    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) ;
+    color: white;
+    border: none ;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-check-answer:hover {
+    /* Gamay nga pag-alsa ug pag-hayag sa color inig hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.4) ;
+    filter: brightness(1.1);
+    color: white ;
+}
+
+.btn-check-answer:active {
+    transform: scale(0.95);
+}
+/*q and a */
+.question-container {
+    padding: 20px;
+    /* Balanced padding for centering */
+    margin: 20px auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    /* Changed to full radius for a centered look */
+
+    max-width: 600px;
+    text-align: center;
+    /* 👈 Centers all text inside the div */
+
+    /* Optional: subtle shadow to make the centered card pop */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.question-label {
+    display: block;
+    /* 👈 Necessary for margin auto to work on a span */
+    margin: 0 auto;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #4A90E2;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.question-text {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #2d3436;
+    line-height: 1.4;
+    font-weight: 600;
+}
+.translation-container {
+    max-width: 500px;
+    margin-top: -10px;
+    /* Pull it closer to the question */
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.translation-text {
+    font-size: 1rem;
+    color: #6c757d;
+    /* Muted grey */
+    font-style: italic;
+    background-color: #f1f3f9;
+    /* Very light blue-grey */
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    border-left: 3px solid #4f46e5;
+    /* Your gradient starting color */
+}
+
+/* Optional: Decorative line between Korean and Translation */
+.translation-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.translation-divider::before,
+.translation-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.divider-icon {
+    padding: 0 10px;
+    color: #4f46e5;
+    font-size: 0.9rem;
+}
+ /* Push down when clicked */
+/* Normal State */
+.choice-card {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.choice-text {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Hover Effect (only for non-selected) */
+.choice-card:hover:not(.active) {
+    border-color: #4f46e5;
+    background-color: #f8f9ff;
+}
+
+/* THE STEADY STATE (When clicked) */
+.choice-card.active {
+    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
+    border-color: transparent !important;
+    transform: scale(1.02);
+    /* Slightly larger to show it's selected */
+}
+
+/* Change text and circle color when active */
+.choice-card.active .choice-text {
+    color: white !important;
+}
+
+.choice-card.active .check-circle {
+    border-color: white !important;
+    background-color: white;
+    /* Fills the circle when selected */
+    box-shadow: inset 0 0 0 3px #0043a8;
+    /* Creates a "dot" effect */
+}
+
+/* The circle on the right */
+.check-circle {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    margin-left: auto;
+    transition: all 0.2s ease;
+}
+.choice-card.correct {
+    background-color: #28a745 !important;
+    color: white;
+    border: none;
+}
+
+.choice-card.wrong {
+    background-color: #dc3545 !important;
+    color: white;
+    border: none;
+}
+
+/* optional selected style before submit */
+.choice-card.active {
+    border: 2px solid #4A90E2;
+}
+/* Adding a slight pulse to the Continue button */
+/* The custom gradient you requested */
+.bg-gradient-blue {
+    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+/* Update the pulse animation to match the new glow color */
+.pulse-button {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(79, 70, 229, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 0 15px rgba(79, 70, 229, 0);
+    }
+}
+
+/* Choice Buttons - keep them clean so they don't fight with the main button */
+.btn-outline-primary {
+    border-color: #4f46e5;
+    border-width: 2px;
+    color: #4f46e5;
+    background-color: white;
+}
+
+.btn-outline-primary:hover {
+    background-color: #f8f9ff;
+    color: #0043a8;
+    border-color: #0043a8;
+    transform: translateY(-2px);
+    transition: transform 0.2s;
+}
+/* The Footer Wrapper */
+.action-footer {
+    border-top: 1px solid #eee;
+    /* Light line to separate from choices */
+    width: 100%;
+}
+
+/* Enhancing your Gradient Button */
+.bg-gradient-blue {
+    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
+    border: none !important;
+    color: white !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    /* For the shimmer effect */
+}
+
+/* Hover: Lift and Glow */
+.bg-gradient-blue:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4) !important;
+    filter: brightness(1.1);
+    /* Makes the colors pop more */
+}
+
+/* Active: Press down */
+.bg-gradient-blue:active {
+    transform: translateY(-1px);
+}
+
+/* The Pulse Animation (Keep this!) */
+.pulse-button {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(79, 70, 229, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 0 15px rgba(79, 70, 229, 0);
+    }
+}
+
+/* Icon Animation on Hover */
+.bg-gradient-blue:hover i {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+/* Base Card Style */
+.feedback-card {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 16px 24px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid;
+    /* Thick left accent */
+}
+
+/* Correct Answer Style (Using your gradient start color) */
+.feedback-card.correct {
+    background-color: #f0f3ff;
+    border-left-color: #4f46e5;
+    color: #312e81;
+}
+
+.feedback-card.correct .feedback-icon {
+    color: #4f46e5;
+    font-size: 1.5rem;
+}
+
+/* Incorrect Answer Style */
+.feedback-card.incorrect {
+    background-color: #fff1f2;
+    border-left-color: #e11d48;
+    color: #881337;
+}
+
+.feedback-card.incorrect .feedback-icon {
+    color: #e11d48;
+    font-size: 1.5rem;
+}
+
+/* Simple Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
