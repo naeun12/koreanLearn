@@ -75,10 +75,16 @@
                                             Greetings
                                         </a>
 
-                                        <div class="dropdown flex-fill">
+                                        <div class="dropdown flex-fill ">
                                             <a href="#"
                                                 class="k-nav-item dropdown-toggle w-100 d-flex align-items-center justify-content-center"
-                                                :class="{ 'active': activeMainSection === 'grammar' || activeMainSection === 'particles' }"
+                                                :class="{
+                                                    'active': activeMainSection === 'sentence_structure' || activeMainSection === 'hangul_structure'
+                                                        || activeMainSection === 'batchim' || activeMainSection === 'numbers_counters' || activeMainSection === 'to_be'
+                                                        || activeMainSection === 'particles_all' || activeMainSection === 'verb_conjugation' || activeMainSection === 'tenses' || activeMainSection === 'negation'
+                                                        || activeMainSection === 'honorifics' || activeMainSection === 'complex_structures' || activeMainSection === 'pronunciation_changes'
+                                                         ? 'active' : ''
+                                                 }"
                                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Grammar
                                             </a>
@@ -89,7 +95,7 @@
                                                     <h6 class="dropdown-header small text-uppercase fw-bold opacity-50">
                                                         Basics</h6>
                                                 </li>
-                                                <li><a class="dropdown-item" href="#"
+                                                <li><a class="dropdown-item " href="#"
                                                         @click.prevent="changeSection('hangul_structure')">Hangul
                                                         Structure</a></li>
                                                 <li><a class="dropdown-item" href="#"
@@ -123,7 +129,7 @@
                                                     <h6 class="dropdown-header small text-uppercase fw-bold opacity-50">
                                                         Verbs & Sentences</h6>
                                                 </li>
-                                                <li><a class="dropdown-item" href="#"
+                                                <li><a class="dropdown-item " href="#"
                                                         @click.prevent="changeSection('sentence_structure')">SOV
                                                         Structure & Conjugation</a></li>
                                                 <li><a class="dropdown-item" href="#"
@@ -181,7 +187,7 @@
                                     <greetingAssets></greetingAssets>
                                 </transition-group>
                                 <transition-group name="fade-slide" tag="div" class="row g-3"
-                                    v-if="activeMainSection === 'sentence_structure' ||  activeMainSection === 'verb_conjugation' || activeMainSection === 'tenses' || activeMainSection === 'honorifics'">
+                                    v-if="activeMainSection === 'sentence_structure' ||  activeMainSection === 'tenses' || activeMainSection === 'negation'">
                                     <verbAndSentenceIndex></verbAndSentenceIndex>
                                 </transition-group>
                                 <transition-group v-if="activeMainSection === 'particles_all'">

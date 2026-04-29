@@ -33,18 +33,18 @@
                                             class="col-sm-6 col-lg-4 col-xxl-3" style="cursor: pointer;"
                                             @click="isalphabetimageModal(consonant.image, consonant.char, consonant.instruction)">
                                             <div
-                                                class="card h-100 border-0 shadow-sm rounded-4 hover-lift text-center py-4 bg-white border">
-                                                <div class="hangul-char display-4 fw-bold text-black mb-2">{{
+                                                class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient">
+                                                <div class="hangul-char display-4 fw-bold mb-2">{{
                                                     consonant.char }}</div>
-                                                <div class="badge bg-warning-subtle text-dark border border-warning px-3 mb-2badge bg-light text-black border px-3 mb-2">{{
-                                                    consonant.sound
-                                                    }}</div>
-                                                <p class="small text-muted mb-0 px-3">{{ consonant.description }}</p>
+                                                <div class="text-gradient-custom fw-bold fs-5 mb-2">
+                                                    {{ consonant.sound }}
+                                                </div>
+                                                <p class="description-text mb-4">{{ consonant.description }}</p>
                                                 <button
-                                                    class="modern-btn-minimal d-flex align-items-center justify-content-center gap-2"
+                                                    class="btn-gradient-play"
                                                     @click="playSound(consonant.char)">
                                                     <span class="icon">🔊</span>
-                                                    <span>Play Sound</span>
+                                                    <span>Listen</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -56,40 +56,38 @@
                                         <div v-for="vowel in vowels" :key="'v-' + vowel.char"
                                             class="col-sm-6 col-lg-4 col-xxl-3">
                                             <div
-                                                class="card h-100 border-0 shadow-sm rounded-4 hover-lift text-center py-4 bg-white border-start-4 border-primary">
-                                                <div class="hangul-char display-4 fw-bold text-dark mb-2">{{ vowel.char
+                                                class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient">
+                                                <div class="hangul-char display-4 fw-bold mb-2">{{ vowel.char
                                                     }}
                                                 </div>
                                                 <div
-                                                    class="badge bg-warning-subtle text-dark border border-warning px-3 mb-2">
+                                                    class="text-gradient-custom fw-bold fs-5 mb-2 fw-bold fs-5 mb-2">
                                                     {{ vowel.sound }}</div>
-                                                <p class="small text-muted mb-0 px-3">{{ vowel.description }}</p>
+                                                <p class="description-text mb-4">{{ vowel.description }}</p>
                                                 <button
-                                                    class="modern-btn-minimal d-flex align-items-center justify-content-center gap-2"
+                                                    class="btn-gradient-play"
                                                     @click="playSound(vowel.char)">
                                                     <span class="icon">🔊</span>
-                                                    <span>Play Sound</span>
+                                                    <span>Listen</span>
                                                 </button>
                                             </div>
 
                                         </div>
                                     </template>
                                     <template v-if="currentSection === 'doubleConsonants'">
-                                        <div v-for="con in doubleConsonants" :key="'c-' + con.char"
-                                            class="col-sm-6 col-lg-4 col-xxl-3">
-                                            <div
-                                                class="card h-100 border-0 shadow-sm rounded-4 hover-lift text-center py-4 bg-white border-start-4 border-warning">
-                                                <div class="hangul-char display-4 fw-bold text-dark mb-2">{{ con.char }}
+                                        <div v-for="con in doubleConsonants" :key="'c-' + con.char" class="col-sm-6 col-lg-4 col-xxl-3 mb-4">
+                                            <div class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient">
+                                                <div class="hangul-char display-4 fw-bold mb-2">{{ con.char }}</div>
+
+                                                <div class="text-gradient-custom fw-bold fs-5 mb-2 fw-bold fs-5 mb-2">
+                                                    {{ con.sound }}
                                                 </div>
-                                                <div
-                                                    class="badge bg-warning-subtle text-dark border border-warning px-3 mb-2">
-                                                    {{ con.sound }}</div>
-                                                <p class="small text-muted mb-0 px-3">{{ con.description }}</p>
-                                                <button
-                                                    class="modern-btn-minimal d-flex align-items-center justify-content-center gap-2"
-                                                    @click="playSound(con.char)">
+
+                                                <p class="description-text mb-4">{{ con.description }}</p>
+
+                                                <button class="btn-gradient-play" @click="playSound(con.char)">
                                                     <span class="icon">🔊</span>
-                                                    <span>Play Sound</span>
+                                                    <span>Listen</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -98,18 +96,18 @@
                                         <div v-for="con in aspiratedConsonants" :key="'c-' + con.char"
                                             class="col-sm-6 col-lg-4 col-xxl-3">
                                             <div
-                                                class="card h-100 border-0 shadow-sm rounded-4 hover-lift text-center py-4 bg-white border-start-4 border-warning">
+                                                class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient-start-4 border-warning">
                                                 <div class="hangul-char display-4 fw-bold text-dark mb-2">{{ con.char }}
                                                 </div>
                                                 <div
-                                                    class="badge bg-warning-subtle text-dark border border-warning px-3 mb-2">
+                                                    class="text-gradient-custom fw-bold fs-5 mb-2">
                                                     {{ con.sound }}</div>
-                                                <p class="small text-muted mb-0 px-3">{{ con.description }}</p>
+                                                <p class="con-description-pill">{{ con.description }}</p>
                                                <button
-                                            class="modern-btn-minimal d-flex align-items-center justify-content-center gap-2"
+                                            class="btn-gradient-play"
                                             @click.stop="playSound(con.char)">
                                                     <span class="icon">🔊</span>
-                                                    <span>Play Sound</span>
+                                                    <span>Listen</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -136,38 +134,37 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div 
-                                    class="mt-5 p-4 rounded-4 border-0 shadow-sm transition-all" :class="{
-                                        'bg-primary-subtle text-primary': currentSection === 'vowels',
-                                        'bg-success-subtle text-success': currentSection === 'consonants',
-                                        'bg-warning-subtle text-dark': currentSection === 'doubleConsonants',
-                                        'bg-info-subtle text-dark': currentSection === 'aspiratedConsonants'
-                                    }">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-lightbulb-fill me-2 fs-5"></i>
-                                        <h5 class="mb-0 fw-bold">Pro Learning Tip</h5>
+                                <div class="mt-5 p-4 pro-tip-box transition-all" 
+                                    :class="currentSection">
+                                    
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="tip-gradient-icon">
+                                            <i class="bi bi-lightbulb-fill"></i>
+                                        </div>
+                                        <h5 class="mb-0 fw-bold tip-title">Pro Learning Tip</h5>
                                     </div>
 
-                                    <p v-if="currentSection === 'vowels'" class="mb-0 small">
-                                        Vowels cannot stand alone! Combine these with the silent <strong>ㅇ</strong> to
-                                        form blocks like
-                                        <strong>아</strong> (a) or <strong>야</strong> (ya).
-                                    </p>
+                                    <div class="tip-body-text">
+                                        <p v-if="currentSection === 'vowels'" class="mb-0">
+                                            Vowels cannot stand alone! Combine these with the silent <span class="kr-badge-sm">ㅇ</span> to
+                                            form blocks like <span class="kr-badge-sm">아</span> (a) or <span class="kr-badge-sm">야</span> (ya).
+                                        </p>
 
-                                    <p v-else-if="currentSection === 'consonants'" class="mb-0 small">
-                                        The sound of these can change! For example, <strong>ㄱ</strong> sounds like 'k'
-                                        at the end of a word but more like 'g' at the start.
-                                    </p>
+                                        <p v-else-if="currentSection === 'consonants'" class="mb-0">
+                                            The sound of these can change! For example, <span class="kr-badge-sm">ㄱ</span> sounds like 'k'
+                                            at the end of a word but more like 'g' at the start.
+                                        </p>
 
-                                    <p v-else-if="currentSection === 'doubleConsonants'" class="mb-0 small">
-                                        These require "tenseness." Imagine you are tightening your throat or stomach
-                                        muscles to create a sharp, forceful sound!
-                                    </p>
+                                        <p v-else-if="currentSection === 'doubleConsonants'" class="mb-0">
+                                            These require <strong>"tenseness."</strong> Imagine you are tightening your throat or stomach
+                                            muscles to create a sharp, forceful sound!
+                                        </p>
 
-                                   <p v-else-if="currentSection === 'aspiratedConsonants'" class="mb-0 small">
-                                These consonants are pronounced with a strong burst of air. Try placing your hand in
-                                front of your mouth and feel the air when saying them!
-                            </p>
+                                        <p v-else-if="currentSection === 'aspiratedConsonants'" class="mb-0">
+                                            These consonants are pronounced with a <strong>strong burst of air</strong>. Try placing your hand in
+                                            front of your mouth and feel the air!
+                                        </p>
+                                    </div>
                                 </div>
              
 </template>

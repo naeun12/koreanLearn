@@ -190,18 +190,18 @@
             </tbody>
         </table>
        <div class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white">
-    <div class="mb-4 mb-md-0 text-center text-md-start">
-        <h3 class="fw-black mb-1">Time to Practice</h3>
-        <p class="mb-0 opacity-75 fs-5">
-            Test your skills on <strong>Past, Present, and Future</strong> sentence structures
-        </p>
-    </div>
+        <div class="mb-4 mb-md-0 text-center text-md-start">
+            <h3 class="fw-black mb-1">Time to Practice</h3>
+            <p class="mb-0 opacity-75 fs-5">
+                Test your skills on <strong>Past, Present, and Future</strong> sentence structures
+            </p>
+        </div>
 
-    <button class="btn btn-quiz rounded-pill shadow-lg" @click="OpenQuiz">
-        Start Tense Mastery Quiz
-    </button>
-</div>
+        <button class="btn btn-quiz rounded-pill shadow-lg" @click="OpenQuiz">
+            Start Tense Mastery Quiz
+        </button>
     </div>
+</div>
 </div>
 </div>
 <div v-if="isOpenQuiz" class="modal fade show d-block" tabindex="-1"
@@ -249,46 +249,56 @@
                 </p>
                 </div>
                     </div>
-          <div v-if="isFeedback" :class="iscorrectAnswer" class="feedback-card animate__animated animate__fadeIn">
-  <div class="card-content d-flex align-items-center">
-    <div class="feedback-icon me-3">
-      <i :class="iscorrectAnswer === 'correct' ? 'bi bi-check-circle-fill' : 'bi bi-x-circle-fill'"></i>
-    </div>
-    <div class="feedback-text">
-      <strong class="d-block mb-1">
-        {{ iscorrectAnswer === 'correct' ? 'Great Job!' : 'Not Quite!' }}
-      </strong>
-      <p class="mb-0">{{ explaination }}</p>
-    </div>
-  </div>
-</div>
-                  <div class="choices-container mb-4">
-    <div class="text-center mb-3">
-        <small class="text-uppercase fw-bold text-muted" style="letter-spacing: 2px;">Select the correct answer</small>
-    </div>
-    
-    <div class="d-grid gap-3 col-md-10 mx-auto">
- <button
-  v-for="choice in currentQuestion.choices"
-  :key="choice"
-  class="btn choice-card shadow-sm mb-3"
-  @click="Getanswer(choice)"
-  :disabled="showExplanation"
-  :class="{
-    active: selectedAnswer === choice,
+                <div v-if="isFeedback" :class="iscorrectAnswer" class="feedback-card animate__animated animate__fadeIn">
+                    <div class="card-content d-flex align-items-center">
+                        <div class="feedback-icon me-3">
+                        <i :class="{
+                            'bi bi-check-circle-fill text-success': correctAnswer === 'correct',
+                            'bi bi-x-circle-fill text-danger': correctAnswer === 'wrong',
+                        }"></i>                        
+                        </div>
+                        <div class="feedback-text">
+                            <strong class="d-block mb-1">
+                                {{
+                                    correctAnswer === 'correct'
+                                        ? 'Great Job!'
+                                        : correctAnswer === 'wrong'
+                                        ? 'Not Quite!'
+                                        : 'No Answer Selected'
+                                }}
+                            </strong>
+                            <p class="mb-0">{{ explanation }}</p>
+                        </div>
+                    </div>
+              </div>
+            <div class="choices-container mb-4">
+            <div class="text-center mb-3">
+                <small class="text-uppercase fw-bold text-muted" style="letter-spacing: 2px;">Select the correct answer</small>
+            </div>
+            
+            <div class="d-grid gap-3 col-md-10 mx-auto">
+        <button
+        v-for="choice in currentQuestion.choices"
+        :key="choice"
+                    class="btn choice-card shadow-sm mb-3"
+                    @click="Getanswer(choice)"
+                    :disabled="showExplanation"
+                    :class="{
+                        
+                        active: selectedAnswer === choice,
 
-    // 🟢 always show correct answer
-    correct: showExplanation && choice === currentQuestion.answer,
+                        // 🟢 always show correct answer
+                        correct: showExplanation && choice === currentQuestion.answer,
 
-    // 🔴 show wrong selected answer
-    wrong: showExplanation && selectedAnswer === choice && selectedAnswer !== currentQuestion.answer
-  }"
->
-  <span class="choice-text">{{ choice }}</span>
-  <div class="check-circle"></div>
-</button>
-</div>
-</div>
+                        // 🔴 show wrong selected answer
+                        // wrong: showExplanation && selectedAnswer === choice && selectedAnswer !== currentQuestion.answer
+                    }"
+                    >
+                    <span class="choice-text">{{ choice }}</span>
+                    <div class="check-circle"></div>
+                    </button>
+                    </div>
+                </div>
                 <div class="text-center">
                 <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" @click="checkAnswer">
                     Check Answer <i class="bi bi-arrow-right-circle-fill ms-2"></i>
@@ -359,8 +369,9 @@ export default {
             currentIndex: 0,
             selectedAnswer: "",
             iscorrectAnswer: false,
+            correctAnswer: "",
             isFeedback: false,
-            explaination: "",
+            explanation: "",
             showExplanation: false,
             score: 0,
             isQuizFinished: false
@@ -400,11 +411,11 @@ export default {
             this.isOpenQuiz = true
             this.shuffleQuestions()
             this.currentIndex = 0
-            this.explaination = ""
+            this.explanation = ""
             this.selectedAnswer = ""
             this.correctAnswer = ""
             this.showExplanation = false
-                            this.isQuizFinished = false
+            this.isQuizFinished = false
 
 
         },
@@ -414,16 +425,25 @@ export default {
         },
 
         checkAnswer() {
+            if (!this.selectedAnswer) {
+                this.isFeedback = true;
+                this.explanation = this.currentQuestion.explanation;
+                this.$refs.gameSounds.playSound('wrong');
+                this.showExplanation = true;
+                return; // 🔥 STOP HERE
+            }
             if (this.selectedAnswer === this.currentQuestion.answer) {
                 this.iscorrectAnswer = true
                 this.isFeedback = true
-                this.explaination = this.currentQuestion.explanation
+                this.correctAnswer = "correct"
+                this.explanation = this.currentQuestion.explanation
                 this.score++
                 this.$refs.gameSounds.playSound('correct');
             } else {
                 this.iscorrectAnswer = false
                 this.isFeedback = true
-                this.explaination = this.currentQuestion.explanation
+                this.correctAnswer = "wrong"
+                this.explanation = this.currentQuestion.explanation
                 this.$refs.gameSounds.playSound('wrong');
 
 
@@ -435,12 +455,12 @@ export default {
         },
 
         nextQuestion() {
+            if(!this.selectedAnswer) 
+                return;
             this.currentIndex++
-
             if (this.currentIndex >= this.QuizQuestions.length) {
                 this.currentIndex = 0
-                                            this.$refs.gameSounds.playSound('finalscores')
-
+                this.$refs.gameSounds.playSound('finalscores')
                 this.isQuizFinished = true
                 this.isOpenQuiz = false
 
@@ -449,7 +469,7 @@ export default {
 
             this.selectedAnswer = ""
             this.isFeedback = false
-            this.explaination = ""
+            this.explanation = ""
             this.showExplanation = false
         },
 

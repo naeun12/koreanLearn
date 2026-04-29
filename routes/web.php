@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\HomepageController;
 use App\Http\Controllers\Users\koreanlettersController;
-use App\Http\Controllers\Users\volcabularyController;
+use App\Http\Controllers\Users\vocabularyController;
 use App\Http\Controllers\partofspeech\nounController;
 use App\Http\Controllers\partofspeech\verbController;
 use App\Http\Controllers\partofspeech\adjectivesController;
@@ -15,12 +15,12 @@ use App\Http\Controllers\lesson\lessonController;
 Route::get('/', [HomepageController::class, 'homepage'])->name('homepage');
 Route::get('/korean-letters', [KoreanLettersController::class, 'koreanLetters'])
     ->name('koreanletters');
-Route::get('/volcabulary', [VolcabularyController::class, 'volcabulary'])
-    ->name('volcabulary');
-Route::get('/fetch-volcabulary', [VolcabularyController::class, 'fetchVolcabulary'])
-    ->name('fetchVolcabulary');
-Route::get('/categories', [VolcabularyController::class, 'getCategories']);
-Route::get('/QuizVocabularyFetch', [VolcabularyController::class,'QuizVocabularyFetch']);
+Route::get('/vocabulary', [VocabularyController::class, 'vocabulary'])
+    ->name('vocabulary');
+Route::get('/fetch-vocabulary', [VocabularyController::class, 'fetchVocabulary'])
+    ->name('fetchVocabulary');
+Route::get('/categories', [VocabularyController::class, 'getCategories']);
+Route::get('/QuizVocabularyFetch', [VocabularyController::class,'QuizVocabularyFetch']);
 Route::get('/nouns', [nounController::class, 'index'])->name('nouns');
 Route::get('/fetch-nouns', [nounController::class, 'fetchNouns'])->name('fetchNouns');
 Route::get('/noun-categories', [nounController::class, 'getCategories'])->name('nounCategories');

@@ -8,12 +8,12 @@ use App\Models\users\VocabularyQuizIdentification;
 
 use Illuminate\Http\Request;
 
-class volcabularyController extends Controller
+class vocabularyController extends Controller
 {
-    public function volcabulary(){
+    public function vocabulary(){
         return view('users.vocabulary');
     }
- public function fetchVolcabulary(Request $request)
+ public function fetchVocabulary(Request $request)
 {
     $tone = strtolower($request->tone ?? 'all');
     $category = $request->category ?? 'all';

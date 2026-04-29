@@ -216,7 +216,7 @@
                     <div class="h3 fw-black text-dark mb-3 d-flex align-items-center justify-content-between">
                         <span>저는 밥을 먹어요 그리고 커피를 마셔요</span>
                         <button class="btn btn-link text-primary p-0 border-0"
-                            @click="sentenceCoreSound('riceandcoffee')" title="Play Sound">
+                            @click="sentenceCoreSound('conjuctionex4')" title="Play Sound">
                             <i class="bi bi-volume-up-fill fs-3"></i>
                         </button>
                     </div>
@@ -256,7 +256,7 @@
                         <div class="h3 fw-black text-dark mb-3 d-flex align-items-center justify-content-between">
                             <span>저는 밥을 먹어요 하지만 커피는 안 마셔요</span>
                             <button class="btn btn-link text-primary p-0 border-0"
-                                @click="sentenceCoreSound('butcoffee')" title="Play Sound">
+                                @click="sentenceCoreSound('conjuctionex5')" title="Play Sound">
                                 <i class="bi bi-volume-up-fill fs-3"></i>
                             </button>
                         </div>
@@ -297,7 +297,7 @@
                         <div class="h3 fw-black text-dark mb-3 d-flex align-items-center justify-content-between">
                             <span>배가 고파요 그래서 밥을 먹어요</span>
                             <button class="btn btn-link text-primary p-0 border-0"
-                                @click="sentenceCoreSound('sohunger')" title="Play Sound">
+                                @click="sentenceCoreSound('conjuctionex6')" title="Play Sound">
                                 <i class="bi bi-volume-up-fill fs-3"></i>
                             </button>
                         </div>
@@ -415,8 +415,8 @@
                     <button class="btn btn-light flex-grow-1 rounded-pill fw-bold py-2" @click="resetQuiz">
                         Reset
                     </button>
-                    <button class="btn btn-check-answer flex-grow-1 rounded-pill fw-bold py-2 shadow" @click="checkSentence">
-                        Check Answer
+                    <button class="btn btn-sm rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" @click="checkSentence">
+                        Check Answer <i class="bi bi-arrow-right-circle-fill ms-2"></i>
                     </button>
                 </div>
             </div>
@@ -459,8 +459,8 @@
     </div>
 </template>
 <script>
-import sentenceData from '../../data/grammar/sentenceData';
-import playVisualSound from '../../gamesounds/sounds.vue';
+import sentenceData from '../../../data/grammar/sentenceData';
+import playVisualSound from '../../../gamesounds/sounds.vue';
 
 export default {
     name: "sentenceCore",
@@ -638,9 +638,9 @@ export default {
     }
 }
 </script>
-<style scoped src="../../../../css/users/assets/lessons/grammarassetscss/sentencescore.css"></style>
-<style scoped src="../../../../css/users/partials/game/gameFooter.css"></style>
-<style scoped src="../../../../css/users/partials/game/gameModal.css"></style>
-<style scoped src="../../../../css/users/partials/game/gamefinalresultmodal.css"></style>
-<style scoped src="../../../../css/users/partials/card/k-card.css"></style>
-<style scoped src="../../../../css/users/assets/lessons/grammarassetscss/examplebutton.css"></style>
+<style scoped src="../../../../../css/users/assets/lessons/grammarassetscss/sentencescore.css"></style>
+<style scoped src="../../../../../css/users/partials/game/gameFooter.css"></style>
+<style scoped src="../../../../../css/users/partials/game/gameModal.css"></style>
+<style scoped src="../../../../../css/users/partials/game/gamefinalresultmodal.css"></style>
+<style scoped src="../../../../../css/users/partials/card/k-card.css"></style>
+<style scoped src="../../../../../css/users/assets/lessons/grammarassetscss/examplebutton.css"></style>

@@ -320,7 +320,7 @@ export default {
                 this.isLoading = true;
                 const tone = this.currentTone.toLowerCase();
                 const category = this.activeFilter.toLowerCase();
-                const response = await fetch(`/fetch-volcabulary?page=${page}&tone=${tone}&category=${category}`);
+                const response = await fetch(`/fetch-vocabulary?page=${page}&tone=${tone}&category=${category}`);
                 const result = await response.json();
 
                 const paginated = result.data;

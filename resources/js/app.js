@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import { createApp } from 'vue'
 import homepage from './components/homepage.vue'
 import koreanletters from './components/koreanletters.vue'
-import volcabulary from './components/volcabulary.vue'
+import vocabulary from './components/vocabulary.vue'
 import noun from './components/partofspeech/noun.vue'
 import verb from './components/partofspeech/verb.vue'
 import adjective from './components/partofspeech/adjectives.vue'
@@ -23,9 +23,9 @@ const koreanlettersContainer = document.querySelector('#koreanletters')
 if (koreanlettersContainer) {
     createApp(koreanletters).mount('#koreanletters')
 }
-const volcabularyContainer = document.querySelector('#volcabulary')
-if (volcabularyContainer) {
-    createApp(volcabulary).mount('#volcabulary')
+const vocabularyContainer = document.querySelector('#vocabulary')
+if (vocabularyContainer) {
+    createApp(vocabulary).mount('#vocabulary')
 }
 const nounContainer = document.querySelector('#noun')
 if (nounContainer) {

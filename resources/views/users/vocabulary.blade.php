@@ -1,6 +1,6 @@
 @include('users.partials.header')
 
-<div id="volcabulary"></div>
+<div id="vocabulary"></div>
 
 @include('users.partials.footer')
 
