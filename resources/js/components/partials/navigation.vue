@@ -18,8 +18,12 @@
                 </ul>
             </div>
 
-            <a class="navbar-brand mx-lg-auto" href="#">
-                <span class="logo-text">K-LEARN<span class="text-primary">.</span></span>
+           <a class="navbar-brand mx-lg-auto" href="#">
+                <img src="../../../../public/logo/logowithtext.jpg" 
+                    alt="Logo" 
+                    width="120" 
+                    height="30" 
+                    class="d-inline-block">
             </a>
 
             <div class="collapse navbar-collapse flex-grow-1 basis-0 justify-content-end" id="mainNavContentRight">

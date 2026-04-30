@@ -7,8 +7,13 @@
                 <aside class="col-lg-3 col-xl-2 mb-4">
                     <div class="modern-sidebar shadow-sm border p-3 bg-white rounded-4">
                         <div class="sidebar-brand d-flex align-items-center mb-4">
-                            <span class="logo-box fs-3 me-2">🇰🇷</span>
-                            <span class="brand-text fw-bold fs-5 tracking-tight">K-LEARN</span>
+                             <a class="navbar-brand mx-lg-auto" href="#">
+                                <img src="../../../../public/logo/logowithtext.jpg" 
+                                    alt="Logo" 
+                                    width="120" 
+                                    height="30" 
+                                    class="">
+                            </a>
                         </div>
 
                         <p class="text-uppercase text-muted smaller-text fw-bold mb-3">Learn</p>
@@ -186,10 +191,14 @@
                                     v-if="activeMainSection === 'greetings'">
                                     <greetingAssets></greetingAssets>
                                 </transition-group>
+                                <transition-group name="fade-slide" tag="div" class="row g-3"v-if="activeMainSection === 'hangul_structure'">
+                                    <hangulStructure></hangulStructure>
+                                </transition-group>
                                 <transition-group name="fade-slide" tag="div" class="row g-3"
                                     v-if="activeMainSection === 'sentence_structure' ||  activeMainSection === 'tenses' || activeMainSection === 'negation'">
                                     <verbAndSentenceIndex></verbAndSentenceIndex>
                                 </transition-group>
+                                
                                 <transition-group v-if="activeMainSection === 'particles_all'">
                                 <particleAssets></particleAssets>
                                 </transition-group>
@@ -226,6 +235,7 @@ import navigation from '../partials/navigation.vue';
 import alphabetAssets from '../lessons/lessonalphabet.vue'
 import pronouncationAssets from '../lessons/lessonpronounce.vue'
 import greetingAssets from '../lessons/lessongreetings.vue'
+import hangulStructure from './grammarassets/basic/hangulStructure.vue';
 import koreanalphabet from '../data/koreanalphabet.js';
 import particleAssets from './grammarassets/particle.vue'
 import verbAndSentenceIndex from './grammarassets/verbandsentence/verbAndSentenceIndex.vue'
@@ -238,6 +248,7 @@ export default {
         greetingAssets,
         particleAssets,
         verbAndSentenceIndex,
+        hangulStructure,
     },
     data() {
         return {
