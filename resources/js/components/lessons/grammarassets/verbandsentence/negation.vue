@@ -286,14 +286,14 @@
                     
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" @click="checkAnswer">
+                    <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" :disabled="selectedAnswer === ''" @click="checkAnswer">
                         Check Answer <i class="bi bi-arrow-right-circle-fill ms-2"></i>
                     </button>
                     <div class="action-footer mt-4 pt-4 border-top">
                         <p class="text-muted small mb-3">Ready to move on?</p>
     
                         <div class="text-center mb-3">
-                            <button class="btn btn-lg  rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" @click="nextQuestion">
+                            <button class="btn btn-lg  rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" :disabled="isContinue === false" @click="nextQuestion">
                                 <span>Continue</span>
                                 <i class="bi bi-arrow-right-circle-fill ms-2"></i>
                             </button>
@@ -355,7 +355,8 @@ export default {
             isExplanation: false,
             explanation: "",
             showExplanation: false,
-            isQuizFinished: false
+            isQuizFinished: false,
+            isContinue : false,
         }
     },  
     mounted() {
@@ -393,25 +394,16 @@ export default {
             this.selectedAnswer = choice;
         },
        checkAnswer() {
-
-        // ❌ NO ANSWER SELECTED
-        if (!this.selectedAnswer) {
-            this.isExplanation = true;
-            this.explanation = this.currentQuestion.explanation;
-            this.$refs.gameSounds.playSound('wrong');
-            this.showExplanation = true;
-            return; // 🔥 STOP HERE
-        }
-        // ✅ CORRECT ANSWER
         if (this.selectedAnswer === this.currentQuestion.correctAnswer) {
             this.iscorrectAnswer = true;
+            this.isContinue = true;
             this.correctAnswer = "correct";
             this.score++;
             this.$refs.gameSounds.playSound('correct');
         } 
-        // ❌ WRONG ANSWER
         else {
             this.iscorrectAnswer = false;
+            this.isContinue = true;
             this.correctAnswer = "wrong";
             this.$refs.gameSounds.playSound('wrong');
         }
@@ -420,8 +412,6 @@ export default {
         this.showExplanation = true;
      },
         nextQuestion() {
-            if(!this.selectedAnswer) 
-                return;
             this.currentIndex++
             if (this.currentIndex >= 10) {
                 this.currentIndex = 0
@@ -434,6 +424,8 @@ export default {
             this.isExplanation = false
             this.explanation = ""
             this.showExplanation = false
+            this.isContinue = false;
+
         },
 
     } 

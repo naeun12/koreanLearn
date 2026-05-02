@@ -1,4 +1,5 @@
 <template>
+    <soundQuiz ref="gameSounds"/>
     <div class="k-card">
        <h1 class="fw-black text-dark mb-3" style="letter-spacing: -2.5px; font-size: 3.5rem; line-height: 1;">
             Hangul Structure <span class="text-primary">(Core Rule)</span>
@@ -559,20 +560,186 @@
                 <button type="button" @click="btnChangeCombinations('tenseAndDipthongs')" class="dot-btn" :class="{'active':changeCombination === 'tenseAndDipthongs'}"></button>
 
         </div>
+
     </div>
+    <div class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white">
+         <div class="mb-4 mb-md-0 text-center text-md-start">
+            <h3 class="fw-black mb-1">
+                Time to Practice
+            </h3>
+            <p class="mb-0 opacity-75 fs-5">
+                 Test your understanding of <strong>Hangul Structure</strong>, including syllable formation, consonants, vowels and final consonants.
+            </p>
+        </div>
+        <button class="btn btn-quiz rounded-pill shadow-lg" @click="OpenQuiz">
+         Start Negation Mastery Quiz
+        </button>
+     </div>
+</div>
+<div v-if="isOpenQuiz" class="modal fade show d-block" tabindex="-1"
+        style="background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-5 overflow-hidden animate-pop">
+            <div class="modal-header border-0 p-4 pb-0">
+                <div class="d-flex align-items-center">
+                    <div class="p-2 bg-primary-subtle rounded-3 me-3 text-primary shadow-sm">
+                        <i class="bi bi-puzzle-fill fs-4"></i>
+                    </div>
+                    <div>
+                        <h5 class="modal-title fw-bold mt-2">
+                            Hangul Structure Quiz
+                        </h5>      
+                        <p class="text-muted mb-0">
+                            Learn how Korean Hangul syllables are formed through consonants, vowels, and final consonants.
+                        </p>
+                    </div>
+                 </div>
+                    <button type="button" class="btn-close shadow-none bg-light rounded-circle"
+                        @click="isOpenQuiz = false">
+                    </button>
+             </div>
+            <div class="modal-body p-4">
+                <div class="d-flex justify-content-between align-items-end mb-1">
+                    <span class="badge rounded-pill bg-primary px-3 py-2 fs-6">
+                        Question {{ currentIndex }} of 10
+                    </span>
+                    <span class="text-muted small fw-bold">
+                        {{ (currentIndex / 10) * 100 }}% Complete
+                    </span>
+                    </div>
+                    <div class="progress " style="height: 10px; border-radius: 50px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                            role="progressbar" :style="{ width: (currentIndex / 10) * 100 + '%' }"
+                            :aria-valuenow="currentIndex" aria-valuemin="0" aria-valuemax="10">
+                        </div>
+                    </div>
+                     <div class="question-container">
+                        <span class="question-label">QUESTION</span>
+                        <h2 class="question-text">{{currentQuestion.question}}</h2>
+                    </div>
+                     <div v-if="isExplanation" :class="iscorrectAnswer" class="feedback-card animate__animated animate__fadeIn">
+                        <div class="card-content d-flex align-items-center">
+                            <div class="feedback-icon me-3">
+                            <i :class="{
+                                'bi bi-check-circle-fill text-success': correctAnswer === 'correct',
+                                'bi bi-x-circle-fill text-danger': correctAnswer === 'wrong',
+                            }"></i>                        
+                            </div>
+                            <div class="feedback-text">
+                                <strong class="d-block mb-1">
+                                    {{
+                                        correctAnswer === 'correct'
+                                            ? 'Great Job!'
+                                            : correctAnswer === 'wrong'
+                                            ? 'Not Quite!'
+                                            : 'No Answer Selected'
+                                    }}
+                                </strong>
+                                <p class="mb-0">{{ explanation }}</p>
+                            </div>
+                        </div>
+                </div>
+                   <div class="question-container">
+                        <input type="text" placeholder="Type your answer here..." v-model="answer" :disabled="isDisable === true">
+
+                        <div class="error-container" v-if="isEmpty">
+                            <span class="error-icon">⚠️</span>
+                            <div class="error-content">
+                                <strong>Answer Required</strong>
+                                <p>Please enter your answer before continuing.</p>
+                            </div>
+                        </div>                            
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" @click="checkAnswer">
+                            Check Answer <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                        </button>
+                        <div class="action-footer mt-4 pt-4 border-top">
+                            <p class="text-muted small mb-3">Ready to move on?</p>
+        
+                            <div class="text-center mb-3">
+                                <button class="btn btn-lg  rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" :disabled="isContinue === false" @click="nextQuestion">
+                                    <span>Continue</span>
+                                    <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div v-if="isQuizFinished" class="result-modal-backdrop">
+        <div class="result-modal-content">
+            <div class="celebration-header">
+                <div class="result-icon-wrapper">
+                    <div class="modern-celebration-icon">
+                        <div class="ribbon-icon"></div>
+                        <div class="confetti-burst"></div>
+                    </div>
+                </div>
+                <h2 class="fw-bold mb-1">Quiz Finished</h2>
+                <div class="status-badge" :class="score >= 5 ? 'pass' : 'retry'">
+                    {{ score >= 5 ? 'Excellent Work!' : 'Keep Practicing' }}
+                </div>
+            </div>
+            <div class="score-visualization my-5">
+                <div class="score-circle-glow">
+                    <div class="score-content">
+                        <span class="score-main">{{ score }}</span>
+                        <span class="score-divider"></span>
+                        <span class="score-total">10</span>
+                    </div>
+                </div>
+                <p class="text-muted mt-3 mb-0 small text-uppercase fw-bold ls-1">Final Score</p>
+            </div>
+            <div class="result-actions">
+                <button class="btn-retry-premium" @click="OpenQuiz">
+                    <i class="bi bi-arrow-clockwise me-2"></i> Try Again
+                </button>
+            </div>
+        </div>
 </div>
 </template>
 <script>
 import hangulstuctureData from '../../../data/grammar/basic/hangulstuctureData';
 import hangulData from '../../../data/koreanalphabet.js';
+import soundQuiz from '../../../gamesounds/sounds.vue'
+import quizData from '../../../data/grammar/basic/questionData/hangulStructureData.js'
 
 export default {
+    components: {
+        soundQuiz
+    },
     data() { 
         return {
             isHangulStructureExampleModal: false,
             hangulStructureData: hangulstuctureData.HangulContentData,
             hangulData: hangulData,
             changeCombination: 'vowelsAndConsonants',
+            questions: quizData.questions,
+            isOpenQuiz: false,
+            currentIndex: 0,
+            score: 0,
+            answer: "",
+            isEmpty: false,
+            isDisable: false,
+            iscorrectAnswer: false,
+            correctAnswer: "",
+            isExplanation: false,
+            explanation: "",
+            showExplanation: false,
+            isQuizFinished: false,
+            isContinue: false,
+        }
+    },
+      mounted() {
+        this.shuffleQuestions();
+        
+    }, 
+    computed: { 
+        currentQuestion() {
+        return this.questions[this.currentIndex]
         }
     },
     methods: {
@@ -586,7 +753,59 @@ export default {
         },
         btnChangeCombinations(change) { 
             this.changeCombination = change
-        }
+        },
+        OpenQuiz() { 
+            this.isOpenQuiz = true;
+            this.isQuizFinished = false;
+        },
+        shuffleQuestions() {
+            if (!this.questions) return;
+
+            this.questions = [...this.questions]
+                .sort(() => Math.random() - 0.5);
+        },
+        checkAnswer() {
+            const userAnswer = this.answer.trim().toLowerCase();
+            const correctAnswer = this.currentQuestion.answer.trim().toLowerCase();
+            if (userAnswer === correctAnswer) {
+                this.iscorrectAnswer = true;
+                this.correctAnswer = "correct";
+                this.isContinue = true;
+                this.score++;
+                this.$refs.gameSounds.playSound('correct');
+                this.isEmpty = false;
+                this.isDisable = true;
+            } 
+            else {
+                this.iscorrectAnswer = false;
+                this.correctAnswer = "wrong";
+                this.$refs.gameSounds.playSound('wrong');
+                this.isEmpty = false;
+                this.isContinue = true;
+                this.isDisable = true
+            }
+
+            this.isExplanation = true;
+            this.explanation = this.currentQuestion.explanation;
+            this.showExplanation = true;
+        },
+        nextQuestion() {
+            this.isContinue = false;
+            this.currentIndex++
+            if (this.currentIndex >= 10) {
+                this.currentIndex = 0
+                this.$refs.gameSounds.playSound('finalscores')
+                this.isQuizFinished = true
+                this.isOpenQuiz = false
+
+            }
+            this.isDisable = false,
+            this.answer = ""
+            this.isExplanation = false
+            this.explanation = ""
+            this.showExplanation = false
+        },
+
     }
 }
 </script>

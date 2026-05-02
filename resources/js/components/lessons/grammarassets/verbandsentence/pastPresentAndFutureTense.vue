@@ -300,20 +300,20 @@
                     </div>
                 </div>
                 <div class="text-center">
-                <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" @click="checkAnswer">
+                <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" :disabled="selectedAnswer === ''" @click="checkAnswer">
                     Check Answer <i class="bi bi-arrow-right-circle-fill ms-2"></i>
                 </button>
                
                             <div class="action-footer mt-4 pt-4 border-top">
-    <p class="text-muted small mb-3">Ready to move on?</p>
-    
-    <div class="text-center mb-3">
-        <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" @click="nextQuestion">
-            <span>Continue</span>
-            <i class="bi bi-arrow-right-circle-fill ms-2"></i>
-        </button>
-    </div>
-</div>
+                    <p class="text-muted small mb-3">Ready to move on?</p>
+                    
+                    <div class="text-center mb-3">
+                        <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" :disabled="isContinue === false" @click="nextQuestion">
+                            <span>Continue</span>
+                            <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             </div>
         </div>
@@ -374,7 +374,8 @@ export default {
             explanation: "",
             showExplanation: false,
             score: 0,
-            isQuizFinished: false
+            isQuizFinished: false,
+            isContinue: false,
         }
     },
 
@@ -425,16 +426,10 @@ export default {
         },
 
         checkAnswer() {
-            if (!this.selectedAnswer) {
-                this.isFeedback = true;
-                this.explanation = this.currentQuestion.explanation;
-                this.$refs.gameSounds.playSound('wrong');
-                this.showExplanation = true;
-                return; // 🔥 STOP HERE
-            }
             if (this.selectedAnswer === this.currentQuestion.answer) {
                 this.iscorrectAnswer = true
                 this.isFeedback = true
+                this.isContinue = true
                 this.correctAnswer = "correct"
                 this.explanation = this.currentQuestion.explanation
                 this.score++
@@ -442,6 +437,7 @@ export default {
             } else {
                 this.iscorrectAnswer = false
                 this.isFeedback = true
+                this.isContinue = true
                 this.correctAnswer = "wrong"
                 this.explanation = this.currentQuestion.explanation
                 this.$refs.gameSounds.playSound('wrong');
@@ -463,6 +459,7 @@ export default {
                 this.$refs.gameSounds.playSound('finalscores')
                 this.isQuizFinished = true
                 this.isOpenQuiz = false
+                this.isContinue = false
 
 
             }
@@ -471,6 +468,7 @@ export default {
             this.isFeedback = false
             this.explanation = ""
             this.showExplanation = false
+            this.isContinue = false
         },
 
     }

@@ -191,8 +191,8 @@
                                     v-if="activeMainSection === 'greetings'">
                                     <greetingAssets></greetingAssets>
                                 </transition-group>
-                                <transition-group name="fade-slide" tag="div" class="row g-3"v-if="activeMainSection === 'hangul_structure'">
-                                    <hangulStructure></hangulStructure>
+                                <transition-group name="fade-slide" tag="div" class="row g-3"v-if="activeMainSection === 'hangul_structure' || activeMainSection === 'batchim' " >
+                                    <basicLearn></basicLearn>
                                 </transition-group>
                                 <transition-group name="fade-slide" tag="div" class="row g-3"
                                     v-if="activeMainSection === 'sentence_structure' ||  activeMainSection === 'tenses' || activeMainSection === 'negation'">
@@ -235,7 +235,7 @@ import navigation from '../partials/navigation.vue';
 import alphabetAssets from '../lessons/lessonalphabet.vue'
 import pronouncationAssets from '../lessons/lessonpronounce.vue'
 import greetingAssets from '../lessons/lessongreetings.vue'
-import hangulStructure from './grammarassets/basic/hangulStructure.vue';
+import basicLearn from './grammarassets/basic/basicIndex.vue';
 import koreanalphabet from '../data/koreanalphabet.js';
 import particleAssets from './grammarassets/particle.vue'
 import verbAndSentenceIndex from './grammarassets/verbandsentence/verbAndSentenceIndex.vue'
@@ -248,7 +248,7 @@ export default {
         greetingAssets,
         particleAssets,
         verbAndSentenceIndex,
-        hangulStructure,
+        basicLearn,
     },
     data() {
         return {
