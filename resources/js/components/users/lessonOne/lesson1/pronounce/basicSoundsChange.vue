@@ -1,23 +1,19 @@
 <template>
     <div class="k-card">
         <h1 class="fw-black text-dark mb-3">
-            Basic Vowel and Consonant Sounds (Korean)
+            Basic Sound Changes (Intro)
             <span class="text-primary">(Core Rule)</span>
         </h1>
         <p class="lead text-secondary text-justify" style="max-width: 2000px">
-            <strong>Basic Vowel and Consonant Sounds</strong> are the foundation
-            of reading and pronouncing Hangul correctly. Korean words are formed
-            by combining consonants and vowels into syllable blocks, so
-            understanding their sounds is essential for beginners. Korean vowels
-            include simple sounds such as “ㅏ (a)”, “ㅓ (eo)”, “ㅗ (o)”, and “ㅜ
-            (u)”, while consonants include sounds like “ㄱ (g/k)”, “ㄴ (n)”, “ㅁ
-            (m)”, and “ㅅ (s)”. Some letters may sound slightly different
-            depending on their position in a word or when combined with other
-            letters. By mastering these core sounds, learners can read Korean
-            words accurately, improve pronunciation, and develop stronger
-            listening skills. Learning vowel and consonant sounds also builds
-            confidence in speaking, spelling, and understanding how Korean
-            syllables are naturally formed in everyday language.
+            refers to the natural pronunciation changes that happen when Korean
+            letters are combined in words or sentences. These changes make
+            speech smoother and faster, so native speakers often pronounce words
+            differently from how they are written. Learning these sound changes
+            helps you
+            <strong
+                >listen better, speak more naturally, and read Hangul
+                correctly.</strong
+            >
         </p>
         <div class="row g-4">
             <div class="col-12">
@@ -25,7 +21,7 @@
                     class="h5 text-uppercase fw-bold text-muted mb-4"
                     style="letter-spacing: 1px"
                 >
-                    Core Principles of Korean Vowel and Consonants
+                    Core Principles of Basic Sound Changes (Intro)
                 </h2>
                 <div class="list-group list-group-flush gap-3">
                     <div
@@ -39,11 +35,21 @@
                         </div>
                         <div>
                             <strong class="d-block text-dark"
-                                >Consonants create the base sound</strong
+                                >Ease of Pronunciation</strong
                             >
                             <span class="text-secondary small">
-                                Every Korean syllable begins with a consonant or
-                                a silent placeholder (ㅇ).
+                                Korean speakers naturally change sounds to make
+                                words easier and faster to say.
+                            </span>
+                            <span class="d-block text-dark">
+                                Example:합니다 → 함니다
+                            </span>
+                            <span class="text-secondary small">
+                                (ham-ni-da instead of hap-ni-da)
+                            </span>
+                            <span class="d-block text-secondary small">
+                                Saying ㅂ + ㄴ directly is harder, so it changes
+                                smoothly.
                             </span>
                         </div>
                     </div>
@@ -58,11 +64,19 @@
                         </div>
                         <div>
                             <strong class="d-block text-dark"
-                                >Vowels provide the voice sound</strong
+                                >Smooth Sound Connection</strong
                             >
                             <span class="text-secondary small">
-                                Vowels determine the main sound of the syllable
-                                such as a, eo, o, u, i.
+                                When a syllable ends in a consonant and the next
+                                syllable begins with a vowel, the final
+                                consonant often links to the next syllable.
+                            </span>
+                            <strong class="d-block text-dark"
+                                >Example: 한국어 → 한구거 <br />
+                                책이 → 채기</strong
+                            >
+                            <span class="text-secondary small">
+                                Sounds flow naturally between syllables.
                             </span>
                         </div>
                     </div>
@@ -77,11 +91,18 @@
                         </div>
                         <div>
                             <strong class="d-block text-dark"
-                                >Syllables are built in blocks</strong
+                                >Neighboring Sounds Influence Each Other</strong
                             >
                             <span class="text-secondary small">
-                                Korean letters combine into one square-shaped
-                                syllable block like 가, 나, 한.
+                                A sound may change because of the letter beside
+                                it.
+                            </span>
+                            <strong class="d-block text-dark"
+                                >Example: 국물 → 궁물
+                            </strong>
+                            <span class="text-secondary small">
+                                ㅁ affects ㄱ, making it nasal.<br />
+                                Nearby sounds often “blend.”
                             </span>
                         </div>
                     </div>
@@ -96,11 +117,18 @@
                         </div>
                         <div>
                             <strong class="d-block text-dark"
-                                >At least one consonant + one vowel</strong
+                                >Natural Speech Rhythm</strong
                             >
                             <span class="text-secondary small">
-                                A complete Hangul syllable needs both parts to
-                                be readable.
+                                Some sounds become stronger or softer to match
+                                Korean speaking rhythm.
+                            </span>
+                            <strong class="d-block text-dark">Example: </strong>
+                            <span class="text-secondary small">
+                                학교 → 학꾜
+                            </span>
+                            <span class="text-secondary small">
+                                Tense sounds help create clearer rhythm.
                             </span>
                         </div>
                     </div>
@@ -115,68 +143,14 @@
                         </div>
                         <div>
                             <strong class="d-block text-dark"
-                                >Vowel direction affects layout</strong
+                                >Consistency in Native Speech</strong
                             >
                             <span class="text-secondary small">
-                                Vertical vowels (ㅏ,ㅓ,ㅣ) and horizontal vowels
-                                (ㅗ,ㅜ,ㅡ) change block structure.
-                            </span>
-                        </div>
-                    </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
-                        <div
-                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0"
-                        >
-                            <span class="fw-bold text-primary">6</span>
-                        </div>
-                        <div>
-                            <strong class="d-block text-dark"
-                                >Consonant sounds can change</strong
-                            >
-                            <span class="text-secondary small">
-                                Some consonants sound softer or stronger
-                                depending on position or nearby letters.
-                            </span>
-                        </div>
-                    </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
-                        <div
-                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0"
-                        >
-                            <span class="fw-bold text-primary">7</span>
-                        </div>
-                        <div>
-                            <strong class="d-block text-dark"
-                                >Final consonants add ending sound</strong
-                            >
-                            <span class="text-secondary small">
-                                Batchim (받침) closes the syllable and affects
-                                pronunciation.
-                            </span>
-                        </div>
-                    </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
-                        <div
-                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0"
-                        >
-                            <span class="fw-bold text-primary">8</span>
-                        </div>
-                        <div>
-                            <strong class="d-block text-dark"
-                                >Practice improves fluency</strong
-                            >
-                            <span class="text-secondary small">
-                                Repetition helps learners read faster and speak
-                                more naturally.
+                                These sound changes are not random. They follow
+                                regular patterns used by native speakers.
+                                <br />
+                                Once you learn the rules, many words become
+                                predictable.
                             </span>
                         </div>
                     </div>
@@ -192,25 +166,24 @@
 
                         <div>
                             <strong class="d-block mb-1"
-                                >Pro Tip: Vowel & Consonant Shortcut</strong
+                                >Pro Tip: Basic Sound Changes (Intro)</strong
                             >
 
                             <p class="mb-0 opacity-75 small">
-                                Korean syllables are made by combining a
-                                <strong>consonant + vowel</strong>. Remember
-                                this easy pattern: <strong>ㄱ + ㅏ</strong> = 가
-                                (ga), <strong>ㄴ + ㅏ</strong> = 나 (na),
-                                <strong>ㅁ + ㅜ</strong> = 무 (mu). Consonants
-                                give the starting sound, while vowels give the
-                                main voice sound. Once you recognize these
-                                combinations quickly, reading Hangul becomes
-                                much easier.
+                                Basic sound changes happen when Korean letters
+                                meet and adjust to make pronunciation smoother
+                                and more natural. Final consonants may connect
+                                to the next syllable, nearby sounds can
+                                influence each other, and some sounds become
+                                stronger or softer in speech. Learning these
+                                patterns helps you read, listen, and speak
+                                Korean more naturally.
                             </p>
                         </div>
 
                         <button
                             class="example-sentences ms-auto"
-                            @click="btnVowelConsonantExample()"
+                            @click="btnBasicSoundsChangeExamples()"
                         >
                             Example
                         </button>
@@ -234,7 +207,7 @@
     <div
         class="mt-4 p-4 bg-white overflow-hidden mb-3 k-card"
         v-if="isExampleModal"
-        ref="VowelConsonantExample"
+        ref="BasicSoundsChangeExample"
     >
         <div class="p-4 border-bottom border-light bg-white">
             <div class="d-flex align-items-center">
@@ -277,23 +250,24 @@
                                 class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
                                 >Ex 1</span
                             >
-                            <span class="text-primary fw-bold small">가</span>
                         </div>
 
                         <!-- Title -->
                         <div class="h6 fw-bold text-dark mb-3">
-                            ㄱ + ㅏ = ga
+                            책이 → 채기 <em>(chae-gi)</em>
                         </div>
 
                         <!-- Description -->
                         <div class="text-secondary small mb-3">
-                            This syllable uses <strong>ㄱ</strong>, which sounds
-                            like a soft <strong>g</strong> or
-                            <strong>k</strong>, and <strong>ㅏ</strong>, which
-                            sounds like <strong>a</strong> in “father.” It is
-                            one of the most common beginner syllables in Korean
-                            reading practice.
+                            Final consonant links to the next vowel sound.
                         </div>
+                        <button
+                            @click="listenSound('chagi.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -306,20 +280,21 @@
                                 class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
                                 >Ex 2</span
                             >
-                            <span class="text-primary fw-bold small">나</span>
                         </div>
                         <!-- Description -->
                         <div class="h6 fw-bold text-dark mb-3">
-                            ㄴ + ㅏ = na
+                            한국어 → 한구거 <em>(han-gu-geo)</em>
                         </div>
                         <div class="text-secondary small mb-3">
-                            <strong>ㄴ</strong> gives an
-                            <strong>n</strong> sound, while
-                            <strong>ㅏ</strong> keeps the open
-                            <strong>a</strong> vowel. Together they form
-                            <strong>na</strong>, a smooth and easy sound often
-                            used in beginner vocabulary.
+                            Batchim moves smoothly to the next syllable.
                         </div>
+                        <button
+                            @click="listenSound('hangugeo.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -332,20 +307,22 @@
                                 class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
                                 >Ex 3</span
                             >
-                            <span class="text-primary fw-bold small">다</span>
                         </div>
 
                         <!-- Title -->
                         <div class="h6 fw-bold text-dark mb-3">
-                            ㄷ + ㅏ = da
+                            꽃을 → 꼬츨 <em>(kko-cheul)</em>
                         </div>
                         <div class="text-secondary small mb-3">
-                            This block combines <strong>ㄷ</strong>, which
-                            sounds like a light <strong>d</strong> or
-                            <strong>t</strong>, with <strong>ㅏ</strong>. It
-                            creates <strong>da</strong>, a syllable commonly
-                            found in verbs and sentence endings.
+                            Final sound connects to the following vowel.
                         </div>
+                        <button
+                            @click="listenSound('kkocheul.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -358,20 +335,22 @@
                                 class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
                                 >Ex 4</span
                             >
-                            <span class="text-primary fw-bold small">모</span>
                         </div>
 
                         <!-- Title -->
                         <div class="h6 fw-bold text-dark mb-3">
-                            ㅁ + ㅗ = mo
+                            합니다 → 함니다 <em>(ham-ni-da)</em>
                         </div>
                         <div class="text-secondary small mb-3">
-                            <strong>ㅁ</strong> sounds like <strong>m</strong>,
-                            and <strong>ㅗ</strong> sounds like
-                            <strong>o</strong> in “go.” Together they form
-                            <strong>mo</strong>, a rounded vowel sound useful
-                            for practicing mouth shape in pronunciation.
+                            ㅂ changes to ㅁ before ㄴ for easier speech.
                         </div>
+                        <button
+                            @click="listenSound('hamnida.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -384,20 +363,22 @@
                                 class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
                                 >Ex 5</span
                             >
-                            <span class="text-primary fw-bold small">수</span>
                         </div>
 
                         <!-- Title -->
                         <div class="h6 fw-bold text-dark mb-3">
-                            ㅅ + ㅜ = su
+                            국물 → 궁물 <em>(gung-mul)</em>
                         </div>
                         <div class="text-secondary small mb-3">
-                            This syllable uses <strong>ㅅ</strong>, which sounds
-                            like <strong>s</strong>, and <strong>ㅜ</strong>,
-                            which sounds like <strong>oo</strong> in “food.” It
-                            creates <strong>su</strong>, a common sound in many
-                            Korean names and words.
+                            ㄱ changes to ng sound before ㅁ.
                         </div>
+                        <button
+                            @click="listenSound('gungmul.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -410,21 +391,246 @@
                                 class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
                                 >Ex 6</span
                             >
-                            <span class="text-primary fw-bold small">기</span>
                         </div>
 
                         <!-- Title -->
                         <div class="h6 fw-bold text-dark mb-3">
-                            ㄱ + ㅣ = gi
+                            앞문 → 암문 <em>(am-mun)</em>
                         </div>
                         <div class="text-secondary small mb-3">
-                            <strong>ㄱ</strong> combined with
-                            <strong>ㅣ</strong> forms <strong>gi</strong> or a
-                            soft <strong>ki</strong> sound. The vowel
-                            <strong>ㅣ</strong> sounds like <strong>ee</strong>
-                            in “see,” making this syllable bright and sharp in
-                            tone.
+                            ㅍ changes to ㅁ before ㅁ.
                         </div>
+                        <button
+                            @click="listenSound('ammun.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 7</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            학교 → 학꾜 <em>(hak-kyo)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㄱ becomes stronger after batchim.
+                        </div>
+                        <button
+                            @click="listenSound('hakkyo.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 8</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            입구 → 입꾸 <em>(ip-kku)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㄱ becomes tense after final consonant.
+                        </div>
+                        <button
+                            @click="listenSound('ipkku.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 9</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            국밥 → 국빱 <em>(guk-ppap)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㅂ becomes tense after batchim.
+                        </div>
+                        <button
+                            @click="listenSound('gukppap.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 w-50">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 10</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            설날 → 설랄 <em>(seol-lal)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㄴ changes to ㄹ after ㄹ.
+                        </div>
+                        <button
+                            @click="listenSound('seollal.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 w-50">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 11</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            신라 → 실라 <em>(sil-la)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㄴ + ㄹ becomes ㄹㄹ sound.
+                        </div>
+                        <button
+                            @click="listenSound('silla.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 12</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            좋아요 → 조아요 <em>(jo-a-yo)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㅎ becomes silent in smooth speech.
+                        </div>
+                        <button
+                            @click="listenSound('joayo.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 13</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            놓다 → 노타 <em>(no-ta)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㅎ affects the next consonant sound.
+                        </div>
+                        <button
+                            @click="listenSound('nota.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div
+                        class="example-row h-100 p-3 rounded-4 border-start border-4 border-primary bg-light transition-all"
+                    >
+                        <!-- Header -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span
+                                class="badge rounded-pill bg-dark px-3 py-1 me-2 small text-uppercase"
+                                >Ex 14</span
+                            >
+                        </div>
+
+                        <!-- Title -->
+                        <div class="h6 fw-bold text-dark mb-3">
+                            많다 → 만타 <em>(man-ta)</em>
+                        </div>
+                        <div class="text-secondary small mb-3">
+                            ㅎ changes the following sound to stronger ㅌ.
+                        </div>
+                        <button
+                            @click="listenSound('manta.mp3')"
+                            class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        >
+                            <i class="bi bi-volume-up-fill"></i>
+                            <span>Listen</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -432,18 +638,24 @@
         <div
             class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white"
         >
-            <div class="mb-4 mb-md-0 text-center text-md-start">
-                <h3 class="fw-black mb-1">
-                    Master Korean Vowel & Consonant Sounds
-                </h3>
-                <p class="mb-0 opacity-75 fs-5">
-                    Strengthen your foundation in Hangul by practicing how
-                    vowels and consonants combine to form syllables. Learn how
-                    each letter contributes<br />
-                    to pronunciation, improve your reading accuracy, and build
-                    confidence in recognizing Korean sound patterns through
-                    interactive exercises and quizzes.
-                </p>
+            <div class="mb-4 mb-md-0 text-md-start">
+                <div class="">
+                    <h3 class="fw-black mb-2">Master Basic Sound Changes</h3>
+
+                    <p
+                        class="small mb-0 text-white-50"
+                        style="max-width: 1200px"
+                    >
+                        Build a strong foundation in Hangul by understanding how
+                        sounds naturally change in real Korean speech. Learn how
+                        vowels and consonants combine, how syllables connect,
+                        and how pronunciation shifts for smoother flow. Improve
+                        your reading accuracy, train your listening skills, and
+                        gain confidence in recognizing natural Korean sound
+                        patterns through guided practice and interactive
+                        exercises.
+                    </p>
+                </div>
             </div>
             <button
                 class="btn btn-quiz rounded-pill shadow-lg"
@@ -464,15 +676,19 @@ export default {
     computed: {},
     mounted() {},
     methods: {
-        btnVowelConsonantExample() {
+        btnBasicSoundsChangeExamples() {
             this.isExampleModal = !this.isExampleModal;
             if (this.isExampleModal) {
                 this.$nextTick(() => {
-                    this.$refs.VowelConsonantExample.scrollIntoView({
+                    this.$refs.BasicSoundsChangeExample.scrollIntoView({
                         behavior: "smooth",
                     });
                 });
             }
+        },
+        listenSound(file) {
+            const audio = new Audio(`/sounds/volcabulary/${file}`);
+            audio.play();
         },
     },
 };
@@ -501,3 +717,4 @@ export default {
     scoped
     src="../../../../../../css/users/partials/game/gamefinalresultmodal.css"
 ></style>
+<style scoped src="../../../../../../css/btn-audio.css"></style>

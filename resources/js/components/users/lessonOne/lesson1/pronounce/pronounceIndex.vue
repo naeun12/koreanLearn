@@ -12,6 +12,9 @@
     <div class="basic-sound-change">
         <basicSoundsChange />
     </div>
+    <div class="lesson-pronounce">
+        <lessonPronounce />
+    </div>
 </template>
 <script>
 import koreanVowelAndConsonants from "./koreanVowelAndConsonants.vue";
@@ -19,6 +22,7 @@ import pronunciationRule from "./pronunciationRule.vue";
 import pronunciationsGuide from "./lessonPronounce.vue";
 import batchim from "./batchim.vue";
 import basicSoundsChange from "./basicSoundsChange.vue";
+import lessonPronounce from "./lessonPronounce.vue";
 
 export default {
     components: {
@@ -27,6 +31,7 @@ export default {
         koreanVowelAndConsonants,
         basicSoundsChange,
         pronunciationRule,
+        lessonPronounce,
     },
 };
 </script>

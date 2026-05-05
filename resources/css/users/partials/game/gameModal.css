@@ -109,18 +109,10 @@
 }
 /*q and a */
 .question-container {
-    padding: 20px;
-    /* Balanced padding for centering */
-    margin: 20px auto;
     background-color: #f8f9fa;
     border-radius: 8px;
-    /* Changed to full radius for a centered look */
-
     max-width: 600px;
     text-align: center;
-    /* 👈 Centers all text inside the div */
-
-    /* Optional: subtle shadow to make the centered card pop */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 

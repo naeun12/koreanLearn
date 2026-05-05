@@ -447,22 +447,38 @@
             </div>
             <button
                 class="btn btn-quiz rounded-pill shadow-lg"
-                @click="OpenQuiz"
+                @click="openQuiz = true"
             >
                 Start Mastery Quiz
             </button>
         </div>
     </div>
+    <GameModal v-model="openQuiz" :questions="questions" />
 </template>
 <script>
+import questionData from "../data/koreanVowelAndConsonantsData";
+import GameModal from "../../../../users/partials/games/gameModal.vue";
 export default {
+    components: {
+        GameModal,
+    },
     data() {
         return {
             isExampleModal: false,
+            openQuiz: false,
+            questions: questionData.koreanVowelAndConsonantsData, // IMPORTANT FIX
+            // currentIndex: 0,
+            // score: 0,
+            // selectedAnswer: "",
+            // iscorrectAnswer: false,
+            // correctAnswer: "",
+            // isExplanation: false,
+            // explanation: "",
+            // showExplanation: false,
+            // isQuizFinished: false,
+            // isContinue: false,
         };
     },
-    computed: {},
-    mounted() {},
     methods: {
         btnVowelConsonantExample() {
             this.isExampleModal = !this.isExampleModal;
@@ -474,6 +490,13 @@ export default {
                 });
             }
         },
+        listenSound(file) {
+            const audio = new Audio(`/sounds/volcabulary/${file}`);
+            audio.play();
+        },
+    },
+    mounted() {
+        console.log(this.questions);
     },
 };
 </script>
