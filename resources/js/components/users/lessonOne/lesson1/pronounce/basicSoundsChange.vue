@@ -659,22 +659,35 @@
             </div>
             <button
                 class="btn btn-quiz rounded-pill shadow-lg"
-                @click="OpenQuiz"
+                @click="openQuiz = true"
             >
                 Start Mastery Quiz
             </button>
         </div>
     </div>
+    <GameModal
+        v-model="openQuiz"
+        :questions="questions"
+        :gameDescription="gameDescription"
+        :gameTitle="gameTitle"
+    />
 </template>
 <script>
+import questionData from "../data/LessonOneData/basicSoundChangeData";
+import GameModal from "../../../../users/partials/games/gameModal.vue";
 export default {
+    components: {
+        GameModal,
+    },
     data() {
         return {
             isExampleModal: false,
+            openQuiz: false,
+            questions: questionData,
+            gameDescription: "Practice Korean Basic Sounds Change!",
+            gameTitle: "Quiz Basic Sounds And Change",
         };
     },
-    computed: {},
-    mounted() {},
     methods: {
         btnBasicSoundsChangeExamples() {
             this.isExampleModal = !this.isExampleModal;

@@ -1,205 +1,208 @@
 <template>
     <soundQuiz ref="gameSounds" />
 
-    <div
-        v-if="isOpenQuiz"
-        class="modal fade show d-block"
-        tabindex="-1"
-        style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px)"
-    >
-        <div class="modal-dialog modal-dialog-centered">
-            <div
-                class="modal-content border-0 shadow-lg rounded-5 overflow-hidden animate-pop"
-            >
-                <div class="modal-header border-0 p-4 pb-0">
-                    <div class="d-flex align-items-center">
-                        <div
-                            class="p-2 bg-primary-subtle rounded-3 me-3 text-primary shadow-sm"
-                        >
-                            <i class="bi bi-puzzle-fill fs-4"></i>
+    <div v-if="isOpenQuiz" class="quiz-overlay">
+        <div class="modal-dialog modal-dialog-centered quiz-modal modal-lg">
+            <div class="modal-content quiz-card">
+                <!-- Subtle Gradient Glows -->
+                <div class="glow-top"></div>
+
+                <!-- Header -->
+                <div class="quiz-header">
+                    <div class="header-main">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-puzzle-fill"></i>
                         </div>
-                        <div>
-                            <h5 class="modal-title fw-bold mt-2">
-                                Korean Batchim Quiz
+                        <div class="title-group">
+                            <h5 class="game-title text-primary">
+                                {{ gameTitle }}
                             </h5>
-                            <p class="text-muted mb-0">
-                                Test your understanding of Korean Batchim (final
-                                consonants) through simple and interactive quiz
-                                questions.
-                            </p>
+                            <p class="game-desc">{{ gameDescription }}</p>
                         </div>
                     </div>
-                    <button
-                        type="button"
-                        class="btn-close shadow-none bg-light rounded-circle"
-                        @click="isOpenQuiz = false"
-                    ></button>
+                    <button @click="isOpenQuiz = false" class="close-circle">
+                        <i class="bi bi-x"></i>
+                    </button>
                 </div>
-                <div class="modal-body p-4">
-                    <div
-                        class="d-flex justify-content-between align-items-end mb-1"
-                    >
-                        <span
-                            class="badge rounded-pill bg-primary px-3 py-2 fs-6"
+
+                <div class="modal-body quiz-body">
+                    <!-- Progress Tracking -->
+                    <div class="progress-info">
+                        <span class="q-count"
+                            >QUESTION {{ currentIndex }} / 10</span
                         >
-                            Question {{ currentIndex }} of 10
-                        </span>
-                        <span class="text-muted small fw-bold">
-                            {{ (currentIndex / 10) * 100 }}% Complete
-                        </span>
+                        <span class="q-percent"
+                            >{{ (currentIndex / 10) * 100 }}%</span
+                        >
                     </div>
-                    <div
-                        class="progress"
-                        style="height: 10px; border-radius: 50px"
-                    >
+
+                    <div class="progress-track">
                         <div
-                            class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
-                            role="progressbar"
+                            class="progress-thumb"
                             :style="{ width: (currentIndex / 10) * 100 + '%' }"
-                            :aria-valuenow="currentIndex"
-                            aria-valuemin="0"
-                            aria-valuemax="10"
                         ></div>
                     </div>
-                    <div class="question-container">
-                        <span class="question-label">QUESTION</span>
+                    <div
+                        class="d-flex justify-content-center align-items-center text-center"
+                    >
+                        <div
+                            v-if="isExplanation"
+                            class="feedback-card mb-3 d-flex justify-content-center align-items-center"
+                            :class="
+                                correctAnswer ? 'success-mode' : 'error-mode'
+                            "
+                        >
+                            <div
+                                class="feedback-content p-3 d-flex justify-content-center align-items-center"
+                                v-if="correctAnswer === 'correct'"
+                            >
+                                <div class="text-section">
+                                    <h2 class="feedback-title text-white">
+                                        Your Answer is correct!
+                                    </h2>
+                                    <div class="explanation-container">
+                                        <label>Explanation</label>
+                                        <p>{{ currentQuestion.explanation }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="image-section">
+                                    <div class="image-wrapper">
+                                        <img
+                                            src="../../../../../../public/characters/thumbsupchibby.png"
+                                            alt="Great job!"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="feedback-content p-3"
+                                v-if="correctAnswer === 'wrong'"
+                            >
+                                <div class="text-section">
+                                    <h2 class="feedback-title text-white">
+                                        Your Answer is wrong!
+                                    </h2>
+                                    <div class="explanation-container">
+                                        <label>Explanation</label>
+                                        <p>{{ currentQuestion.explanation }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="image-section">
+                                    <div class="image-wrapper">
+                                        <img
+                                            src="../../../../../../public/characters/thumbsdownchibby.png"
+                                            alt="Great job!"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question Text -->
+                    <div class="question-wrapper">
                         <h2 class="question-text">
-                            {{
-                                currentQuestion?.question ||
-                                "Loading question..."
-                            }}
+                            {{ currentQuestion?.question || "Loading..." }}
                         </h2>
                     </div>
-                </div>
-                <div
-                    v-if="isExplanation"
-                    :class="iscorrectAnswer"
-                    class="feedback-card animate__animated animate__fadeIn"
-                >
-                    <div class="card-content d-flex align-items-center">
-                        <div class="feedback-icon me-3">
-                            <i
-                                :class="{
-                                    'bi bi-check-circle-fill text-success':
-                                        correctAnswer === 'correct',
-                                    'bi bi-x-circle-fill text-danger':
-                                        correctAnswer === 'wrong',
-                                }"
-                            ></i>
-                        </div>
-                        <div class="feedback-text">
-                            <strong class="d-block mb-1">
-                                {{
-                                    correctAnswer === "correct"
-                                        ? "Great Job!"
-                                        : correctAnswer === "wrong"
-                                          ? "Not Quite!"
-                                          : "No Answer Selected"
-                                }}
-                            </strong>
-                            <p class="mb-0">{{ explanation }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="choices-container mb-4"
-                    v-if="currentQuestion?.type === 'multiple_choice'"
-                >
-                    <div class="text-center mb-3">
-                        <small
-                            class="text-uppercase fw-bold text-muted"
-                            style="letter-spacing: 2px"
-                            >Select the correct answer</small
-                        >
-                    </div>
-                    <div class="d-grid gap-3 col-md-10 mx-auto">
-                        <button
-                            v-for="choice in currentQuestion.choices"
-                            :key="choice"
-                            class="btn choice-card shadow-sm mb-3"
-                            @click="Getanswer(choice)"
-                            :disabled="showExplanation"
-                            :class="{
-                                active: selectedAnswer === choice,
-                                correct:
-                                    showExplanation &&
-                                    choice === currentQuestion.answer,
-                                wrong:
-                                    showExplanation &&
-                                    selectedAnswer === choice &&
-                                    selectedAnswer !== currentQuestion.answer,
-                            }"
-                        >
-                            <span class="choice-text">{{ choice }}</span>
-                            <div class="check-circle"></div>
-                        </button>
-                    </div>
-                </div>
-                <div
-                    class="question-container w-100 p-3"
-                    v-if="
-                        currentQuestion?.type === 'identification' ||
-                        currentQuestion?.type === 'short_answer'
-                    "
-                >
-                    <input
-                        type="text"
-                        placeholder="Type your answer here..."
-                        v-model="selectedAnswer"
-                        :disabled="isDisable === true"
-                    />
 
-                    <div class="error-container" v-if="isEmpty">
-                        <span class="error-icon">⚠️</span>
-                        <div class="error-content">
-                            <strong>Answer Required</strong>
-                            <p>Please enter your answer before continuing.</p>
+                    <!-- Feedback Toast (Appears after answer) -->
+
+                    <!-- Options Area -->
+                    <div class="interaction-zone">
+                        <!-- Multiple Choice -->
+                        <div
+                            v-if="currentQuestion?.type === 'multiple_choice'"
+                            class="choices-list"
+                        >
+                            <button
+                                v-for="choice in currentQuestion.choices"
+                                :key="choice"
+                                class="choice-node"
+                                :class="{
+                                    selected: selectedAnswer === choice,
+                                    'is-correct':
+                                        showExplanation &&
+                                        choice === currentQuestion.answer,
+                                    'is-wrong':
+                                        showExplanation &&
+                                        selectedAnswer === choice &&
+                                        selectedAnswer !==
+                                            currentQuestion.answer,
+                                }"
+                                :disabled="showExplanation"
+                                @click="Getanswer(choice)"
+                            >
+                                {{ choice }}
+                            </button>
+                        </div>
+
+                        <!-- Short Answer -->
+                        <div v-else class="input-container">
+                            <input
+                                type="text"
+                                class="modern-field"
+                                placeholder="Enter answer here..."
+                                v-model="selectedAnswer"
+                                :disabled="showExplanation"
+                            />
                         </div>
                     </div>
                 </div>
-                <div class=""></div>
-                <div class="text-center">
+
+                <!-- Single Primary Action -->
+                <div class="quiz-footer">
                     <button
-                        class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2"
-                        :disabled="selectedAnswer === ''"
+                        v-if="!showExplanation"
+                        class="action-trigger primary-trigger"
+                        :disabled="!selectedAnswer"
                         @click="checkAnswer"
                     >
                         Check Answer
-                        <i class="bi bi-arrow-right-circle-fill ms-2"></i>
                     </button>
-                    <div class="action-footer mt-4 pt-4 border-top">
-                        <p class="text-muted small mb-3">Ready to move on?</p>
-
-                        <div class="text-center mb-3">
-                            <button
-                                class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button"
-                                :disabled="isContinue === false"
-                                @click="nextQuestion"
-                            >
-                                <span>Continue</span>
-                                <i
-                                    class="bi bi-arrow-right-circle-fill ms-2"
-                                ></i>
-                            </button>
-                        </div>
-                    </div>
+                    <button
+                        v-else
+                        class="action-trigger next-trigger pulse-animation"
+                        @click="nextQuestion"
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <GameResult
+        :OpenResult="isQuizFinished"
+        @retry="restartQuiz"
+        :score="score"
+    />
 </template>
 <script>
 import soundQuiz from "../../../gamesounds/sounds.vue";
+import GameResult from "./gameResult.vue";
 export default {
     components: {
         soundQuiz,
+        GameResult,
     },
     props: {
         modelValue: Boolean,
         questions: {
-            // Ensure this matches the parent's :questions
             type: Array,
             default: () => [],
+        },
+        gameDescription: {
+            type: String,
+            default: "",
+        },
+        gameTitle: {
+            type: String,
+            default: "",
         },
     },
 
@@ -216,13 +219,13 @@ export default {
             showExplanation: false,
             isQuizFinished: false,
             isContinue: false,
+            isDisable: false,
         };
     },
     mounted() {
         this.shuffleQuestions();
     },
     computed: {
-        // We use a setter to support v-model properly
         isOpenQuiz: {
             get() {
                 return this.modelValue;
@@ -298,20 +301,14 @@ export default {
             this.showExplanation = false;
             this.isContinue = false;
         },
-
-        resetState() {
-            this.selectedAnswer = "";
-            this.showExplanation = false;
-            this.isCorrect = false;
+        restartQuiz() {
+            this.currentIndex = 0;
+            this.score = 0;
+            this.isQuizFinished = false;
+            this.shuffleQuestions();
         },
     },
 };
 </script>
-<style
-    scoped
-    src="../../../../../css/users/partials/game/gameFooter.css"
-></style>
-<style
-    scoped
-    src="../../../../../css/users/partials/game/gameModal.css"
-></style>
+<style src="../../../../../css/users/partials/game/gameFooter.css"></style>
+<style src="../../../../../css/users/partials/game/gameModal.css"></style>

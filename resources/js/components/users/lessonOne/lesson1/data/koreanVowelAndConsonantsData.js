@@ -14,7 +14,7 @@ export default {
         "multiple_choice",
         ["g/k", "h", "ng", "b"],
         "g/k",
-        "Can sound like G or K depending on position."
+        "Correct! The letter 'g' can sound like G at the beginning and K at the end depending on position in the syllable."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -23,7 +23,7 @@ export default {
         "multiple_choice",
         ["eo", "a", "o", "u"],
         "eo",
-        "Mid-back vowel sound."
+        "Correct! 'eo' sounds similar to the English 'uh' but spoken more clearly."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -32,7 +32,7 @@ export default {
         "multiple_choice",
         ["na", "ga", "la", "da"],
         "la",
-        "L sound does not follow basic structure rules."
+        "Correct! 'la' is uncommon in basic Korean sound formation because ㄹ changes between R/L sounds."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -41,7 +41,7 @@ export default {
         "multiple_choice",
         ["o", "a", "i", "eo"],
         "o",
-        "Requires lip rounding."
+        "Correct! The vowel 'o' requires rounding your lips while pronouncing."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -50,7 +50,7 @@ export default {
         "multiple_choice",
         ["ng", "m", "g", "s"],
         "ng",
-        "Used as silent placeholder sound."
+        "Correct! This sound can act as a silent placeholder when placed at the start."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -59,7 +59,7 @@ export default {
         "multiple_choice",
         ["su", "so", "sa", "si"],
         "su",
-        "Straight combination rule."
+        "Correct! Combining consonant + vowel forms 'su'."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -68,7 +68,7 @@ export default {
         "multiple_choice",
         ["gi", "ge", "go", "gu"],
         "gi",
-        "i = ee sound"
+        "Correct! 'i' gives the EE sound, so g + i becomes gi."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -77,7 +77,7 @@ export default {
         "multiple_choice",
         ["d", "m", "s", "ng"],
         "d",
-        "Sound changes based on position."
+        "Correct! This consonant may sound softer like D or stronger like T depending on position."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -86,7 +86,7 @@ export default {
         "multiple_choice",
         ["g + a = ga", "a + g = ag", "ga = a + g", "none"],
         "g + a = ga",
-        "Always consonant + vowel order."
+        "Correct! Korean syllables usually follow consonant + vowel order."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -95,11 +95,11 @@ export default {
         "multiple_choice",
         ["main sound", "final sound", "silent role", "double consonant"],
         "main sound",
-        "Vowels carry pronunciation."
+        "Correct! Vowels carry the main voice sound of each syllable."
       ),
 
       // =========================
-      // IDENTIFICATION (ROMANJI ONLY)
+      // IDENTIFICATION
       // =========================
 
       new KoreanVowelAndConsonantsModel(
@@ -108,7 +108,7 @@ export default {
         "identification",
         null,
         "na",
-        "Basic combination"
+        "Correct! n + a creates the syllable na."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -117,7 +117,7 @@ export default {
         "identification",
         null,
         "gi",
-        "Uses i vowel sound"
+        "Correct! g with i becomes gi."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -126,7 +126,7 @@ export default {
         "identification",
         null,
         "mo",
-        "Rounded vowel sound"
+        "Correct! m + o forms mo with rounded lips."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -135,7 +135,7 @@ export default {
         "identification",
         null,
         "da",
-        "Basic syllable formation"
+        "Correct! d + a gives da."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -144,12 +144,11 @@ export default {
         "identification",
         null,
         "su",
-        "Common syllable"
-
+        "Correct! s combined with u makes su."
       ),
 
       // =========================
-      // SHORT ANSWER (ROMANJI ONLY)
+      // SHORT ANSWER
       // =========================
 
       new KoreanVowelAndConsonantsModel(
@@ -158,7 +157,7 @@ export default {
         "short_answer",
         null,
         "ng",
-        "Silent placeholder sound"
+        "Correct! This consonant may stay silent when used as a placeholder before vowels."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -167,7 +166,7 @@ export default {
         "short_answer",
         null,
         "a",
-        "Open vowel sound"
+        "Correct! 'a' sounds like the a in father."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -176,7 +175,7 @@ export default {
         "short_answer",
         null,
         "u",
-        "Rounded vowel sound"
+        "Correct! 'u' sounds like oo in food."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -185,7 +184,7 @@ export default {
         "short_answer",
         null,
         "o",
-        "Mid-back vowel"
+        "Correct! 'o' sounds similar to the o in go."
       ),
 
       new KoreanVowelAndConsonantsModel(
@@ -194,7 +193,7 @@ export default {
         "short_answer",
         null,
         "block",
-        "Square block structure"
+        "Correct! Korean letters combine into square-like syllable blocks."
       ),
     ]
   }

@@ -453,11 +453,17 @@
             </button>
         </div>
     </div>
-    <GameModal v-model="openQuiz" :questions="questions" />
+    <GameModal
+        v-model="openQuiz"
+        :questions="questions"
+        :gameDescription="gameDescription"
+        :gameTitle="gameTitle"
+    />
 </template>
 <script>
 import questionData from "../data/koreanVowelAndConsonantsData";
 import GameModal from "../../../../users/partials/games/gameModal.vue";
+
 export default {
     components: {
         GameModal,
@@ -466,17 +472,10 @@ export default {
         return {
             isExampleModal: false,
             openQuiz: false,
-            questions: questionData.koreanVowelAndConsonantsData, // IMPORTANT FIX
-            // currentIndex: 0,
-            // score: 0,
-            // selectedAnswer: "",
-            // iscorrectAnswer: false,
-            // correctAnswer: "",
-            // isExplanation: false,
-            // explanation: "",
-            // showExplanation: false,
-            // isQuizFinished: false,
-            // isContinue: false,
+            questions: questionData.koreanVowelAndConsonantsData,
+            gameDescription:
+                "Practice Korean vowels and consonants with fun quiz questions!",
+            gameTitle: "Quiz Vowel and Consonants",
         };
     },
     methods: {
@@ -494,9 +493,6 @@ export default {
             const audio = new Audio(`/sounds/volcabulary/${file}`);
             audio.play();
         },
-    },
-    mounted() {
-        console.log(this.questions);
     },
 };
 </script>
