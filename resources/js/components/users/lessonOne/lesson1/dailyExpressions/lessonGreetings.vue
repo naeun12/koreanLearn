@@ -35,9 +35,7 @@
             </div>
         </div>
         <div class="col-lg-8">
-            <div
-                class="card-body-greeting p-5 shadow-sm border-0 position-relative overflow-hidden"
-            >
+            <div class="k-card">
                 <div
                     class="border-1 position-absolute top-0 start-0 w-100 h-100 z-0"
                 ></div>
@@ -57,57 +55,8 @@
                 </div>
             </div>
             <div class="col-12 mt-4">
-                <div class="row g-4">
-                    <div
-                        class="col-lg-6 col-xl-4"
-                        v-for="greetingcontent in greetingscontent"
-                        :key="greetingcontent.id"
-                    >
-                        <div
-                            class="card-greeting-content glass-effect p-3 shadow-sm border-0 h-100"
-                        >
-                            <div class="row align-items-center g-0">
-                                <div class="ps-3 text-start">
-                                    <div
-                                        class="icon-wrapper shadow-sm w-100 h-100 mb-4"
-                                    >
-                                        <div class="glass-overlay"></div>
-                                        <img
-                                            :src="greetingcontent.image"
-                                            alt="Greeting Illustration"
-                                            class="img-fluid greeting-image"
-                                        />
-                                    </div>
-                                    <h1
-                                        class="h4 fw-bold text-primary mb-1 hangul-text"
-                                    >
-                                        {{ greetingcontent.korean }}
-                                    </h1>
-                                    <h2
-                                        class="h6 text-muted fw-normal mb-2 text-uppercase tracking-wider small"
-                                    >
-                                        {{ greetingcontent.meaning }}
-                                    </h2>
-                                    <p
-                                        class="x-small text-secondary mb-3 lh-sm"
-                                    >
-                                        {{ greetingcontent.usage }}
-                                    </p>
+                <GreetingsCard :cardDetails="greetingContent" />
 
-                                    <button
-                                        @click="
-                                            greetingVoice(greetingcontent.sound)
-                                        "
-                                        class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
-                                    >
-                                        <i class="bi bi-volume-up-fill"></i>
-                                        <span>Listen</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="usage-container p-4 p-md-5 glass-effect border-0">
                     <div class="text-center mb-5">
                         <h1 class="display-6 fw-bold text-gradient mb-2">
@@ -583,6 +532,8 @@
 import greetings from "../data/greetingstip.js";
 import greetingContent from "../data/greetingscontent.js";
 import GameData from "../data/greetinggame.js";
+import GreetingsCard from "../../../partials/cards.vue";
+
 const SOUND_URLS = {
     correct: "/sounds/gamevisualsound/chrisiex1-correct-156911.mp3",
     wrong: "/sounds/gamevisualsound/wrong.mp3",
@@ -590,10 +541,13 @@ const SOUND_URLS = {
         "/sounds/gamevisualsound/freesound_community-success-fanfare-trumpets-6185.mp3",
 };
 export default {
+    components: {
+        GreetingsCard,
+    },
     data() {
         return {
             greetings: greetings.Greeting,
-            greetingscontent: greetingContent.GreetingContent,
+            greetingContent: greetingContent.GreetingContent,
             fullList: GameData.GreetingGame,
             openPronouncationModal: false,
             shuffledList: [],
@@ -929,3 +883,7 @@ export default {
     src="../../../../../../css/users/partials/game/gamefinalresultmodal.css"
 ></style>
 <style scoped src="../../../../../../css/btn-audio.css"></style>
+<style
+    scoped
+    src="../../../../../../css/users/partials/card/k-card.css"
+></style>

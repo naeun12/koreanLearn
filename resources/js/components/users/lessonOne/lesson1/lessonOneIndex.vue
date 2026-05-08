@@ -231,7 +231,9 @@
                                                 :class="{
                                                     active:
                                                         activeMainSection ===
-                                                        'greetings',
+                                                            'greetings' ||
+                                                        activeMainSection ===
+                                                            'basicClassroomExpressions',
                                                 }"
                                                 role="button"
                                                 data-bs-toggle="dropdown"
@@ -263,7 +265,7 @@
                                                         href="#"
                                                         @click.prevent="
                                                             goToLesson(
-                                                                'pronunciationRules',
+                                                                'basicClassroomExpressions',
                                                             )
                                                         "
                                                     >
@@ -576,7 +578,11 @@
                                 name="fade-slide"
                                 tag="div"
                                 class="row g-3"
-                                v-if="activeMainSection === 'greetings'"
+                                v-if="
+                                    activeMainSection === 'greetings' ||
+                                    activeMainSection ===
+                                        'basicClassroomExpressions'
+                                "
                             >
                                 <dailyExpressionsIndex></dailyExpressionsIndex>
                             </transition-group>
@@ -614,15 +620,15 @@
             </div>
         </div>
         <div
-            class="scroll-buttons d-flex flex-row gap-3 position-fixed shadow-lg p-2 rounded-pill"
+            class="scroll-buttons d-flex flex-row align-items-center gap-2 position-fixed p-2 rounded-pill shadow-lg"
             style="
                 bottom: 2rem;
-                left: 50%;
-                transform: translateX(-50%);
+                left: 2rem; /* Changed from 50% to move it to the left side */
                 z-index: 1050;
-                background: rgba(255, 255, 255, 0.4);
+                background: rgba(255, 255, 255, 0.25);
                 backdrop-filter: blur(15px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.4);
             "
         >
             <button
@@ -633,7 +639,10 @@
                 <i class="bi bi-chevron-up fw-bold"></i>
             </button>
 
-            <div class="vr opacity-25 my-1"></div>
+            <div
+                class="vr mx-1"
+                style="height: 20px; color: rgba(255, 255, 255, 0.5)"
+            ></div>
 
             <button
                 class="scroll-btn bottom btn-glass shadow-sm"

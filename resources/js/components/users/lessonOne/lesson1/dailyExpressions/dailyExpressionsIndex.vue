@@ -2,12 +2,17 @@
     <div id="greetings">
         <lessonGreetings />
     </div>
+    <div id="basicClassroomExpressions">
+        <basicClassroomExpressions />
+    </div>
 </template>
 <script>
 import lessonGreetings from "./lessonGreetings.vue";
+import basicClassroomExpressions from "./basicClassroomExpressions.vue";
 export default {
     components: {
         lessonGreetings,
+        basicClassroomExpressions,
     },
     watch: {
         "$parent.activeMainSection"(newVal) {
