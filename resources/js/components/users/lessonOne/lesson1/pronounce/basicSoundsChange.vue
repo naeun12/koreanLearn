@@ -673,7 +673,7 @@
     />
 </template>
 <script>
-import questionData from "../data/LessonOneData/basicSoundChangeData";
+import questionData from "../data/LessonOneData/questionsData";
 import GameModal from "../../../../users/partials/games/gameModal.vue";
 export default {
     components: {
@@ -683,7 +683,7 @@ export default {
         return {
             isExampleModal: false,
             openQuiz: false,
-            questions: questionData,
+            questions: questionData.questionsBasicSoundChangeData,
             gameDescription: "Practice Korean Basic Sounds Change!",
             gameTitle: "Quiz Basic Sounds And Change",
         };

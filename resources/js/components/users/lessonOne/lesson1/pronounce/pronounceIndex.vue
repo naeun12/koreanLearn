@@ -1,18 +1,18 @@
 <template>
-    <div class="korean-vowel-consonants">
+    <div id="BasicVowelConsonantSounds">
         <koreanVowelAndConsonants />
     </div>
-    <div class="pronounciation-rule">
+    <div id="pronunciationRules">
         <pronunciationRule />
     </div>
 
-    <div class="batchim">
+    <div id="Batchim">
         <batchim />
     </div>
-    <div class="basic-sound-change">
+    <div id="soundChange">
         <basicSoundsChange />
     </div>
-    <div class="lesson-pronounce">
+    <div id="lesson-pronounce">
         <lessonPronounce />
     </div>
 </template>
@@ -32,6 +32,28 @@ export default {
         basicSoundsChange,
         pronunciationRule,
         lessonPronounce,
+    },
+    watch: {
+        "$parent.activeMainSection"(newVal) {
+            this.scrollToSection(newVal);
+        },
+    },
+
+    methods: {
+        scrollToSection(section) {
+            if (!section) return;
+
+            this.$nextTick(() => {
+                const el = document.getElementById(section);
+
+                if (el) {
+                    el.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            });
+        },
     },
 };
 </script>

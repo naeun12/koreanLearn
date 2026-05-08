@@ -1,18 +1,13 @@
 <template>
-    <div id="Hangul">
-        <hangulAlphabet />
-    </div>
-    <div id="Hangul-Structure">
-        <hangulStructure />
+    <div id="greetings">
+        <lessonGreetings />
     </div>
 </template>
 <script>
-import hangulStructure from "./hangulStructure.vue";
-import hangulAlphabet from "./hangulAlphabet.vue";
+import lessonGreetings from "./lessonGreetings.vue";
 export default {
     components: {
-        hangulStructure,
-        hangulAlphabet,
+        lessonGreetings,
     },
     watch: {
         "$parent.activeMainSection"(newVal) {

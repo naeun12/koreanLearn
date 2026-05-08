@@ -1,817 +1,1039 @@
 <template>
-    <soundQuiz ref="gameSounds"/>
     <div class="k-card">
-       <h1 class="fw-black text-dark mb-3" style="letter-spacing: -2.5px; font-size: 3.5rem; line-height: 1;">
+        <h1
+            class="fw-black text-dark mb-3"
+            style="letter-spacing: -2.5px; font-size: 3.5rem; line-height: 1"
+        >
             Hangul Structure <span class="text-primary">(Core Rule)</span>
         </h1>
 
-        <p class="lead text-secondary text-justify" style="max-width: 2000px;">
-            Hangul, the Korean writing system, is built in a very logical and structured way that makes it easy to learn. It is made up of three main components that work together to form complete syllables. The first component is the <strong>consonants (자음)</strong>, which represent sounds such as b, k, m, and s. These consonants are used to start or end a syllable. The second component is the <strong>vowels (모음)</strong>, which represent vowel sounds like a, e, i, o, and u. These vowels are essential because they give shape and sound to each syllable. The third component is the <strong>syllable blocks</strong>, which are formed by combining consonants and vowels into a single square-shaped unit.
-        Unlike English, where letters are written in a straight line, Hangul organizes letters into blocks. Each block represents one complete sound or syllable. A basic syllable is formed using a structure like <strong>consonant + vowel</strong>, while more complex syllables can include an optional final consonant, forming patterns like <strong>consonant + vowel + consonant</strong>. For example, simple syllables like “가 (ga)” and “나 (na)” follow the basic pattern, while words like “한국 (han-guk)” use multiple syllable blocks combined together.
-        This structure makes Hangul very efficient and easy to read because each syllable is visually grouped and pronounced as one unit, helping learners quickly understand how Korean words are formed.
+        <p class="lead text-secondary text-justify" style="max-width: 2000px">
+            Hangul, the Korean writing system, is built in a very logical and
+            structured way that makes it easy to learn. It is made up of three
+            main components that work together to form complete syllables. The
+            first component is the <strong>consonants (자음)</strong>, which
+            represent sounds such as b, k, m, and s. These consonants are used
+            to start or end a syllable. The second component is the
+            <strong>vowels (모음)</strong>, which represent vowel sounds like a,
+            e, i, o, and u. These vowels are essential because they give shape
+            and sound to each syllable. The third component is the
+            <strong>syllable blocks</strong>, which are formed by combining
+            consonants and vowels into a single square-shaped unit. Unlike
+            English, where letters are written in a straight line, Hangul
+            organizes letters into blocks. Each block represents one complete
+            sound or syllable. A basic syllable is formed using a structure like
+            <strong>consonant + vowel</strong>, while more complex syllables can
+            include an optional final consonant, forming patterns like
+            <strong>consonant + vowel + consonant</strong>. For example, simple
+            syllables like “가 (ga)” and “나 (na)” follow the basic pattern,
+            while words like “한국 (han-guk)” use multiple syllable blocks
+            combined together. This structure makes Hangul very efficient and
+            easy to read because each syllable is visually grouped and
+            pronounced as one unit, helping learners quickly understand how
+            Korean words are formed.
         </p>
         <div class="row g-4">
             <div class="col-12">
-                 <h2 class="h5 text-uppercase fw-bold text-muted mb-4" style="letter-spacing: 1px;">
+                <h2
+                    class="h5 text-uppercase fw-bold text-muted mb-4"
+                    style="letter-spacing: 1px"
+                >
                     Core Principles of Hangul
                 </h2>
                 <div class="list-group list-group-flush gap-3">
-                     
                     <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow">
-                        <div class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0;">
+                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
+                    >
+                        <div
+                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px; flex-shrink: 0"
+                        >
                             <span class="fw-bold text-primary">1</span>
                         </div>
                         <div>
-                            <strong class="d-block text-dark">Phonetic Principle (Sound-Based Writing)</strong>
+                            <strong class="d-block text-dark"
+                                >Phonetic Principle (Sound-Based
+                                Writing)</strong
+                            >
                             <span class="text-secondary small">
-                                Hangul is a phonetic alphabet, which means each letter represents a sound. Words are written exactly how they are pronounced, making reading and pronunciation much easier for learners.
+                                Hangul is a phonetic alphabet, which means each
+                                letter represents a sound. Words are written
+                                exactly how they are pronounced, making reading
+                                and pronunciation much easier for learners.
                             </span>
                         </div>
                     </div>
                     <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow">
-                        <div class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0;">
+                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
+                    >
+                        <div
+                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px; flex-shrink: 0"
+                        >
                             <span class="fw-bold text-primary">2</span>
                         </div>
                         <div>
-                            <strong class="d-block text-dark">Syllable Block System</strong>
+                            <strong class="d-block text-dark"
+                                >Syllable Block System</strong
+                            >
                             <span class="text-secondary small">
-                               Instead of writing letters in a straight line, Hangul groups letters into square syllable blocks. Each block represents one complete syllable, formed by combining consonants and vowels.
+                                Instead of writing letters in a straight line,
+                                Hangul groups letters into square syllable
+                                blocks. Each block represents one complete
+                                syllable, formed by combining consonants and
+                                vowels.
                             </span>
                             <p class="text-muted">
                                 가 = ga
-                                <br>
+                                <br />
                                 한 = han
-                                <br>
+                                <br />
                                 국 = guk
                             </p>
                         </div>
                     </div>
                     <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow">
-                        <div class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0;">
+                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
+                    >
+                        <div
+                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px; flex-shrink: 0"
+                        >
                             <span class="fw-bold text-primary">3</span>
                         </div>
                         <div>
-                            <strong class="d-block text-dark">Combination of Consonants and Vowels</strong>
+                            <strong class="d-block text-dark"
+                                >Combination of Consonants and Vowels</strong
+                            >
                             <span class="text-secondary small">
-                               Every syllable in Hangul is built using a combination of:
-                                <br>
-                                - Consonants (자음): Representing sounds like b, k, m, s.
-                                <br>
-                                - Vowels (모음): Representing vowel sounds like a, e, i, o, u.
-                                <br>
+                                Every syllable in Hangul is built using a
+                                combination of:
+                                <br />
+                                - Consonants (자음): Representing sounds like b,
+                                k, m, s.
+                                <br />
+                                - Vowels (모음): Representing vowel sounds like
+                                a, e, i, o, u.
+                                <br />
                                 These combine in structured patterns like:
-                                <br>
+                                <br />
                                 Consonant + Vowel
-                                <br>
+                                <br />
                                 Consonant + Vowel + Consonant
                             </span>
                         </div>
                     </div>
                     <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow">
-                        <div class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0;">
+                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
+                    >
+                        <div
+                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px; flex-shrink: 0"
+                        >
                             <span class="fw-bold text-primary">4</span>
                         </div>
                         <div>
-                            <strong class="d-block text-dark">Logical Letter Design</strong>
+                            <strong class="d-block text-dark"
+                                >Logical Letter Design</strong
+                            >
                             <span class="text-secondary small">
-                               The shapes of Hangul letters are not random. They were originally designed to represent the position of the mouth, tongue, and throat when pronouncing sounds. This makes the system intuitive and systematic.
+                                The shapes of Hangul letters are not random.
+                                They were originally designed to represent the
+                                position of the mouth, tongue, and throat when
+                                pronouncing sounds. This makes the system
+                                intuitive and systematic.
                             </span>
                         </div>
                     </div>
                     <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow">
-                        <div class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 32px; height: 32px; flex-shrink: 0;">
+                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
+                    >
+                        <div
+                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px; flex-shrink: 0"
+                        >
                             <span class="fw-bold text-primary">1</span>
                         </div>
                         <div>
-                            <strong class="d-block text-dark">Simplicity and Efficiency</strong>
+                            <strong class="d-block text-dark"
+                                >Simplicity and Efficiency</strong
+                            >
                             <span class="text-secondary small">
-                               Hangul was created to be easy to learn and use. With only a small set of basic letters, learners can form thousands of words quickly and efficiently.
+                                Hangul was created to be easy to learn and use.
+                                With only a small set of basic letters, learners
+                                can form thousands of words quickly and
+                                efficiently.
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class="mt-5 p-4 rounded-4 bg-primary text-white shadow-sm position-relative overflow-hidden">
-                    <div class="d-flex align-items-center position-relative" style="z-index: 1;">
-                        
+                <div
+                    class="mt-5 p-4 rounded-4 bg-primary text-white shadow-sm position-relative overflow-hidden"
+                >
+                    <div
+                        class="d-flex align-items-center position-relative"
+                        style="z-index: 1"
+                    >
                         <div class="me-3 fs-2">💡</div>
 
                         <div>
-                            <strong class="d-block mb-1">Pro Tip: Hangul Structure Shortcut</strong>
-                            
+                            <strong class="d-block mb-1"
+                                >Pro Tip: Hangul Structure Shortcut</strong
+                            >
+
                             <p class="mb-0 opacity-75 small">
-                                In Hangul, remember this simple rule:  
-                                <strong>Consonants (자음)</strong> provide the basic sound,  
-                                <strong>Vowels (모음)</strong> complete the sound,  
-                                and together they form <strong>Syllable Blocks</strong>.  
-
-                                Every Korean syllable is built using this structure:
-                                <strong>Consonant + Vowel</strong> or 
-                                <strong>Consonant + Vowel + Consonant</strong>.  
-
-                                Once you understand this pattern, reading Korean becomes much easier because each block represents one complete sound.
+                                In Hangul, remember this simple rule:
+                                <strong>Consonants (자음)</strong> provide the
+                                basic sound,
+                                <strong>Vowels (모음)</strong> complete the
+                                sound, and together they form
+                                <strong>Syllable Blocks</strong>. Every Korean
+                                syllable is built using this structure:
+                                <strong>Consonant + Vowel</strong> or
+                                <strong>Consonant + Vowel + Consonant</strong>.
+                                Once you understand this pattern, reading Korean
+                                becomes much easier because each block
+                                represents one complete sound.
                             </p>
                         </div>
 
-                        <button class="example-sentences ms-auto" @click="btnHangulStructure()">
+                        <button
+                            class="example-sentences ms-auto"
+                            @click="btnHangulStructure()"
+                        >
                             Example
                         </button>
                     </div>
 
-                    <div class="position-absolute"
-                        style="width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; right: -20px; bottom: -20px;">
-                    </div>
+                    <div
+                        class="position-absolute"
+                        style="
+                            width: 100px;
+                            height: 100px;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 50%;
+                            right: -20px;
+                            bottom: -20px;
+                        "
+                    ></div>
                 </div>
             </div>
         </div>
     </div>
- <div class="mt-4 p-4  bg-white overflow-hidden mb-3 k-card" v-if="isHangulStructureExampleModal" ref="hangulStructureExample">
-    <div class="d-flex align-items-center">
+    <div
+        class="mt-4 p-4 bg-white overflow-hidden mb-3 k-card"
+        v-if="isHangulStructureExampleModal"
+        ref="hangulStructureExample"
+    >
+        <div class="d-flex align-items-center">
             <div class="p-4 border-bottom border-light bg-white">
                 <div class="d-flex align-items-center">
-                    <div class="p-2 bg-primary-subtle rounded-3 me-3 text-primary">
+                    <div
+                        class="p-2 bg-primary-subtle rounded-3 me-3 text-primary"
+                    >
                         <i class="bi bi-arrow-repeat fs-4"></i>
                     </div>
-                  <div>
-                        <h3 class="h5 fw-black text-dark mb-0" style="letter-spacing: -0.5px;">
+                    <div>
+                        <h3
+                            class="h5 fw-black text-dark mb-0"
+                            style="letter-spacing: -0.5px"
+                        >
                             Hangul Consonants & Structure Overview
                         </h3>
                         <p class="text-muted small mb-0">
-                            Learn basic, aspirated, and double consonants with vowel combinations
+                            Learn basic, aspirated, and double consonants with
+                            vowel combinations
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    <div class="k-card shadow-lg border-0 overflow-hidden" style="background: #ffffff; border-radius: 30px; border-top: 6px solid #4f46e5;">
-        <div class="table-responsive">
-                <table class="table table-borderless mb-0" v-if="changeCombination === 'vowelsAndConsonants'">
+        <div
+            class="k-card shadow-lg border-0 overflow-hidden"
+            style="
+                background: #ffffff;
+                border-radius: 30px;
+                border-top: 6px solid #4f46e5;
+            "
+        >
+            <div class="table-responsive">
+                <table
+                    class="table table-borderless mb-0"
+                    v-if="changeCombination === 'vowelsAndConsonants'"
+                >
                     <thead>
-                            
-              
-                        <tr style="background: #f8fafc;">
-                            <th class="py-4 border-end text-uppercase small fw-800 text-secondary" style="letter-spacing: 1px;">
-                                <div class="d-flex flex-column" style="line-height: 1.2;">
+                        <tr style="background: #f8fafc">
+                            <th
+                                class="py-4 border-end text-uppercase small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div
+                                    class="d-flex flex-column"
+                                    style="line-height: 1.2"
+                                >
                                     <span class="d-flex align-items-center">
                                         Vowels
-                                        <i class="bi bi-arrow-right-short lh-1 ms-1"></i>
+                                        <i
+                                            class="bi bi-arrow-right-short lh-1 ms-1"
+                                        ></i>
                                     </span>
-                                    <span class="d-flex align-items-center mt-1">
+                                    <span
+                                        class="d-flex align-items-center mt-1"
+                                    >
                                         Consonants
-                                        <i class="bi bi-arrow-down-short lh-1 ms-1"></i>
+                                        <i
+                                            class="bi bi-arrow-down-short lh-1 ms-1"
+                                        ></i>
                                     </span>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-secondary" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅏ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">a</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅏ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        a
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-primary" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-primary"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅑ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">ya</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅑ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        ya
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-info" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-info"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅓ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">eo</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅓ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        eo
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-info" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-info"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅕ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">yeo</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅕ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        yeo
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class=" py-3 small fw-800 text-warning" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-warning"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅗ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">o</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅗ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        o
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-warning" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-warning"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅛ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">yo</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅛ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        yo
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-warning" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-warning"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅜ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">u</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅜ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        u
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-warning" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-warning"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅠ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">yu</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅠ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        yu
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-warning" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-warning"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅣ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">i</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅣ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        i
+                                    </div>
                                 </div>
                             </th>
 
-                            <th class="py-3 small fw-800 text-warning" style="letter-spacing: 1px; ">
+                            <th
+                                class="py-3 small fw-800 text-warning"
+                                style="letter-spacing: 1px"
+                            >
                                 <div class="text-center">
-                                    <div class="fs-5 text-primary fw-bold">ㅡ</div>
-                                    <div class="text-muted small" style="font-size: 0.7rem;">eu</div>
+                                    <div class="fs-5 text-primary fw-bold">
+                                        ㅡ
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        eu
+                                    </div>
                                 </div>
                             </th>
                         </tr>
                     </thead>
-                        <tbody class="bg-white">
-                            <tr class="border-bottom border-light transition-all hover-light"
-                                v-for="(row, index) in hangulStructureData.consonantsVowels"
-                                :key="index">
-
-                                <!-- CONSONANT -->
-                                <td class="px-2 py-3 border-end" style="background: #f8fafc;">
-                                    
-                                    <div
-                                        class="d-flex flex-column align-items-center text-center"
-                                        style="line-height: 1;"
-                                        :class="{
-                                            'text-warning': row.type === 'aspirated',
-                                        }"
-                                    >
-                                        <div class="fs-5 fw-bold" >
-                                            {{ row.consonant }}
-                                        </div>
-
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;">
-                                            {{ row.roman }}
-                                        </div>
-
-                                        <!-- 🔥 Label for aspirated -->
-                                        <div v-if="row.type === 'aspirated'" class="mt-1">
-                                            <span class="badge bg-warning text-dark" style="font-size: 0.6rem;">
-                                                aspirated
-                                            </span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- COMBINATIONS -->
-                                <td class="px-2 py-3"
-                                    v-for="(item, i) in row.combinations"
-                                    :key="i">
-
-                                    <div class="d-flex flex-column align-items-center text-center" style="line-height: 1;" >
-                                        <div class="fs-5 text-primary fw-bold" :class="{ 'text-warning': row.type === 'aspirated' }">
-                                            {{ item.char }}
-                                        </div>
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;"> 
-                                            {{ item.roman }}
-                                        </div>
-                                    </div>
-                                </td>
-
-                            </tr>
-                                                      
-                    </tbody>
-            </table>
-            <table class="table table-borderless mb-0" v-if="changeCombination === 'vowelsAndDipthongs'">
-                <thead>
-                
-                    <tr style="background: #f8fafc;">
-                        <th class="py-4 border-end text-uppercase small fw-800 text-secondary" style="letter-spacing: 1px;">
-                            <div class="d-flex flex-column" style="line-height: 1.2;">
-                                <span class="d-flex align-items-center">
-                                    Diphthongs
-                                    <i class="bi bi-arrow-right-short lh-1 ms-1"></i>
-                                </span>
-                                <span class="d-flex align-items-center mt-1">
-                                    Consonants
-                                    <i class="bi bi-arrow-down-short lh-1 ms-1"></i>
-                                </span>
-                            </div>
-                        </th>
-
-                        <!-- VOWEL HEADERS -->
-                        <th
-                            v-for="(vowel, i) in hangulData.otherConsonants"
-                            :key="'vowel-' + i"
-                            class="py-3 small fw-800 text-secondary"
-                            style="letter-spacing: 1px;"
+                    <tbody class="bg-white">
+                        <tr
+                            class="border-bottom border-light transition-all hover-light"
+                            v-for="(
+                                row, index
+                            ) in hangulStructureData.consonantsVowels"
+                            :key="index"
                         >
-                            <div class="text-center">
-                                <div class="fs-5 fw-bold text-primary">
-                                    {{ vowel.char }}
-                                </div>
-                                <div class="text-muted small" style="font-size: 0.7rem;">
-                                    {{ vowel.sound }}
-                                </div>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
+                            <!-- CONSONANT -->
+                            <td
+                                class="px-2 py-3 border-end"
+                                style="background: #f8fafc"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                    :class="{
+                                        'text-warning':
+                                            row.type === 'aspirated',
+                                    }"
+                                >
+                                    <div class="fs-5 fw-bold">
+                                        {{ row.consonant }}
+                                    </div>
 
-                <tbody class="bg-white">
-                            <tr class="border-bottom border-light transition-all hover-light"
-                                v-for="(row, index) in hangulStructureData.consonantsDiphthongs"
-                                :key="index">
-
-                                <!-- CONSONANT -->
-                                <td class="px-2 py-3 border-end" style="background: #f8fafc;">
-                                    
                                     <div
-                                        class="d-flex flex-column align-items-center text-center"
-                                        style="line-height: 1;"
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ row.roman }}
+                                    </div>
+
+                                    <!-- 🔥 Label for aspirated -->
+                                    <div
+                                        v-if="row.type === 'aspirated'"
+                                        class="mt-1"
+                                    >
+                                        <span
+                                            class="badge bg-warning text-dark"
+                                            style="font-size: 0.6rem"
+                                        >
+                                            aspirated
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- COMBINATIONS -->
+                            <td
+                                class="px-2 py-3"
+                                v-for="(item, i) in row.combinations"
+                                :key="i"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                >
+                                    <div
+                                        class="fs-5 text-primary fw-bold"
                                         :class="{
-                                            'text-warning': row.type === 'aspirated',
+                                            'text-warning':
+                                                row.type === 'aspirated',
                                         }"
                                     >
-                                        <div class="fs-5 fw-bold" >
-                                            {{ row.consonant }}
-                                        </div>
-
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;">
-                                            {{ row.roman }}
-                                        </div>
-
-                                        <!-- 🔥 Label for aspirated -->
-                                        <div v-if="row.type === 'aspirated'" class="mt-1">
-                                            <span class="badge bg-warning text-dark" style="font-size: 0.6rem;">
-                                                aspirated
-                                            </span>
-                                        </div>
+                                        {{ item.char }}
                                     </div>
-                                </td>
-                                <!-- COMBINATIONS -->
-                                <td class="px-2 py-3"
-                                    v-for="(item, i) in row.combinations"
-                                    :key="i">
-
-                                    <div class="d-flex flex-column align-items-center text-center" style="line-height: 1;" >
-                                        <div class="fs-5 text-primary fw-bold" :class="{ 'text-warning': row.type === 'aspirated' }">
-                                            {{ item.char }}
-                                        </div>
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;"> 
-                                            {{ item.roman }}
-                                        </div>
+                                    <div
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ item.roman }}
                                     </div>
-                                </td>
-
-                            </tr>
-                                                      
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
-            </table>
-            <table class="table table-borderless mb-0" v-if="changeCombination === 'tenseAndBasicVowels'">
-                <thead>
-                
-                    <tr style="background: #f8fafc;">
-                        <th class="py-4 border-end text-uppercase small fw-800 text-secondary" style="letter-spacing: 1px;">
-                            <div class="d-flex flex-column" style="line-height: 1.2;">
-                                <span class="d-flex align-items-center">
-                                    Vowels
-                                    <i class="bi bi-arrow-right-short lh-1 ms-1"></i>
-                                </span>
-                                <span class="d-flex align-items-center mt-1">
-                                    Tense Consonants
-                                    <i class="bi bi-arrow-down-short lh-1 ms-1"></i>
-                                </span>
-                            </div>
-                        </th>
+                </table>
+                <table
+                    class="table table-borderless mb-0"
+                    v-if="changeCombination === 'vowelsAndDipthongs'"
+                >
+                    <thead>
+                        <tr style="background: #f8fafc">
+                            <th
+                                class="py-4 border-end text-uppercase small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div
+                                    class="d-flex flex-column"
+                                    style="line-height: 1.2"
+                                >
+                                    <span class="d-flex align-items-center">
+                                        Diphthongs
+                                        <i
+                                            class="bi bi-arrow-right-short lh-1 ms-1"
+                                        ></i>
+                                    </span>
+                                    <span
+                                        class="d-flex align-items-center mt-1"
+                                    >
+                                        Consonants
+                                        <i
+                                            class="bi bi-arrow-down-short lh-1 ms-1"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </th>
 
-                        <!-- VOWEL HEADERS -->
-                        <th
-                            v-for="(vowel, i) in hangulData.vowels"
-                            :key="'vowel-' + i"
-                            class="py-3 small fw-800 text-secondary"
-                            style="letter-spacing: 1px;"
+                            <!-- VOWEL HEADERS -->
+                            <th
+                                v-for="(vowel, i) in hangulData.otherConsonants"
+                                :key="'vowel-' + i"
+                                class="py-3 small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div class="text-center">
+                                    <div class="fs-5 fw-bold text-primary">
+                                        {{ vowel.char }}
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ vowel.sound }}
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="bg-white">
+                        <tr
+                            class="border-bottom border-light transition-all hover-light"
+                            v-for="(
+                                row, index
+                            ) in hangulStructureData.consonantsDiphthongs"
+                            :key="index"
                         >
-                            <div class="text-center">
-                                <div class="fs-5 fw-bold text-primary">
-                                    {{ vowel.char }}
-                                </div>
-                                <div class="text-muted small" style="font-size: 0.7rem;">
-                                    {{ vowel.sound }}
-                                </div>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
+                            <!-- CONSONANT -->
+                            <td
+                                class="px-2 py-3 border-end"
+                                style="background: #f8fafc"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                    :class="{
+                                        'text-warning':
+                                            row.type === 'aspirated',
+                                    }"
+                                >
+                                    <div class="fs-5 fw-bold">
+                                        {{ row.consonant }}
+                                    </div>
 
-                <tbody class="bg-white">
-                            <tr class="border-bottom border-light transition-all hover-light"
-                                v-for="(row, index) in hangulStructureData.TenseSoundsBasicVowels"
-                                :key="index">
-
-                                <!-- CONSONANT -->
-                                <td class="px-2 py-3 border-end" style="background: #f8fafc;">
-                                    
                                     <div
-                                        class="d-flex flex-column align-items-center text-center"
-                                        style="line-height: 1;"
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ row.roman }}
+                                    </div>
+
+                                    <!-- 🔥 Label for aspirated -->
+                                    <div
+                                        v-if="row.type === 'aspirated'"
+                                        class="mt-1"
+                                    >
+                                        <span
+                                            class="badge bg-warning text-dark"
+                                            style="font-size: 0.6rem"
+                                        >
+                                            aspirated
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- COMBINATIONS -->
+                            <td
+                                class="px-2 py-3"
+                                v-for="(item, i) in row.combinations"
+                                :key="i"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                >
+                                    <div
+                                        class="fs-5 text-primary fw-bold"
                                         :class="{
-                                            'text-warning': row.type === 'aspirated',
+                                            'text-warning':
+                                                row.type === 'aspirated',
                                         }"
                                     >
-                                        <div class="fs-5 fw-bold" >
-                                            {{ row.consonant }}
-                                        </div>
-
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;">
-                                            {{ row.roman }}
-                                        </div>
-
-                                        <!-- 🔥 Label for aspirated -->
-                                        <div v-if="row.type === 'aspirated'" class="mt-1">
-                                            <span class="badge bg-warning text-dark" style="font-size: 0.6rem;">
-                                                aspirated
-                                            </span>
-                                        </div>
+                                        {{ item.char }}
                                     </div>
-                                </td>
-                                <!-- COMBINATIONS -->
-                                <td class="px-2 py-3"
-                                    v-for="(item, i) in row.combinations"
-                                    :key="i">
-
-                                    <div class="d-flex flex-column align-items-center text-center" style="line-height: 1;" >
-                                        <div class="fs-5 text-primary fw-bold" :class="{ 'text-warning': row.type === 'aspirated' }">
-                                            {{ item.char }}
-                                        </div>
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;"> 
-                                            {{ item.roman }}
-                                        </div>
+                                    <div
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ item.roman }}
                                     </div>
-                                </td>
-
-                            </tr>
-                                                      
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
-            </table>
-            <table class="table table-borderless mb-0" v-if="changeCombination === 'tenseAndDipthongs'">
+                </table>
+                <table
+                    class="table table-borderless mb-0"
+                    v-if="changeCombination === 'tenseAndBasicVowels'"
+                >
+                    <thead>
+                        <tr style="background: #f8fafc">
+                            <th
+                                class="py-4 border-end text-uppercase small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div
+                                    class="d-flex flex-column"
+                                    style="line-height: 1.2"
+                                >
+                                    <span class="d-flex align-items-center">
+                                        Vowels
+                                        <i
+                                            class="bi bi-arrow-right-short lh-1 ms-1"
+                                        ></i>
+                                    </span>
+                                    <span
+                                        class="d-flex align-items-center mt-1"
+                                    >
+                                        Tense Consonants
+                                        <i
+                                            class="bi bi-arrow-down-short lh-1 ms-1"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </th>
 
-                <thead>
-                    <tr style="background: #f8fafc;">
-                        <th class="py-4 border-end text-uppercase small fw-800 text-secondary" style="letter-spacing: 1px;">
-                            <div class="d-flex flex-column" style="line-height: 1.2;">
-                                <span class="d-flex align-items-center">
-                                    Diphthongs
-                                    <i class="bi bi-arrow-right-short lh-1 ms-1"></i>
-                                </span>
-                                <span class="d-flex align-items-center mt-1">
-                                    Tense Consonants
-                                    <i class="bi bi-arrow-down-short lh-1 ms-1"></i>
-                                </span>
-                            </div>
-                        </th>
+                            <!-- VOWEL HEADERS -->
+                            <th
+                                v-for="(vowel, i) in hangulData.vowels"
+                                :key="'vowel-' + i"
+                                class="py-3 small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div class="text-center">
+                                    <div class="fs-5 fw-bold text-primary">
+                                        {{ vowel.char }}
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ vowel.sound }}
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
 
-                        <!-- VOWEL HEADERS -->
-                        <th
-                            v-for="(vowel, i) in hangulData.otherConsonants"
-                            :key="'vowel-' + i"
-                            class="py-3 small fw-800 text-secondary"
-                            style="letter-spacing: 1px;"
+                    <tbody class="bg-white">
+                        <tr
+                            class="border-bottom border-light transition-all hover-light"
+                            v-for="(
+                                row, index
+                            ) in hangulStructureData.TenseSoundsBasicVowels"
+                            :key="index"
                         >
-                            <div class="text-center">
-                                <div class="fs-5 fw-bold text-primary">
-                                    {{ vowel.char }}
-                                </div>
-                                <div class="text-muted small" style="font-size: 0.7rem;">
-                                    {{ vowel.sound }}
-                                </div>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
+                            <!-- CONSONANT -->
+                            <td
+                                class="px-2 py-3 border-end"
+                                style="background: #f8fafc"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                    :class="{
+                                        'text-warning':
+                                            row.type === 'aspirated',
+                                    }"
+                                >
+                                    <div class="fs-5 fw-bold">
+                                        {{ row.consonant }}
+                                    </div>
 
-                <tbody class="bg-white">
-                            <tr class="border-bottom border-light transition-all hover-light"
-                                v-for="(row, index) in hangulStructureData.TenseSoundsDipthongs"
-                                :key="index">
-
-                                <!-- CONSONANT -->
-                                <td class="px-2 py-3 border-end" style="background: #f8fafc;">
-                                    
                                     <div
-                                        class="d-flex flex-column align-items-center text-center"
-                                        style="line-height: 1;"
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ row.roman }}
+                                    </div>
+
+                                    <!-- 🔥 Label for aspirated -->
+                                    <div
+                                        v-if="row.type === 'aspirated'"
+                                        class="mt-1"
+                                    >
+                                        <span
+                                            class="badge bg-warning text-dark"
+                                            style="font-size: 0.6rem"
+                                        >
+                                            aspirated
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- COMBINATIONS -->
+                            <td
+                                class="px-2 py-3"
+                                v-for="(item, i) in row.combinations"
+                                :key="i"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                >
+                                    <div
+                                        class="fs-5 text-primary fw-bold"
                                         :class="{
-                                            'text-warning': row.type === 'aspirated',
+                                            'text-warning':
+                                                row.type === 'aspirated',
                                         }"
                                     >
-                                        <div class="fs-5 fw-bold" >
-                                            {{ row.consonant }}
-                                        </div>
-
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;">
-                                            {{ row.roman }}
-                                        </div>
-
-                                        <!-- 🔥 Label for aspirated -->
-                                        <div v-if="row.type === 'aspirated'" class="mt-1">
-                                            <span class="badge bg-warning text-dark" style="font-size: 0.6rem;">
-                                                aspirated
-                                            </span>
-                                        </div>
+                                        {{ item.char }}
                                     </div>
-                                </td>
-                                <!-- COMBINATIONS -->
-                                <td class="px-2 py-3"
-                                    v-for="(item, i) in row.combinations"
-                                    :key="i">
-
-                                    <div class="d-flex flex-column align-items-center text-center" style="line-height: 1;" >
-                                        <div class="fs-5 text-primary fw-bold" :class="{ 'text-warning': row.type === 'aspirated' }">
-                                            {{ item.char }}
-                                        </div>
-                                        <div class="text-muted small fw-normal" style="font-size: 0.7rem;"> 
-                                            {{ item.roman }}
-                                        </div>
+                                    <div
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ item.roman }}
                                     </div>
-                                </td>
-
-                            </tr>
-                                                      
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
-            </table>
-            
+                </table>
+                <table
+                    class="table table-borderless mb-0"
+                    v-if="changeCombination === 'tenseAndDipthongs'"
+                >
+                    <thead>
+                        <tr style="background: #f8fafc">
+                            <th
+                                class="py-4 border-end text-uppercase small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div
+                                    class="d-flex flex-column"
+                                    style="line-height: 1.2"
+                                >
+                                    <span class="d-flex align-items-center">
+                                        Diphthongs
+                                        <i
+                                            class="bi bi-arrow-right-short lh-1 ms-1"
+                                        ></i>
+                                    </span>
+                                    <span
+                                        class="d-flex align-items-center mt-1"
+                                    >
+                                        Tense Consonants
+                                        <i
+                                            class="bi bi-arrow-down-short lh-1 ms-1"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </th>
+
+                            <!-- VOWEL HEADERS -->
+                            <th
+                                v-for="(vowel, i) in hangulData.otherConsonants"
+                                :key="'vowel-' + i"
+                                class="py-3 small fw-800 text-secondary"
+                                style="letter-spacing: 1px"
+                            >
+                                <div class="text-center">
+                                    <div class="fs-5 fw-bold text-primary">
+                                        {{ vowel.char }}
+                                    </div>
+                                    <div
+                                        class="text-muted small"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ vowel.sound }}
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="bg-white">
+                        <tr
+                            class="border-bottom border-light transition-all hover-light"
+                            v-for="(
+                                row, index
+                            ) in hangulStructureData.TenseSoundsDipthongs"
+                            :key="index"
+                        >
+                            <!-- CONSONANT -->
+                            <td
+                                class="px-2 py-3 border-end"
+                                style="background: #f8fafc"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                    :class="{
+                                        'text-warning':
+                                            row.type === 'aspirated',
+                                    }"
+                                >
+                                    <div class="fs-5 fw-bold">
+                                        {{ row.consonant }}
+                                    </div>
+
+                                    <div
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ row.roman }}
+                                    </div>
+
+                                    <!-- 🔥 Label for aspirated -->
+                                    <div
+                                        v-if="row.type === 'aspirated'"
+                                        class="mt-1"
+                                    >
+                                        <span
+                                            class="badge bg-warning text-dark"
+                                            style="font-size: 0.6rem"
+                                        >
+                                            aspirated
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- COMBINATIONS -->
+                            <td
+                                class="px-2 py-3"
+                                v-for="(item, i) in row.combinations"
+                                :key="i"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center text-center"
+                                    style="line-height: 1"
+                                >
+                                    <div
+                                        class="fs-5 text-primary fw-bold"
+                                        :class="{
+                                            'text-warning':
+                                                row.type === 'aspirated',
+                                        }"
+                                    >
+                                        {{ item.char }}
+                                    </div>
+                                    <div
+                                        class="text-muted small fw-normal"
+                                        style="font-size: 0.7rem"
+                                    >
+                                        {{ item.roman }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <button
+                    type="button"
+                    @click="btnChangeCombinations('vowelsAndConsonants')"
+                    class="dot-btn"
+                    :class="{
+                        active: changeCombination === 'vowelsAndConsonants',
+                    }"
+                ></button>
+                <button
+                    type="button"
+                    @click="btnChangeCombinations('vowelsAndDipthongs')"
+                    class="dot-btn"
+                    :class="{
+                        active: changeCombination === 'vowelsAndDipthongs',
+                    }"
+                ></button>
+                <button
+                    type="button"
+                    @click="btnChangeCombinations('tenseAndBasicVowels')"
+                    class="dot-btn"
+                    :class="{
+                        active: changeCombination === 'tenseAndBasicVowels',
+                    }"
+                ></button>
+                <button
+                    type="button"
+                    @click="btnChangeCombinations('tenseAndDipthongs')"
+                    class="dot-btn"
+                    :class="{
+                        active: changeCombination === 'tenseAndDipthongs',
+                    }"
+                ></button>
+            </div>
         </div>
-        <div class="d-flex justify-content-center mt-3">
-                <button type="button" @click="btnChangeCombinations('vowelsAndConsonants')" class="dot-btn " :class="{'active':changeCombination === 'vowelsAndConsonants'}"></button>
-                <button type="button" @click="btnChangeCombinations('vowelsAndDipthongs')" class="dot-btn" :class="{'active':changeCombination === 'vowelsAndDipthongs'}"  ></button>
-                <button type="button" @click="btnChangeCombinations('tenseAndBasicVowels')" class="dot-btn" :class="{'active':changeCombination === 'tenseAndBasicVowels'}"  ></button>
-                <button type="button" @click="btnChangeCombinations('tenseAndDipthongs')" class="dot-btn" :class="{'active':changeCombination === 'tenseAndDipthongs'}"></button>
-
+        <div
+            class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white"
+        >
+            <div class="mb-4 mb-md-0 text-center text-md-start">
+                <h3 class="fw-black mb-1">Time to Practice</h3>
+                <p class="mb-0 opacity-75 fs-5">
+                    Test your understanding of
+                    <strong>Hangul Structure</strong>, including syllable
+                    formation, consonants, vowels and final consonants.
+                </p>
+            </div>
+            <button
+                class="btn btn-quiz rounded-pill shadow-lg"
+                @click="openQuiz = true"
+            >
+                Start Negation Mastery Quiz
+            </button>
         </div>
-
     </div>
-    <div class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white">
-         <div class="mb-4 mb-md-0 text-center text-md-start">
-            <h3 class="fw-black mb-1">
-                Time to Practice
-            </h3>
-            <p class="mb-0 opacity-75 fs-5">
-                 Test your understanding of <strong>Hangul Structure</strong>, including syllable formation, consonants, vowels and final consonants.
-            </p>
-        </div>
-        <button class="btn btn-quiz rounded-pill shadow-lg" @click="OpenQuiz">
-         Start Negation Mastery Quiz
-        </button>
-     </div>
-</div>
-<div v-if="isOpenQuiz" class="modal fade show d-block" tabindex="-1"
-        style="background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0 shadow-lg rounded-5 overflow-hidden animate-pop">
-            <div class="modal-header border-0 p-4 pb-0">
-                <div class="d-flex align-items-center">
-                    <div class="p-2 bg-primary-subtle rounded-3 me-3 text-primary shadow-sm">
-                        <i class="bi bi-puzzle-fill fs-4"></i>
-                    </div>
-                    <div>
-                        <h5 class="modal-title fw-bold mt-2">
-                            Hangul Structure Quiz
-                        </h5>      
-                        <p class="text-muted mb-0">
-                            Learn how Korean Hangul syllables are formed through consonants, vowels, and final consonants.
-                        </p>
-                    </div>
-                 </div>
-                    <button type="button" class="btn-close shadow-none bg-light rounded-circle"
-                        @click="isOpenQuiz = false">
-                    </button>
-             </div>
-            <div class="modal-body p-4">
-                <div class="d-flex justify-content-between align-items-end mb-1">
-                    <span class="badge rounded-pill bg-primary px-3 py-2 fs-6">
-                        Question {{ currentIndex }} of 10
-                    </span>
-                    <span class="text-muted small fw-bold">
-                        {{ (currentIndex / 10) * 100 }}% Complete
-                    </span>
-                    </div>
-                    <div class="progress " style="height: 10px; border-radius: 50px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
-                            role="progressbar" :style="{ width: (currentIndex / 10) * 100 + '%' }"
-                            :aria-valuenow="currentIndex" aria-valuemin="0" aria-valuemax="10">
-                        </div>
-                    </div>
-                     <div class="question-container">
-                        <span class="question-label">QUESTION</span>
-                        <h2 class="question-text">{{currentQuestion.question}}</h2>
-                    </div>
-                     <div v-if="isExplanation" :class="iscorrectAnswer" class="feedback-card animate__animated animate__fadeIn">
-                        <div class="card-content d-flex align-items-center">
-                            <div class="feedback-icon me-3">
-                            <i :class="{
-                                'bi bi-check-circle-fill text-success': correctAnswer === 'correct',
-                                'bi bi-x-circle-fill text-danger': correctAnswer === 'wrong',
-                            }"></i>                        
-                            </div>
-                            <div class="feedback-text">
-                                <strong class="d-block mb-1">
-                                    {{
-                                        correctAnswer === 'correct'
-                                            ? 'Great Job!'
-                                            : correctAnswer === 'wrong'
-                                            ? 'Not Quite!'
-                                            : 'No Answer Selected'
-                                    }}
-                                </strong>
-                                <p class="mb-0">{{ explanation }}</p>
-                            </div>
-                        </div>
-                </div>
-                   <div class="question-container">
-                        <input type="text" placeholder="Type your answer here..." v-model="answer" :disabled="isDisable === true">
-
-                        <div class="error-container" v-if="isEmpty">
-                            <span class="error-icon">⚠️</span>
-                            <div class="error-content">
-                                <strong>Answer Required</strong>
-                                <p>Please enter your answer before continuing.</p>
-                            </div>
-                        </div>                            
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-lg rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button mb-4 mt-2" @click="checkAnswer">
-                            Check Answer <i class="bi bi-arrow-right-circle-fill ms-2"></i>
-                        </button>
-                        <div class="action-footer mt-4 pt-4 border-top">
-                            <p class="text-muted small mb-3">Ready to move on?</p>
-        
-                            <div class="text-center mb-3">
-                                <button class="btn btn-lg  rounded-pill px-5 py-3 fw-bold bg-gradient-blue pulse-button" :disabled="isContinue === false" @click="nextQuestion">
-                                    <span>Continue</span>
-                                    <i class="bi bi-arrow-right-circle-fill ms-2"></i>
-                                </button>
-                            </div>
-                        </div>
-                 </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<div v-if="isQuizFinished" class="result-modal-backdrop">
-        <div class="result-modal-content">
-            <div class="celebration-header">
-                <div class="result-icon-wrapper">
-                    <div class="modern-celebration-icon">
-                        <div class="ribbon-icon"></div>
-                        <div class="confetti-burst"></div>
-                    </div>
-                </div>
-                <h2 class="fw-bold mb-1">Quiz Finished</h2>
-                <div class="status-badge" :class="score >= 5 ? 'pass' : 'retry'">
-                    {{ score >= 5 ? 'Excellent Work!' : 'Keep Practicing' }}
-                </div>
-            </div>
-            <div class="score-visualization my-5">
-                <div class="score-circle-glow">
-                    <div class="score-content">
-                        <span class="score-main">{{ score }}</span>
-                        <span class="score-divider"></span>
-                        <span class="score-total">10</span>
-                    </div>
-                </div>
-                <p class="text-muted mt-3 mb-0 small text-uppercase fw-bold ls-1">Final Score</p>
-            </div>
-            <div class="result-actions">
-                <button class="btn-retry-premium" @click="OpenQuiz">
-                    <i class="bi bi-arrow-clockwise me-2"></i> Try Again
-                </button>
-            </div>
-        </div>
-</div>
+    <GameModal
+        v-model="openQuiz"
+        :questions="questions"
+        :gameDescription="gameDescription"
+        :gameTitle="gameTitle"
+    />
 </template>
 <script>
-import hangulstuctureData from '../data/hangulstuctureData.js';
-import hangulData from '../data/koreanalphabet.js';
-import soundQuiz from '../../../../gamesounds/sounds.vue'
-import quizData from '../data/hangulStructureData.js'
+import hangulstuctureData from "../data/hangulstuctureData.js";
+import hangulData from "../data/koreanalphabet.js";
+import questionData from "../data/LessonOneData/questionsData.js";
+import GameModal from "../../../partials/games/gameModal.vue";
 
 export default {
     components: {
-        soundQuiz
+        GameModal,
     },
-    data() { 
+    data() {
         return {
             isHangulStructureExampleModal: false,
             hangulStructureData: hangulstuctureData.HangulContentData,
             hangulData: hangulData,
-            changeCombination: 'vowelsAndConsonants',
-            questions: quizData.questions,
-            isOpenQuiz: false,
-            currentIndex: 0,
-            score: 0,
-            answer: "",
-            isEmpty: false,
-            isDisable: false,
-            iscorrectAnswer: false,
-            correctAnswer: "",
-            isExplanation: false,
-            explanation: "",
-            showExplanation: false,
-            isQuizFinished: false,
-            isContinue: false,
-        }
-    },
-      mounted() {
-        this.shuffleQuestions();
-        
-    }, 
-    computed: { 
-        currentQuestion() {
-        return this.questions[this.currentIndex]
-        }
+            changeCombination: "vowelsAndConsonants",
+            questions: questionData.questionsHangulStructure,
+            openQuiz: false,
+            gameDescription:
+                "Practice Korean vowels and consonants with fun quiz questions!",
+            gameTitle: "Quiz Vowel and Consonants",
+        };
     },
     methods: {
-        btnHangulStructure() { 
-            this.isHangulStructureExampleModal = !this.isHangulStructureExampleModal;
-                if (this.isHangulStructureExampleModal) {
-                    this.$nextTick(() => {
-                        this.$refs.hangulStructureExample.scrollIntoView({ behavior: 'smooth' });
+        btnHangulStructure() {
+            this.isHangulStructureExampleModal =
+                !this.isHangulStructureExampleModal;
+            if (this.isHangulStructureExampleModal) {
+                this.$nextTick(() => {
+                    this.$refs.hangulStructureExample.scrollIntoView({
+                        behavior: "smooth",
                     });
-                }
-        },
-        btnChangeCombinations(change) { 
-            this.changeCombination = change
-        },
-        OpenQuiz() { 
-            this.isOpenQuiz = true;
-            this.isQuizFinished = false;
-        },
-        shuffleQuestions() {
-            if (!this.questions) return;
-
-            this.questions = [...this.questions]
-                .sort(() => Math.random() - 0.5);
-        },
-        checkAnswer() {
-            const userAnswer = this.answer.trim().toLowerCase();
-            const correctAnswer = this.currentQuestion.answer.trim().toLowerCase();
-            if (userAnswer === correctAnswer) {
-                this.iscorrectAnswer = true;
-                this.correctAnswer = "correct";
-                this.isContinue = true;
-                this.score++;
-                this.$refs.gameSounds.playSound('correct');
-                this.isEmpty = false;
-                this.isDisable = true;
-            } 
-            else {
-                this.iscorrectAnswer = false;
-                this.correctAnswer = "wrong";
-                this.$refs.gameSounds.playSound('wrong');
-                this.isEmpty = false;
-                this.isContinue = true;
-                this.isDisable = true
+                });
             }
-
-            this.isExplanation = true;
-            this.explanation = this.currentQuestion.explanation;
-            this.showExplanation = true;
         },
-        nextQuestion() {
-            this.isContinue = false;
-            this.currentIndex++
-            if (this.currentIndex >= 10) {
-                this.currentIndex = 0
-                this.$refs.gameSounds.playSound('finalscores')
-                this.isQuizFinished = true
-                this.isOpenQuiz = false
-
-            }
-            this.isDisable = false,
-            this.answer = ""
-            this.isExplanation = false
-            this.explanation = ""
-            this.showExplanation = false
+        btnChangeCombinations(change) {
+            this.changeCombination = change;
         },
-
-    }
-}
+    },
+};
 </script>
-<style scoped src="../../../../../../css/users/assets/lessons/basic/hangulStructure.css"></style>
-<style scoped src="../../../../../../css/users/partials/card/k-card.css"></style>
-<style scoped src="../../../../../../css/users/assets/lessons/grammarassetscss/examplebutton.css"></style>
-<style scoped src="../../../../../../css/users/partials/game/gameFooter.css"></style>
-<style scoped src="../../../../../../css/users/partials/game/gameModal.css"></style>
-<style scoped src="../../../../../../css/users/partials/game/gamefinalresultmodal.css"></style>
+<style
+    scoped
+    src="../../../../../../css/users/assets/lessons/basic/hangulStructure.css"
+></style>
+<style
+    scoped
+    src="../../../../../../css/users/partials/card/k-card.css"
+></style>
+<style
+    scoped
+    src="../../../../../../css/users/assets/lessons/grammarassetscss/examplebutton.css"
+></style>

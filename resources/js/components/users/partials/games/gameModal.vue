@@ -29,7 +29,7 @@
                     <!-- Progress Tracking -->
                     <div class="progress-info">
                         <span class="q-count"
-                            >QUESTION {{ currentIndex }} / 10</span
+                            >QUESTION {{ currentIndex + 1 }} / 10</span
                         >
                         <span class="q-percent"
                             >{{ (currentIndex / 10) * 100 }}%</span
@@ -239,26 +239,25 @@ export default {
             return this.localQuestions?.[this.currentIndex] ?? {};
         },
 
+        // WITH THIS
         progress() {
-            return this.questions?.questions?.length
-                ? (this.currentIndex / this.questions.questions.length) * 100
+            return this.questions.length
+                ? ((this.currentIndex + 1) / this.questions.length) * 100
                 : 0;
         },
     },
 
     methods: {
+        // WITH THIS
         shuffleQuestions() {
-            if (!this.questions?.questions) return;
+            if (!this.questions || !this.questions.length) return;
 
-            this.localQuestions = [...this.questions.questions].sort(
+            this.localQuestions = [...this.questions].sort(
                 () => Math.random() - 0.5,
             );
         },
         closeModal() {
             this.isOpenQuiz = false;
-            // Optional: reset quiz when closing
-            // this.currentIndex = 0;
-            // this.resetState();
         },
 
         // Renamed to match your template @click="Getanswer"

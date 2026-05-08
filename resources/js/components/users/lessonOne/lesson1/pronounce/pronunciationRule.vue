@@ -767,18 +767,35 @@
             </div>
             <button
                 class="btn btn-quiz rounded-pill shadow-lg"
-                @click="OpenQuiz"
+                @click="openQuiz = true"
             >
                 Start Mastery Quiz
             </button>
         </div>
     </div>
+    <GameModal
+        v-model="openQuiz"
+        :questions="questions"
+        :gameDescription="gameDescription"
+        :gameTitle="gameTitle"
+    />
 </template>
 <script>
+import GameModal from "../../../../users/partials/games/gameModal.vue";
+import questionData from "../data/LessonOneData/questionsData";
+
 export default {
+    components: {
+        GameModal,
+    },
     data() {
         return {
             isPronunciationRuleExample: false,
+            openQuiz: false,
+            questions: questionData.questionsPronunciationRules,
+            gameTitle: "Pronunciation Rules Quiz",
+            gameDescription:
+                "Improve your pronunciation through guided practice exercises",
         };
     },
     methods: {

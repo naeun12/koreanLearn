@@ -461,7 +461,7 @@
     />
 </template>
 <script>
-import questionData from "../data/koreanVowelAndConsonantsData";
+import questionData from "../data/LessonOneData/questionsData";
 import GameModal from "../../../../users/partials/games/gameModal.vue";
 
 export default {
@@ -472,7 +472,7 @@ export default {
         return {
             isExampleModal: false,
             openQuiz: false,
-            questions: questionData.koreanVowelAndConsonantsData,
+            questions: questionData.questionsKoreanAndConsonants,
             gameDescription:
                 "Practice Korean vowels and consonants with fun quiz questions!",
             gameTitle: "Quiz Vowel and Consonants",

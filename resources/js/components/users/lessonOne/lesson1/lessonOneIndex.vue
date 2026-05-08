@@ -91,7 +91,7 @@
                                                         activeMainSection ===
                                                             'Hangul' ||
                                                         activeMainSection ===
-                                                            'sentence_structure'
+                                                            'Hangul-Structure'
                                                             ? 'active'
                                                             : '',
                                                 }"
@@ -117,11 +117,10 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'Hangul',
-                                                            )
+                                                            goToLesson('Hangul')
                                                         "
-                                                        >Hangul Alphabet
+                                                    >
+                                                        Hangul Alphabet
                                                     </a>
                                                 </li>
                                                 <li>
@@ -129,8 +128,8 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'batchim',
+                                                            goToLesson(
+                                                                'Hangul-Structure',
                                                             )
                                                         "
                                                         >Hangul Structure
@@ -147,9 +146,13 @@
                                                 :class="{
                                                     active:
                                                         activeMainSection ===
-                                                            'pronunciation' ||
+                                                            'BasicVowelConsonantSounds' ||
                                                         activeMainSection ===
-                                                            'batchim'
+                                                            'pronunciationRules' ||
+                                                        activeMainSection ===
+                                                            'Batchim' ||
+                                                        activeMainSection ===
+                                                            'soundChange'
                                                             ? 'active'
                                                             : '',
                                                 }"
@@ -169,8 +172,8 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'pronunciation',
+                                                            goToLesson(
+                                                                'BasicVowelConsonantSounds',
                                                             )
                                                         "
                                                     >
@@ -183,8 +186,8 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'pronunciation',
+                                                            goToLesson(
+                                                                'pronunciationRules',
                                                             )
                                                         "
                                                     >
@@ -196,8 +199,8 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'batchim',
+                                                            goToLesson(
+                                                                'Batchim',
                                                             )
                                                         "
                                                     >
@@ -210,8 +213,8 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'sound_changes',
+                                                            goToLesson(
+                                                                'soundChange',
                                                             )
                                                         "
                                                     >
@@ -221,20 +224,83 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <a
-                                            href="#"
-                                            @click.prevent="
-                                                changeSection('greetings')
-                                            "
-                                            class="k-nav-item flex-fill text-center"
-                                            :class="{
-                                                active:
-                                                    activeMainSection ===
-                                                    'greetings',
-                                            }"
-                                        >
-                                            GREETINGS
-                                        </a>
+                                        <div class="dropdown flex-fill">
+                                            <a
+                                                href="#"
+                                                class="k-nav-item dropdown-toggle w-100 d-flex align-items-center justify-content-center"
+                                                :class="{
+                                                    active:
+                                                        activeMainSection ===
+                                                        'greetings',
+                                                }"
+                                                role="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                            >
+                                                <!-- Main Label -->
+                                                DAILY EXPRESSIONS
+                                            </a>
+
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 mt-2"
+                                            >
+                                                <li>
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="#"
+                                                        @click.prevent="
+                                                            goToLesson(
+                                                                'greetings',
+                                                            )
+                                                        "
+                                                    >
+                                                        Self Introductions
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="#"
+                                                        @click.prevent="
+                                                            goToLesson(
+                                                                'pronunciationRules',
+                                                            )
+                                                        "
+                                                    >
+                                                        Basic Classroom
+                                                        Expressions
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="#"
+                                                        @click.prevent="
+                                                            goToLesson(
+                                                                'Batchim',
+                                                            )
+                                                        "
+                                                    >
+                                                        Batchim (Final
+                                                        Consonants)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="#"
+                                                        @click.prevent="
+                                                            goToLesson(
+                                                                'soundChange',
+                                                            )
+                                                        "
+                                                    >
+                                                        Basic Sound Changes
+                                                        (Intro)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
                                         <div class="dropdown flex-fill">
                                             <a
@@ -283,7 +349,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'hangul_structure',
                                                             )
                                                         "
@@ -295,7 +361,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'batchim',
                                                             )
                                                         "
@@ -308,8 +374,8 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'numbers_counters',
+                                                            goToLesson(
+                                                                'numbersCounter',
                                                             )
                                                         "
                                                         >Numbers & Counters</a
@@ -320,9 +386,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'to_be',
-                                                            )
+                                                            goToLesson('to_be')
                                                         "
                                                         >To Be (Identification &
                                                         Existence)</a
@@ -347,7 +411,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'particles_all',
                                                             )
                                                         "
@@ -375,7 +439,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'sentence_structure',
                                                             )
                                                         "
@@ -388,9 +452,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
-                                                                'tenses',
-                                                            )
+                                                            goToLesson('tenses')
                                                         "
                                                         >Past, Present, & Future
                                                         Tenses</a
@@ -401,7 +463,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'negation',
                                                             )
                                                         "
@@ -428,7 +490,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'honorifics',
                                                             )
                                                         "
@@ -441,7 +503,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'complex_structures',
                                                             )
                                                         "
@@ -454,7 +516,7 @@
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
-                                                            changeSection(
+                                                            goToLesson(
                                                                 'pronunciation_changes',
                                                             )
                                                         "
@@ -466,9 +528,7 @@
 
                                         <a
                                             href="#"
-                                            @click.prevent="
-                                                changeSection('verbs')
-                                            "
+                                            @click.prevent="goToLesson('verbs')"
                                             class="k-nav-item flex-fill text-center"
                                             :class="{
                                                 active:
@@ -487,7 +547,10 @@
                     <div class="row g-4">
                         <div class="col-md-9 col-xl-12">
                             <transition-group
-                                v-if="activeMainSection === 'Hangul'"
+                                v-if="
+                                    activeMainSection === 'Hangul' ||
+                                    activeMainSection === 'Hangul-Structure'
+                                "
                                 name="fade-slide"
                                 tag="div"
                                 class="row g-3"
@@ -499,8 +562,12 @@
                                 tag="div"
                                 class="row g-3"
                                 v-if="
-                                    activeMainSection === 'pronunciation' ||
-                                    activeMainSection === 'batchim'
+                                    activeMainSection ===
+                                        'BasicVowelConsonantSounds' ||
+                                    activeMainSection ===
+                                        'pronunciationRules' ||
+                                    activeMainSection === 'Batchim' ||
+                                    activeMainSection === 'soundChange'
                                 "
                             >
                                 <pronouncationIndex></pronouncationIndex>
@@ -511,7 +578,7 @@
                                 class="row g-3"
                                 v-if="activeMainSection === 'greetings'"
                             >
-                                <greetingAssets></greetingAssets>
+                                <dailyExpressionsIndex></dailyExpressionsIndex>
                             </transition-group>
 
                             <transition-group
@@ -583,7 +650,7 @@
 import navigation from "../../partials/navigation.vue";
 import koreanBasics from "../lesson1/koreanBasic/basicIndex.vue";
 import pronouncationIndex from "../lesson1/pronounce/pronounceIndex.vue";
-import greetingAssets from "../lesson1/greetings/lessonGreetings.vue";
+import dailyExpressionsIndex from "../lesson1/dailyExpressions/dailyExpressionsIndex.vue";
 import koreanalphabet from "./data/koreanalphabet.js";
 import particleAssets from "../lesson1/particle/particle.vue";
 import verbAndSentenceIndex from "../lesson1/verbandsentence/verbAndSentenceIndex.vue";
@@ -593,7 +660,7 @@ export default {
         navigation,
         koreanBasics,
         pronouncationIndex,
-        greetingAssets,
+        dailyExpressionsIndex,
         particleAssets,
         verbAndSentenceIndex,
     },
@@ -604,9 +671,23 @@ export default {
         };
     },
     methods: {
-        changeSection(sectionName) {
-            // Update the active section when clicked
-            this.activeMainSection = sectionName;
+        goToLesson(section) {
+            this.activeMainSection = section;
+
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    const el = document.getElementById(section);
+
+                    if (el) {
+                        el.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    } else {
+                        console.warn("Section not found:", section);
+                    }
+                }, 50);
+            });
         },
         scrollToTop() {
             window.scrollTo({
