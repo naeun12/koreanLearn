@@ -40,12 +40,10 @@
                 >
                     Core Principles of Hangul
                 </h2>
-                <div class="list-group list-group-flush gap-3">
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
+                <div class="list-group gap-3">
+                    <div class="list-group-item list-group-flush hover-shadow">
                         <div
-                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            class="me-3 shadow-sm rounded-circle d-flex align-items-center justify-content-center"
                             style="width: 32px; height: 32px; flex-shrink: 0"
                         >
                             <span class="fw-bold text-primary">1</span>
@@ -63,11 +61,9 @@
                             </span>
                         </div>
                     </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
+                    <div class="list-group-item list-group-flush hover-shadow">
                         <div
-                            class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
+                            class="me-3 list-group-flush shadow-sm rounded-circle d-flex align-items-center justify-content-center"
                             style="width: 32px; height: 32px; flex-shrink: 0"
                         >
                             <span class="fw-bold text-primary">2</span>
@@ -92,9 +88,7 @@
                             </p>
                         </div>
                     </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
+                    <div class="list-group-item list-group-flush hover-shadow">
                         <div
                             class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
                             style="width: 32px; height: 32px; flex-shrink: 0"
@@ -123,9 +117,7 @@
                             </span>
                         </div>
                     </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
+                    <div class="list-group-item list-group-flush hover-shadow">
                         <div
                             class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
                             style="width: 32px; height: 32px; flex-shrink: 0"
@@ -145,9 +137,7 @@
                             </span>
                         </div>
                     </div>
-                    <div
-                        class="list-group-item border-0 p-3 rounded-3 bg-light d-flex align-items-start transition-all hover-shadow"
-                    >
+                    <div class="list-group-item list-group-flush hover-shadow">
                         <div
                             class="me-3 bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center"
                             style="width: 32px; height: 32px; flex-shrink: 0"
@@ -168,7 +158,7 @@
                     </div>
                 </div>
                 <div
-                    class="mt-5 p-4 rounded-4 bg-primary text-white shadow-sm position-relative overflow-hidden"
+                    class="mt-5 p-4 rounded-4 pro-tip position-relative overflow-hidden"
                 >
                     <div
                         class="d-flex align-items-center position-relative"
@@ -177,7 +167,7 @@
                         <div class="me-3 fs-2">💡</div>
 
                         <div>
-                            <strong class="d-block mb-1"
+                            <strong class="d-block mb-1 text-pro-tip-main"
                                 >Pro Tip: Hangul Structure Shortcut</strong
                             >
 
@@ -221,7 +211,7 @@
         </div>
     </div>
     <div
-        class="mt-4 p-4 bg-white overflow-hidden mb-3 k-card"
+        class="mt-4 p-4 overflow-hidden mb-3 k-card"
         v-if="isHangulStructureExampleModal"
         ref="hangulStructureExample"
     >

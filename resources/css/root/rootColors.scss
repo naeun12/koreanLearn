@@ -1,0 +1,23 @@
+:root {
+    --color-cream-beige: #FDFBEA;
+    --color-soft-peach: #FCE8C2;
+    --color-soft-highlight: #FCEECF;
+
+    --color-warm-sand: #D9B99D;
+    --color-muted-caramel: #C29876;
+    --color-dusty-brown: #7F675F;
+    --color-deep-cocoa: #3C2D2F;
+
+    --color-rose-terracotta: #BF6045;
+
+    --bg-primary: var(--color-cream-beige);
+    --bg-secondary: var(--color-soft-peach);
+
+    --text-primary: var(--color-deep-cocoa);
+    --text-secondary: var(--color-dusty-brown);
+
+    --accent-primary: var(--color-rose-terracotta);
+    --border-soft: var(--color-warm-sand);
+
+    --card-bg: var(--color-soft-highlight);
+}

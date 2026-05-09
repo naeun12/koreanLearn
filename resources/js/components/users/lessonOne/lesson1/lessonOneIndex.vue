@@ -5,9 +5,7 @@
         <div class="container-fluid mt-4 px-4">
             <div class="row mb-4">
                 <aside class="col-lg-3 col-xl-2 mb-4">
-                    <div
-                        class="modern-sidebar shadow-sm border p-3 bg-white rounded-4"
-                    >
+                    <div class="modern-sidebar shadow-sm border p-3 rounded-4">
                         <div
                             class="sidebar-brand d-flex align-items-center mb-4"
                         >
@@ -60,25 +58,21 @@
 
                 <main class="col-lg-9 col-xl-10 m">
                     <div
-                        class="p-4 p-md-5 bg-white shadow-sm rounded-4 border min-vh-50 mb-4"
+                        class="p-4 p-md-5 k-nav-container shadow-sm rounded-4 min-vh-50 mb-4"
                     >
                         <div class="row align-items-center mb-4">
                             <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-                                <h1
-                                    class="display-5 fw-bold text-dark tracking-tight"
-                                >
+                                <h1 class="display-5 fw-bold tracking-tight">
                                     Hello, K-Learner! 👋
                                 </h1>
-                                <p class="lead text-muted mb-0">
+                                <p class="lead mb-0">
                                     Ready to master the Korean language? Let’s
                                     start with the basics.
                                 </p>
                             </div>
 
                             <div class="col-12 col-lg-6">
-                                <div
-                                    class="k-nav-container p-2 rounded-4 border bg-light"
-                                >
+                                <div class="p-2 rounded-4 nav-container">
                                     <div
                                         class="nav d-flex flex-row align-items-center justify-content-between gap-2"
                                     >
@@ -719,15 +713,6 @@ export default {
 };
 </script>
 <!-- <style src="../../../css/users/lesson.css"></style> -->
-<style
-    scoped
-    src="../../../../../css/users/assets/lessons/lessonMain.css"
-></style>
+<style src="../../../../../css/users/assets/lessons/lessonMain.scss"></style>
 <style src="../../../../../css/trytospeekbutton.css"></style>
 <style scoped src="../../../../../css/buttonscrolldownandscrollup.css"></style>
-<style>
-body {
-    width: 100%;
-    overflow-x: hidden;
-}
-</style>

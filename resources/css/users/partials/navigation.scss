@@ -1,15 +1,16 @@
+@import "/resources/css/root/rootColors.scss";
 .custom-navbar {
-    background: rgba(255, 255, 255, 0.85);
+    background:var(--bg-primary);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--bg-secondary);
     padding: 0.75rem 0;
 }
 
 .nav-link {
     font-size: 0.92rem;
     font-weight: 600;
-    color: #4a4a4a !important;
+    color:var(--text-primary) !important;
     padding: 0.5rem 1rem !important;
     transition: all 0.2s ease;
     position: relative;
@@ -17,7 +18,7 @@
 
 /* --- Kani ang mo-usab sa color base sa directory --- */
 .nav-link.custom-active {
-    color: #4f46e5 !important;
+    color: var(--accent-primary) !important;
 }
 
 .nav-link.custom-active::after {
@@ -27,7 +28,7 @@
     left: 1rem;
     right: 1rem;
     height: 3px;
-    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%);
+    background: var(--accent-primary);
     border-radius: 10px;
 }
 

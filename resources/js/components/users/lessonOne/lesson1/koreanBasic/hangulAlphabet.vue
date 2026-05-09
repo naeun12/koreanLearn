@@ -36,7 +36,7 @@
             <div
                 v-for="consonant in consonants"
                 :key="'c-' + consonant.char"
-                class="col-sm-6 col-lg-4 col-xxl-3"
+                class="col-sm-6 col-lg-4 col-xxl-3 mt-3"
                 style="cursor: pointer"
                 @click="
                     isalphabetimageModal(
@@ -47,7 +47,7 @@
                 "
             >
                 <div
-                    class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient"
+                    class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
                     <div class="hangul-char display-4 fw-bold mb-2">
                         {{ consonant.char }}
@@ -59,11 +59,11 @@
                         {{ consonant.description }}
                     </p>
                     <button
-                        class="btn-gradient-play"
-                        @click="playSound(consonant.char)"
+                        class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        @click.stop="playSound(consonant.char)"
                     >
-                        <span class="icon">🔊</span>
-                        <span>Listen</span>
+                        <i class="bi bi-volume-up-fill"></i>
+                        Listen
                     </button>
                 </div>
             </div>
@@ -74,10 +74,10 @@
             <div
                 v-for="vowel in vowels"
                 :key="'v-' + vowel.char"
-                class="col-sm-6 col-lg-4 col-xxl-3"
+                class="col-sm-6 col-lg-4 col-xxl-3 mt-3"
             >
                 <div
-                    class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient"
+                    class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
                     <div class="hangul-char display-4 fw-bold mb-2">
                         {{ vowel.char }}
@@ -91,11 +91,11 @@
                         {{ vowel.description }}
                     </p>
                     <button
-                        class="btn-gradient-play"
-                        @click="playSound(vowel.char)"
+                        class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        @click.stop="playSound(vowel.char)"
                     >
-                        <span class="icon">🔊</span>
-                        <span>Listen</span>
+                        <i class="bi bi-volume-up-fill"></i>
+                        Listen
                     </button>
                 </div>
             </div>
@@ -106,10 +106,10 @@
             <div
                 v-for="con in doubleConsonants"
                 :key="'c-' + con.char"
-                class="col-sm-6 col-lg-4 col-xxl-3 mb-4"
+                class="col-sm-6 col-lg-4 col-xxl-3 mt-3"
             >
                 <div
-                    class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient"
+                    class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
                     <div class="hangul-char display-4 fw-bold mb-2">
                         {{ con.char }}
@@ -124,11 +124,11 @@
                     </p>
 
                     <button
-                        class="btn-gradient-play"
-                        @click="playSound(con.char)"
+                        class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                        @click.stop="playSound(con.char)"
                     >
-                        <span class="icon">🔊</span>
-                        <span>Listen</span>
+                        <i class="bi bi-volume-up-fill"></i>
+                        Listen
                     </button>
                 </div>
             </div>
@@ -139,12 +139,12 @@
             <div
                 v-for="con in aspiratedConsonants"
                 :key="'c-' + con.char"
-                class="col-sm-6 col-lg-4 col-xxl-3"
+                class="col-sm-6 col-lg-4 col-xxl-3 mt-3"
             >
                 <div
-                    class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 bg-white custom-card-gradient"
+                    class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
-                    <div class="hangul-char display-4 fw-bold text-dark mb-2">
+                    <div class="hangul-char display-4 mb-2">
                         {{ con.char }}
                     </div>
                     <div class="text-gradient-custom fw-bold fs-5 mb-2">
@@ -152,11 +152,11 @@
                     </div>
                     <p class="con-description-pill">{{ con.description }}</p>
                     <button
-                        class="btn-gradient-play"
+                        class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
                         @click.stop="playSound(con.char)"
                     >
-                        <span class="icon">🔊</span>
-                        <span>Listen</span>
+                        <i class="bi bi-volume-up-fill"></i>
+                        Listen
                     </button>
                 </div>
             </div>
@@ -188,9 +188,9 @@
             </div>
         </div>
     </div>
-    <div class="mt-5 p-4 pro-tip-box transition-all" :class="currentSection">
+    <div class="mt-5 p-4 pro-tip-box" :class="currentSection">
         <div class="d-flex align-items-center mb-3">
-            <div class="tip-gradient-icon">
+            <div class="tip-icon">
                 <i class="bi bi-lightbulb-fill"></i>
             </div>
             <h5 class="mb-0 fw-bold tip-title">Pro Learning Tip</h5>
@@ -309,7 +309,6 @@ export default {
     },
 };
 </script>
-<!-- <style src="../../../css/users/lesson.css"></style> -->
 <style src="../../../../../../css/trytospeekbutton.css"></style>
 <style
     src="../../../../../../css/users/assets/lessons/lessonalpbhabet.css"

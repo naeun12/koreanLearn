@@ -1,31 +1,23 @@
+@import "/resources/css/root/rootColors.scss";
 .k-card {
-    background: #ffffff;
-    /* Reduced opacity on border for a cleaner look */
-    border: 1px solid rgba(79, 70, 229, 0.15);
+    background: var(--card-bg);
     border-radius: 24px;
     overflow: hidden;
-    color: #1a1a1a;
-    /* Softened black for better readability */
+    color: var(--text-primary);
     width: 100%;
     padding: 32px;
-    /* Increased padding for better "breathing" room */
-    border-top: 5px solid #4f46e5;
-
-    /* Smooth transition for everything */
+    border-top: 5px solid var(--border-soft);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 .k-card:hover {
-    /* Lift the card up slightly */
     transform: translateY(-8px);
-    /* Soft, deep shadow instead of a harsh dark one */
     box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-color: rgba(79, 70, 229, 0.5);
+    border-color: var(--accent-primary);
 }
 
-/* Optional: Add a subtle accent circle in the background */
 .k-card::before {
     content: "";
     position: absolute;
@@ -33,7 +25,44 @@
     right: -50px;
     width: 100px;
     height: 100px;
-    background: rgba(79, 70, 229, 0.03);
+    background: var(--accent-primary);
     border-radius: 50%;
     z-index: 0;
+}
+.list-group-flush {
+    background-color: var(--bg-primary);
+    border-radius: 12px;
+    /* Adding a radius makes the whole list feel like a "unit" */
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+}
+
+.list-group-flush .list-group-item {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+/* Remove the border from the very last item so it looks "flush" */
+.list-group-flush .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-flush .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    padding-left: 28px;
+    /* Subtle "push" effect on hover */
+    cursor: pointer;
+}
+
+/* If you have icons in your list items */
+.list-group-flush .list-group-item i {
+    margin-right: 12px;
+    color: var(--accent-primary);
+    font-size: 1.1rem;
 }
