@@ -159,14 +159,7 @@
     line-height: 1.5;
 }
 
-/* Footer Section */
-.practice-banner {
-    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
-    border-radius: 28px;
-    padding: 2.5rem;
-    border: none;
-    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.3);
-}
+
 
 .btn-quiz {
     background: #ffffff;

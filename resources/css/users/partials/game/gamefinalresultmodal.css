@@ -10,14 +10,14 @@
 }
 
 .result-modal-content {
-  background-color: #fff;
+  background-color: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 32px;
   width: 90%;
   max-width: 400px;
   padding: 40px 24px;
   text-align: center;
-  color: #4f46e5;
+  color: var(--text-primary);
   position: relative;
   overflow: hidden;
 }
@@ -35,15 +35,15 @@
 }
 
 .status-badge.pass {
-  background-color: rgba(34, 197, 94, 0.15);
-  color: #4ade80;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--bg-primary);
 }
 
 .status-badge.retry {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--bg-primary);
 }
 
 /* Score Visualization */
@@ -51,17 +51,17 @@
   width: 160px;
   height: 160px;
   margin: 0 auto;
-  background: radial-gradient(circle, #4f46e5 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 0 40px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 0 40px rgba(207, 205, 72, 0.3);
 }
 
 .score-content {
-  background-color: #ffffff;
+  background-color: var(--bg-primary);
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -69,7 +69,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 4px solid #4f46e5;
+  border: 4px solid var(--accent-primary);
 }
 
 .score-main {
@@ -81,21 +81,21 @@
 .score-divider {
   width: 40px;
   height: 2px;
-  background-color: #4f46e5;
+  background-color: var(--accent-primary);
   margin: 4px 0;
 }
 
 .score-total {
   font-size: 1.2rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-weight: 600;
 }
 
 /* Try Again Button */
 .btn-retry-premium {
   width: 100%;
-  background-color: #4f46e5;
-  color: white;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
   border: none;
   padding: 18px;
   border-radius: 20px;
@@ -109,9 +109,9 @@
 }
 
 .btn-retry-premium:hover {
-  background-color: #4338ca;
+  background-color: var(--bg-primary);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 10px 20px rgba(180, 178, 73, 0.3);
 }
 
 .btn-retry-premium:active {

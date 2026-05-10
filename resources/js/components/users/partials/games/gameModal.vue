@@ -14,7 +14,7 @@
                             <i class="bi bi-puzzle-fill"></i>
                         </div>
                         <div class="title-group">
-                            <h5 class="game-title text-primary">
+                            <h5 class="game-title">
                                 {{ gameTitle }}
                             </h5>
                             <p class="game-desc">{{ gameDescription }}</p>
@@ -57,7 +57,7 @@
                                 v-if="correctAnswer === 'correct'"
                             >
                                 <div class="text-section">
-                                    <h2 class="feedback-title text-white">
+                                    <h2 class="feedback-title">
                                         Your Answer is correct!
                                     </h2>
                                     <div class="explanation-container">
@@ -82,7 +82,7 @@
                                 v-if="correctAnswer === 'wrong'"
                             >
                                 <div class="text-section">
-                                    <h2 class="feedback-title text-white">
+                                    <h2 class="feedback-title">
                                         Your Answer is wrong!
                                     </h2>
                                     <div class="explanation-container">

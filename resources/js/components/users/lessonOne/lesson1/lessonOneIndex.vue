@@ -713,6 +713,6 @@ export default {
 };
 </script>
 <!-- <style src="../../../css/users/lesson.css"></style> -->
-<style src="../../../../../css/users/assets/lessons/lessonMain.scss"></style>
+<style src="../../../../../css/users/assets/lessons/lessonMain.css"></style>
 <style src="../../../../../css/trytospeekbutton.css"></style>
 <style scoped src="../../../../../css/buttonscrolldownandscrollup.css"></style>

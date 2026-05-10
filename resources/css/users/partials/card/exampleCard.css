@@ -1,0 +1,15 @@
+.card-parent-title
+{
+background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+}
+.table-design,
+.table-design th,
+.table-design td{
+background-color: var(--card-bg);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    /* Gives the table rounded corners */
+    overflow: hidden;}
