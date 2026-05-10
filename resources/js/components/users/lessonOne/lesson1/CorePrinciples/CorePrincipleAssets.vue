@@ -4,7 +4,7 @@
             class="h5 text-uppercase fw-bold text-muted mb-4"
             style="letter-spacing: 1px"
         >
-            Core Principles of Hangul
+            {{ ExampleTitle }}
         </h2>
         <div class="list-group gap-3">
             <div
@@ -24,6 +24,7 @@
                     <strong class="d-block text-title-color">{{
                         corePrincipleData.title
                     }}</strong>
+
                     <span
                         class="text-description-color small"
                         v-html="corePrincipleData.description"
@@ -47,22 +48,14 @@
                 <div class="me-3 fs-2">💡</div>
 
                 <div>
-                    <strong class="d-block mb-1 text-pro-tip-main"
-                        >Pro Tip: Hangul Structure Shortcut</strong
-                    >
+                    <strong class="d-block mb-1 text-pro-tip-main">{{
+                        proTipTitle
+                    }}</strong>
 
-                    <p class="mb-0 opacity-75 small">
-                        In Hangul, remember this simple rule:
-                        <strong>Consonants (자음)</strong> provide the basic
-                        sound, <strong>Vowels (모음)</strong> complete the
-                        sound, and together they form
-                        <strong>Syllable Blocks</strong>. Every Korean syllable
-                        is built using this structure:
-                        <strong>Consonant + Vowel</strong> or
-                        <strong>Consonant + Vowel + Consonant</strong>. Once you
-                        understand this pattern, reading Korean becomes much
-                        easier because each block represents one complete sound.
-                    </p>
+                    <p
+                        class="mb-0 opacity-75 small"
+                        v-html="proTipDescription"
+                    ></p>
                 </div>
 
                 <button
@@ -95,6 +88,9 @@ export default {
             required: true,
         },
         isHangulStructureExampleModal: Boolean,
+        proTipTitle: String,
+        proTipDescription: String,
+        ExampleTitle: String,
     },
     methods: {
         btnHangulStructure() {

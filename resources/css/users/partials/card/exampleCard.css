@@ -13,3 +13,8 @@ background-color: var(--card-bg);
     border-radius: 8px;
     /* Gives the table rounded corners */
     overflow: hidden;}
+.badge-example{
+    background-color: var(--card-bg);
+    border: var(--accent-primary);
+    border-radius: 20px;
+}

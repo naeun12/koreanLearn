@@ -41,6 +41,9 @@
                 :CorePrincipleData="CorePrincipleData"
                 :isHangulStructureExampleModal="isHangulStructureExampleModal"
                 @open-example="btnHangulStructure"
+                :ExampleTitle="ExampleTitle"
+                :proTipTitle="proTipTitle"
+                :proTipDescription="proTipDescription"
             />
         </div>
     </div>
@@ -777,6 +780,16 @@ export default {
             hangulStructureData: hangulstuctureData.HangulContentData,
             hangulData: hangulData,
             CorePrincipleData: CorePrincipleData.HangulStructureData,
+            ExampleTitle: "Core Principles of Hangul",
+            proTipTitle: "Pro Tip: Hangul Structure Shortcut",
+            proTipDescription: `In Hangul, remember this simple rule: Consonants (자음)
+                                provide the basic sound, Vowels (모음) complete the sound,
+                                and together they form Syllable Blocks. Every Korean syllable
+                                is built using this structure: Consonant + Vowel or Consonant
+                                + Vowel + Consonant. Once you understand this pattern,
+                                reading Korean becomes much easier because each block
+                                represents one complete sound.
+                            `,
             changeCombination: "vowelsAndConsonants",
             questions: questionData.questionsHangulStructure,
             openQuiz: false,

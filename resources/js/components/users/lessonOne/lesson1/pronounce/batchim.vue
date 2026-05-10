@@ -1,5 +1,4 @@
 <template>
-    <soundQuiz ref="gameSounds" />
     <div class="k-card">
         <h1
             class="fw-black text-dark mb-3"
