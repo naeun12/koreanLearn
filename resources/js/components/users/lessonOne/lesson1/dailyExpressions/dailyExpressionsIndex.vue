@@ -1,18 +1,23 @@
 <template>
+    <div id="Greetings">
+        <Greetings />
+    </div>
     <div id="SelfIntroduction">
         <SelfIntroduction />
     </div>
     <div id="basicClassroomExpressions">
-        <basicClassroomExpressions />
+        <BasicClassroomExpressions />
     </div>
 </template>
 <script>
+import Greetings from "./Greetings.vue";
+import BasicClassroomExpressions from "./BasicClassroomExpressions.vue";
 import SelfIntroduction from "./SelfIntroduction.vue";
-import basicClassroomExpressions from "./basicClassroomExpressions.vue";
 export default {
     components: {
+        Greetings,
+        BasicClassroomExpressions,
         SelfIntroduction,
-        basicClassroomExpressions,
     },
     watch: {
         "$parent.activeMainSection"(newVal) {

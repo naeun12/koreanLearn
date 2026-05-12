@@ -1,3 +1,4 @@
+import SelfIntroduction from "../../dailyExpressions/SelfIntroduction.vue";
 import TipsModel from "../../models/LessonOneModel/TipsModel";
 
 export default {
@@ -101,6 +102,28 @@ export default {
         new TipsModel(
             "bi-shuffle",
             "Palatalization – Certain consonants change sound before vowels.",
+        ),
+    ],
+    SelfIntroductionData: [
+        new TipsModel(
+            "bi-person-fill",
+            "Introduce yourself clearly by stating your name, age, and background in Korean.",
+        ),
+        new TipsModel(
+            "bi-chat-dots-fill",
+            "Use polite expressions like 안녕하세요 (Annyeonghaseyo) when meeting someone new.",
+        ),
+        new TipsModel(
+            "bi-translate",
+            "Learn both formal (Jondaemal) and informal (Banmal) speech depending on the situation.",
+        ),
+        new TipsModel(
+            "bi-emoji-smile-fill",
+            "Keep your tone friendly and confident when speaking.",
+        ),
+        new TipsModel(
+            "bi-shuffle",
+            "Adjust sentence structure slightly depending on formality and context.",
         ),
     ],
 };

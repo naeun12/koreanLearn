@@ -1,4 +1,5 @@
-import GreetingContent from "../models/greetingcontentModel";
+import SelfIntroduction from "../../dailyExpressions/SelfIntroduction.vue";
+import GreetingContent from "../../models/greetingcontentModel";
 
 export default {
     GreetingContent: [
@@ -129,6 +130,43 @@ export default {
             "Use when teacher speaks too fast",
             "slowly.mp3",
             "https://static.vecteezy.com/system/resources/previews/005/081/441/non_2x/student-listening-vector.jpg",
+        ),
+    ],
+    SelfIntroduction: [
+        new GreetingContent(
+            "안녕하세요",
+            "Hello",
+            "Common greeting used when meeting someone for the first time",
+            "hello.mp3",
+            "https://static.vecteezy.com/system/resources/previews/002/896/807/non_2x/teacher-teaching-students-in-classroom-vector.jpg",
+        ),
+        new GreetingContent(
+            "저는 ___입니다",
+            "I am ___",
+            "Used when introducing your name",
+            "iam.mp3",
+            "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        ),
+        new GreetingContent(
+            "만나서 반갑습니다",
+            "Nice to meet you",
+            "Polite expression used after introducing yourself",
+            "nice_to_meet_you.mp3",
+            "https://cdn-icons-png.flaticon.com/512/4712/4712035.png",
+        ),
+        new GreetingContent(
+            "저는 학생입니다",
+            "I am a student",
+            "Used to describe your occupation or role",
+            "student.mp3",
+            "https://cdn-icons-png.flaticon.com/512/1995/1995574.png",
+        ),
+        new GreetingContent(
+            "잘 부탁드립니다",
+            "Please take care of me",
+            "Polite expression used in introductions and formal settings",
+            "please_take_care.mp3",
+            "https://cdn-icons-png.flaticon.com/512/2920/2920264.png",
         ),
     ],
 };

@@ -1,3 +1,99 @@
-.sidebar-tips {
-    background:var(--bg-secondary);
+/* Container */
+.floating-sidebar {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+/* Individual Module Buttons (Filled Style) */
+.filled-sidebar-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: var(--accent-primary);
+    /* Dark solid base */
+    color: var(--text-primary);
+    /* Neon highlight */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filled-sidebar-btn:hover {
+    background-color: var(bg-primary);
+    color: var(--accent-primary);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px var(--accent-primary);
+}
+
+/* Label nga mogawas inig hover */
+.filled-label {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.module-item-wrapper:hover .filled-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+/* Animation for list items */
+
+.filled-main-label {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateX(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+/* Inig hover sa main toggle container, mugawas ang title */
+.main-toggle-container:hover .filled-main-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Kung gi-open ang menu, pwede nato i-permanente og pakita o i-hide */
+.main-toggle-container .filled-main-label {
+    /* Optional: i-hide kung open ang sidebar para dili crowded */
+    display: v-if="!isOpen"
+}
+.korean-icon-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    /* Mas nindot kung naay Korean font */
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* Siguraduha nga ang filled button magpabiling solid */
+.filled-sidebar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ... (imong existing filled-sidebar-btn styles) ... */
 }

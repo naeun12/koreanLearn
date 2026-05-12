@@ -78,4 +78,4 @@ export default {
 ></style>
 <style scoped src="../../../../css/btn-audio.css"></style>
 <style src="../../../../css/users/partials/card/card.css"></style>
-<style src="../../../../css/users/partials/sidebar.css"></style>
+<style src="../../../../css/users/partials/SideBarTips.css"></style>

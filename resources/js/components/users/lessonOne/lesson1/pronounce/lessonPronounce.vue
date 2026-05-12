@@ -188,7 +188,7 @@
 <script>
 import TipsData from "../data/LessonOneData/TipsData.js";
 import TipsSidebar from "../../../partials/TipsSidebar.vue";
-import greetingContent from "../data/greetingscontent.js";
+import greetingContent from "../data/LessonOneData/GreetingContent.js";
 import pronunciationRules from "../data/pronunciationRules.js";
 
 export default {

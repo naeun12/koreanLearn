@@ -225,7 +225,9 @@
                                                 :class="{
                                                     active:
                                                         activeMainSection ===
-                                                            'SelfIntroduction' ||
+                                                            'Greetings' ||
+                                                        activeMainSection ===
+                                                            'SelfIntroductions' ||
                                                         activeMainSection ===
                                                             'basicClassroomExpressions',
                                                 }"
@@ -246,7 +248,20 @@
                                                         href="#"
                                                         @click.prevent="
                                                             goToLesson(
-                                                                'SelfIntroduction',
+                                                                'Greetings',
+                                                            )
+                                                        "
+                                                    >
+                                                        Greetings
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="#"
+                                                        @click.prevent="
+                                                            goToLesson(
+                                                                'SelfIntroductions',
                                                             )
                                                         "
                                                     >
@@ -267,18 +282,43 @@
                                                         Expressions
                                                     </a>
                                                 </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown flex-fill">
+                                            <a
+                                                href="#"
+                                                class="k-nav-item dropdown-toggle w-100 d-flex align-items-center justify-content-center"
+                                                :class="{
+                                                    active:
+                                                        activeMainSection ===
+                                                            'Greetings' ||
+                                                        activeMainSection ===
+                                                            'SelfIntroductions' ||
+                                                        activeMainSection ===
+                                                            'basicClassroomExpressions',
+                                                }"
+                                                role="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                            >
+                                                <!-- Main Label -->
+                                                CORE GRAMMAR
+                                            </a>
+
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 mt-2"
+                                            >
                                                 <li>
                                                     <a
                                                         class="dropdown-item"
                                                         href="#"
                                                         @click.prevent="
                                                             goToLesson(
-                                                                'Batchim',
+                                                                'Greetings',
                                                             )
                                                         "
                                                     >
-                                                        Batchim (Final
-                                                        Consonants)
+                                                        To Be (이다 / 아니다)
                                                     </a>
                                                 </li>
                                                 <li>
@@ -287,12 +327,25 @@
                                                         href="#"
                                                         @click.prevent="
                                                             goToLesson(
-                                                                'soundChange',
+                                                                'SelfIntroductions',
                                                             )
                                                         "
                                                     >
-                                                        Basic Sound Changes
-                                                        (Intro)
+                                                        Existence (있다 / 없다)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="#"
+                                                        @click.prevent="
+                                                            goToLesson(
+                                                                'basicClassroomExpressions',
+                                                            )
+                                                        "
+                                                    >
+                                                        Basic Particles 은/는
+                                                        이/가 을/를 에 / 에서
                                                     </a>
                                                 </li>
                                             </ul>
@@ -573,7 +626,7 @@
                                 tag="div"
                                 class="row g-3"
                                 v-if="
-                                    activeMainSection === 'SelfIntroduction' ||
+                                    activeMainSection === 'Greetings' ||
                                     activeMainSection ===
                                         'basicClassroomExpressions'
                                 "

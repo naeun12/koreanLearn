@@ -155,7 +155,7 @@
 <script>
 import Tips from "../data/LessonOneData/TipsData.js";
 import GreetingsCard from "../../../partials/cards.vue";
-import GreetingContent from "../data/greetingscontent";
+import GreetingContent from "../data/LessonOneData/GreetingContent.js";
 import TipsSidebar from "../../../partials/TipsSidebar.vue";
 
 export default {
