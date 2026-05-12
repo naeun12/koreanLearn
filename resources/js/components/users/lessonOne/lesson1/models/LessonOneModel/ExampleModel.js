@@ -1,11 +1,12 @@
 export default class ExampleModel {
     constructor(
         number,
-        title,
-        example,
+        title = "",
+        example = "",
         description = "",
         written = "",
         pronounced = "",
+        sound = "",
     ) {
         this.number = number;
         this.title = title;
@@ -13,5 +14,6 @@ export default class ExampleModel {
         this.description = description;
         this.written = written;
         this.pronounced = pronounced;
+        this.sound = sound;
     }
 }

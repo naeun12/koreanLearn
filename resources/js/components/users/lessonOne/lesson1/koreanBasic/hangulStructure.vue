@@ -1,15 +1,23 @@
 <template>
     <div class="k-card">
         <h1
-            class="text-header-color mb-3"
+            class="text-accent-primary-color mb-3"
             style="letter-spacing: -2.5px; font-size: 3.5rem; line-height: 1"
         >
             Hangul Structure
-            <span class="text-description-color">(Core Rule)</span>
+            <span
+                class="text-primary-color"
+                style="
+                    letter-spacing: -2.5px;
+                    font-size: 3.5rem;
+                    line-height: 1;
+                "
+                >(Core Rule)</span
+            >
         </h1>
 
         <p
-            class="lead text-description-color text-justify"
+            class="lead text-secondary-color text-justify"
             style="max-width: 2000px"
         >
             Hangul, the Korean writing system, is built in a very logical and
@@ -53,19 +61,19 @@
         ref="hangulStructureExample"
     >
         <div class="d-flex align-items-center m-2">
-            <div class="p-4 card-parent-title">
+            <div class="p-4 k-card">
                 <div class="d-flex align-items-center">
                     <div class="p-2 icon-color-badge rounded-3 me-3 icon-color">
                         <i class="bi bi-arrow-repeat fs-4"></i>
                     </div>
                     <div>
                         <h3
-                            class="h5 fw-black text-title-color mb-0"
+                            class="fw-black text-accent-primary-color mb-0"
                             style="letter-spacing: -0.5px"
                         >
                             Hangul Consonants & Structure Overview
                         </h3>
-                        <p class="text-description-color small mb-0">
+                        <p class="text-secondary-color small mb-0">
                             Learn basic, aspirated, and double consonants with
                             vowel combinations
                         </p>
@@ -84,17 +92,19 @@
                         <tr>
                             <th class="">
                                 <div
-                                    class="d-flex flex-column"
+                                    class="d-flex flex-column align-items-center justify-content-center w-100"
                                     style="line-height: 1.2"
                                 >
-                                    <span class="d-flex align-items-center">
+                                    <span
+                                        class="d-flex text-accent-primary-color align-items-center"
+                                    >
                                         Vowels
                                         <i
                                             class="bi bi-arrow-right-short lh-1 ms-1"
                                         ></i>
                                     </span>
                                     <span
-                                        class="d-flex align-items-center mt-1"
+                                        class="d-flex text-accent-primary-color align-items-center mt-1"
                                     >
                                         Consonants
                                         <i
@@ -105,11 +115,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-secondary"
+                                class="py-3 small fw-800"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅏ
                                     </div>
                                     <div
@@ -122,11 +134,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅑ
                                     </div>
                                     <div
@@ -143,7 +157,9 @@
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅓ
                                     </div>
                                     <div
@@ -160,7 +176,9 @@
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅕ
                                     </div>
                                     <div
@@ -173,11 +191,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅗ
                                     </div>
                                     <div
@@ -190,11 +210,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅛ
                                     </div>
                                     <div
@@ -207,11 +229,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅜ
                                     </div>
                                     <div
@@ -224,11 +248,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅠ
                                     </div>
                                     <div
@@ -241,11 +267,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅣ
                                     </div>
                                     <div
@@ -258,11 +286,13 @@
                             </th>
 
                             <th
-                                class="py-3 small fw-800 text-header-color"
+                                class="py-3 small fw-800 text-accent-primary-color"
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 text-header-color fw-bold">
+                                    <div
+                                        class="fs-5 text-accent-primary-color fw-bold"
+                                    >
                                         ㅡ
                                     </div>
                                     <div
@@ -293,7 +323,7 @@
                                             row.type === 'aspirated',
                                     }"
                                 >
-                                    <div class="text-description-color">
+                                    <div class="text-primary-color">
                                         {{ row.consonant }}
                                     </div>
 
@@ -305,7 +335,7 @@
                                         class="mt-1"
                                     >
                                         <span
-                                            class="text-header-color"
+                                            class="text-accent-primary-color"
                                             style="font-size: 0.6rem"
                                         >
                                             aspirated
@@ -326,7 +356,7 @@
                                     <div
                                         class="fs-5 fw-bold"
                                         :class="{
-                                            'text-header-color':
+                                            'text-accent-primary-color':
                                                 row.type === 'aspirated',
                                         }"
                                     >
@@ -377,7 +407,9 @@
                                 :key="'vowel-' + i"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 fw-bold text-header-color">
+                                    <div
+                                        class="fs-5 fw-bold text-accent-primary-color"
+                                    >
                                         {{ vowel.char }}
                                     </div>
                                     <div
@@ -409,7 +441,7 @@
                                             row.type === 'aspirated',
                                     }"
                                 >
-                                    <div class="text-description-color">
+                                    <div class="text-primary-color">
                                         {{ row.consonant }}
                                     </div>
 
@@ -421,7 +453,7 @@
                                         class="mt-1"
                                     >
                                         <span
-                                            class="text-header-color"
+                                            class="text-accent-primary-color"
                                             style="font-size: 0.6rem"
                                         >
                                             aspirated
@@ -442,7 +474,7 @@
                                     <div
                                         class="fs-5 fw-bold"
                                         :class="{
-                                            'text-header-color':
+                                            'text-accent-primary-color':
                                                 row.type === 'aspirated',
                                         }"
                                     >
@@ -498,7 +530,9 @@
                                 style="letter-spacing: 1px"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 fw-bold text-header-color">
+                                    <div
+                                        class="fs-5 fw-bold text-accent-primary-color"
+                                    >
                                         {{ vowel.char }}
                                     </div>
                                     <div
@@ -530,7 +564,7 @@
                                             row.type === 'aspirated',
                                     }"
                                 >
-                                    <div class="text-description-color">
+                                    <div class="text-primary-color">
                                         {{ row.consonant }}
                                     </div>
 
@@ -542,7 +576,7 @@
                                         class="mt-1"
                                     >
                                         <span
-                                            class="text-header-color"
+                                            class="text-accent-primary-color"
                                             style="font-size: 0.6rem"
                                         >
                                             aspirated
@@ -563,7 +597,7 @@
                                     <div
                                         class="fs-5 fw-bold"
                                         :class="{
-                                            'text-header-color':
+                                            'text-accent-primary-color':
                                                 row.type === 'aspirated',
                                         }"
                                     >
@@ -617,7 +651,9 @@
                                 :key="'vowel-' + i"
                             >
                                 <div class="text-center">
-                                    <div class="fs-5 fw-bold text-header-color">
+                                    <div
+                                        class="fs-5 fw-bold text-accent-primary-color"
+                                    >
                                         {{ vowel.char }}
                                     </div>
                                     <div
@@ -649,7 +685,7 @@
                                             row.type === 'aspirated',
                                     }"
                                 >
-                                    <div class="text-description-color">
+                                    <div class="text-primary-color">
                                         {{ row.consonant }}
                                     </div>
 
@@ -661,7 +697,7 @@
                                         class="mt-1"
                                     >
                                         <span
-                                            class="text-header-color"
+                                            class="text-accent-primary-color"
                                             style="font-size: 0.6rem"
                                         >
                                             aspirated
@@ -682,7 +718,7 @@
                                     <div
                                         class="fs-5 fw-bold"
                                         :class="{
-                                            'text-header-color':
+                                            'text-accent-primary-color':
                                                 row.type === 'aspirated',
                                         }"
                                     >
@@ -739,8 +775,8 @@
             class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white"
         >
             <div class="mb-4 mb-md-0 text-center text-md-start">
-                <h3 class="fw-black mb-1">Time to Practice</h3>
-                <p class="mb-0 opacity-75 fs-5">
+                <h3 class="text-title-color mb-1">Time to Practice</h3>
+                <p class="mb-0 opacity-75 text-primary-color">
                     Test your understanding of
                     <strong>Hangul Structure</strong>, including syllable
                     formation, consonants, vowels and final consonants.

@@ -1,0 +1,193 @@
+
+
+.custom-plain-modal {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-primary) ;
+    border-radius: 32px ;
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.1) ;
+    backdrop-filter: blur(10px);
+}
+
+/* Stage Steps - Sleek & Minimal */
+.stage-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--bg-secondary);
+    z-index: 0;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+
+.stage-step {
+    width: 38px;
+    height: 38px;
+    background: var(--accent-primary);
+    border: 2px solid  var(--bg-secondary);
+    border-radius: 12px;
+    /* Squircle/Modern rounded square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    z-index: 1;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stage-step.active {
+    background: var(--bg-primary) ;
+    color: var(--text-primary);
+    border-color: transparent;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px -5px var(--accent-primary);
+}
+
+/* Content Cards - Interactive & Deep */
+.content-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-primary);
+    padding: 24px;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.content-card:hover {
+    border-color: transparent;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    transform: translateY(-4px);
+}
+
+.label-text {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    font-weight: 800;
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+/* Modern Voice Waves - Gradient & Variable Motion */
+.voice-waves {
+    display: flex;
+    align-items: center;
+    /* Center-aligned for more organic look */
+    justify-content: center;
+    gap: 5px;
+    height: 50px;
+}
+
+.voice-waves span {
+    width: 5px;
+    min-height: 8px;
+    background: linear-gradient(to top, var(--primary), var(--accent));
+    border-radius: 100px;
+    animation: wave-play 1.2s ease-in-out infinite;
+}
+
+@keyframes wave-play {
+
+    0%,
+    100% {
+        height: 10px;
+        opacity: 0.4;
+    }
+
+    50% {
+        height: 35px;
+        opacity: 1;
+    }
+}
+
+/* Modern Speaking Button */
+.speak-btn {
+    width: 100px;
+    height: 100px;
+    background: var(--accent-primary);
+    border: 1px solid var(--bg-primary);
+    border-radius: 35% 65% 65% 35% / 30% 30% 70% 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+
+    0%,
+    100% {
+        border-radius: 35% 65% 65% 35% / 30% 30% 70% 70%;
+    }
+
+    50% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    }
+}
+
+.speak-btn:hover {
+    transform: scale(1.05) rotate(5deg);
+    border-color: var(--accent-primary);
+    background: var(--bg-primary);
+}
+
+/* Explanation Card - Bolder but cleaner */
+.explanation-card {
+    background: var(--bg-primary);
+    border-left: 6px solid var(--bg-primary);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 4px 4px 15px rgba(251, 191, 36, 0.1);
+}
+
+.explanation-header {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Pulse Animation - High Quality Glow */
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:var(--accent-primary);
+    border-radius: 50%;
+    animation: modern-pulse 2s infinite ease-out;
+}
+
+@keyframes modern-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Transcript Pill */
+.live-transcript-pill {
+    background:var(--bg-secondary);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+.btn-nextquestion{
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+}

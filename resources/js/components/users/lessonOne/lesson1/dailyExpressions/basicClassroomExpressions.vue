@@ -1,42 +1,11 @@
 <template>
     <div class="row align-items-stretch g-4">
-        <div class="col-lg-4">
-            <div
-                class="card h-100 border-0 shadow-sm rounded-4 sidebar-tips text-white overflow-hidden"
-            >
-                <div class="card-body p-4 position-relative">
-                    <div
-                        class="opacity-25 position-absolute end-0 bottom-0 display-1 fw-bold mb-n4 me-n3"
-                    >
-                        🗣️
-                    </div>
+        <TipsSidebar
+            :Tips="Tips.GreetingsData"
+            :TipTitle="TipTitle"
+            :TipDescription="TipDescription"
+        />
 
-                    <h3 class="fw-bold mb-3">
-                        <i class="bi bi-hand-index-thumb"></i> Basic Classroom
-                        Expressions
-                    </h3>
-
-                    <p class="small opacity-75">
-                        Learn useful Korean classroom phrases for answering,
-                        asking questions, requesting help, and speaking
-                        naturally during class.
-                    </p>
-                    <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
-                        <li
-                            class="d-flex align-items-start gap-3"
-                            v-for="classroomTips in classroomsTips"
-                        >
-                            <div>
-                                <i :class="classroomTips.icon"></i>
-                                <span class="ms-2">{{
-                                    classroomTips.text
-                                }}</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="col-lg-8">
             <div class="k-card">
                 <div
@@ -44,11 +13,13 @@
                 ></div>
 
                 <div class="position-relative z-1">
-                    <h1 class="display-5 fw-bold mb-3 text-gradient">
+                    <h1
+                        class="display-5 fw-bold mb-3 text-accent-primary-color fs-2"
+                    >
                         What are Basic Classroom Expressions?
                     </h1>
 
-                    <p class="lead text-secondary lh-base">
+                    <p class="lead text-primary-color fs-5">
                         Basic classroom expressions are common Korean phrases
                         used during lessons and school activities. They help
                         students communicate clearly, show
@@ -63,10 +34,12 @@
                 <GreetingsCard :cardDetails="greetingContent" />
                 <div class="usage-container p-4 p-md-5 glass-effect border-0">
                     <div class="text-center mb-5">
-                        <h1 class="display-6 fw-bold text-gradient mb-2">
+                        <h1
+                            class="display-6 fw-bold text-accent-primary-color fs-3 mb-2"
+                        >
                             When to Use?
                         </h1>
-                        <p class="text-secondary">
+                        <p class="text-primary-color fs-4">
                             Understanding common classroom situations and proper
                             expressions
                         </p>
@@ -74,95 +47,102 @@
 
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
-                            <div class="usage-card shadow-sm h-100">
-                                <div class="usage-icon bg-soft-danger">
-                                    <i class="bi bi-person-workspace"></i>
+                            <div class="practice-card shadow-sm">
+                                <div class="step-badge">1</div>
+
+                                <div class="practice-icon">
+                                    <i
+                                        class="bi bi-person-workspace icon-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">
+                                <h3 class="h5 fw-bold text-primary-color">
                                     Talking to Teacher
                                 </h3>
-                                <p class="small text-muted mb-0">
+                                <p class="small text-secondary-color">
                                     Use polite expressions like
                                     <strong>네</strong> and
                                     <strong>선생님</strong>.
                                 </p>
-                                <span class="badge rounded-pill bg-danger mt-2"
-                                    >Respectful</span
-                                >
                             </div>
                         </div>
 
                         <div class="col-md-6 col-lg-3">
-                            <div class="usage-card shadow-sm h-100">
-                                <div class="usage-icon bg-soft-primary">
-                                    <i class="bi bi-question-circle-fill"></i>
+                            <div class="practice-card shadow-sm">
+                                <div class="step-badge">2</div>
+
+                                <div class="practice-icon">
+                                    <i
+                                        class="bi bi-question-circle-fill fs-1 text-secondary-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">
+                                <h3 class="h5 fw-bold text-primary-color">
                                     Asking Questions
                                 </h3>
-                                <p class="small text-muted mb-0">
+                                <p
+                                    class="small text-muted text-secondary-color"
+                                >
                                     Say <strong>질문 있어요</strong> when you
                                     need help.
                                 </p>
-                                <span class="badge rounded-pill bg-primary mt-2"
-                                    >Participation</span
-                                >
                             </div>
                         </div>
 
                         <div class="col-md-6 col-lg-3">
-                            <div class="usage-card shadow-sm h-100">
-                                <div class="usage-icon bg-soft-info">
-                                    <i class="bi bi-briefcase-fill"></i>
+                            <div class="practice-card shadow-sm">
+                                <div class="step-badge">3</div>
+
+                                <div class="practice-icon">
+                                    <i
+                                        class="bi bi-briefcase-fill icon-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">
+                                <h3 class="h5 fw-bold text-primary-color">
                                     Business Settings
                                 </h3>
-                                <p class="small text-muted mb-0">
+                                <p class="small text-secondary-color">
                                     Use formal endings even with colleagues.
                                 </p>
-                                <span class="badge rounded-pill bg-info mt-2"
-                                    >Professional</span
-                                >
                             </div>
                         </div>
 
                         <div class="col-md-6 col-lg-3">
-                            <div class="usage-card shadow-sm h-100">
-                                <div class="usage-icon bg-soft-success">
-                                    <i class="bi bi-chat-heart-fill"></i>
+                            <div class="practice-card shadow-sm">
+                                <div class="step-badge">3</div>
+
+                                <div class="practice-icon">
+                                    <i
+                                        class="bi bi-chat-heart-fill icon-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">Need Repetition</h3>
-                                <p class="small text-muted mb-0">
+                                <h3 class="h5 fw-bold text-primary-color">
+                                    Need Repetition
+                                </h3>
+                                <p class="small text-secondary-color">
                                     Use <strong>다시 말씀해 주세요</strong> if
                                     you did not hear clearly.
                                 </p>
-                                <span class="badge rounded-pill bg-success mt-2"
-                                    >Listening</span
-                                >
                             </div>
                         </div>
                         <div
                             class="d-flex justify-content-center align-items-center"
                         >
                             <div class="col-md-6 col-lg-3">
-                                <div class="usage-card shadow-sm h-100">
-                                    <div class="usage-icon bg-soft-success">
-                                        <i class="bi bi-chat-heart-fill"></i>
+                                <div class="practice-card shadow-sm">
+                                    <div class="step-badge">3</div>
+
+                                    <div class="practice-icon">
+                                        <i
+                                            class="bi bi-chat-heart-fill icon-color"
+                                        ></i>
                                     </div>
-                                    <h3 class="h6 fw-bold mt-3">
+                                    <h3 class="text-primary-color">
                                         Daily Class Use
                                     </h3>
-                                    <p class="small text-muted mb-0">
+                                    <p class="small text-secondary-color">
                                         Use simple answers like
                                         <strong>네</strong> and
                                         <strong>아니요</strong>.
                                     </p>
-                                    <span
-                                        class="badge rounded-pill bg-success mt-2"
-                                    >
-                                        Basic Use
-                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -173,17 +153,23 @@
     </div>
 </template>
 <script>
-import GreetingsTip from "../data/greetingstip.js";
+import Tips from "../data/LessonOneData/TipsData.js";
 import GreetingsCard from "../../../partials/cards.vue";
 import GreetingContent from "../data/greetingscontent";
+import TipsSidebar from "../../../partials/TipsSidebar.vue";
+
 export default {
     components: {
         GreetingsCard,
+        TipsSidebar,
     },
     data() {
         return {
+            Tips: Tips,
             greetingContent: GreetingContent.ClassroomGreetings,
-            classroomsTips: GreetingsTip.BasicClassroom,
+            TipTitle: "Basic Classroom Expressions",
+            TipDescription:
+                "Learn useful Korean classroom phrases for answering, asking questions, requesting help, and speaking naturally during class.",
         };
     },
 };

@@ -1,5 +1,5 @@
 .practice-banner {
-    background: var(--accent-primary);
+    background: var(--card-bg);
     border-radius: 28px;
     padding: 2.5rem;
     border: none;

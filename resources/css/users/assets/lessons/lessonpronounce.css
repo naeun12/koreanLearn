@@ -1,445 +1,14 @@
-/* Modern Styling without Sass */
-
-.modern-sidebar {
-    min-height: 80vh;
-    position: sticky;
-    top: 20px;
-}
-
-.smaller-text {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-}
-
-.nav-links .nav-item {
-    text-decoration: none;
-    color: #555;
-    padding: 12px 16px;
-    border-radius: 12px;
-    transition: all 0.2s ease;
-    font-weight: 500;
-}
-
-.nav-links .nav-item:hover {
-    background-color: #f8f9fa;
-    color: #4f46e5;
-    transform: translateX(5px);
-}
-
-.nav-links .nav-item.active {
-    background-color: #e7f1ff;
-    color: #4f46e5;
-}
-
-.logo-box {
-    background: #f8f9fa;
-    padding: 5px 10px;
-    border-radius: 10px;
-}
-
-.min-vh-75 {
-    min-height: 75vh;
-}
-
-/* Container to center it on the page */
-
-
-/* The "Pill" background */
-.k-nav-pill {
-    display: flex;
-    background: #ffffff;
-    padding: 6px;
-    border-radius: 100px;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    gap: 4px;
-}
-
-/* Individual Navigation Items */
-.k-nav-item {
-    text-decoration: none;
-    color: #6c757d;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 20px;
-    border-radius: 100px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    white-space: nowrap;
-}
 
 .sidebar-tips {
-    background: linear-gradient(90deg, #1e293b, #4f46e5);
+    background: linear-gradient(90deg, var(--bg-secondary) );
 }
 
-/* Icons within the nav */
-.k-icon {
-    margin-right: 4px;
-}
 
-/* Active State (The highlighted tab) */
-.k-nav-item.active {
-    background: #1a1a1a;
-    color: #ffffff;
-}
-
-/* Hover State */
-.k-nav-item:hover:not(.active) {
-    background: #f8f9fa;
-    color: #000;
-}
-
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-    .k-nav-pill {
-        overflow-x: auto;
-        max-width: 100%;
-        padding: 4px;
-    }
-}
-
-/* Animation Base */
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-slide-enter-from {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.fade-slide-leave-to {
-    opacity: 0;
-    transform: translateY(-20px);
-    position: absolute;
-    /* Prevents layout jumping during exit */
-}
-
-/* Ensure the container handles the absolute positioning of leaving elements */
-.row.g-3 {
-    position: relative;
-}
-
-/* Modern Typography & Card */
-.tracking-tight {
-    letter-spacing: -0.03em;
-}
-
-.hover-lift {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-}
-
-.bg-primary-subtle {
-    background-color: #e7f1ff;
-}
-
-.bg-warning-subtle {
-    background-color: #fff3cd;
-}
-
-.hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .1) !important;
-}
-
-.smaller-text {
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
-}
-
-/* Glass effect for active headers */
-.bg-primary {
-    background: linear-gradient(135deg, #4f46e5 0%, #0043a8 100%) !important;
-}
-
-/* Badge styling for examples */
-.badge {
-    font-size: 0.85rem;
-    padding: 0.5em 1em;
-}
-
-/* Background Dimmer */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.4);
-    /* Dark slate with transparency */
-    backdrop-filter: blur(4px);
-    z-index: 999;
-}
-
-/* The Bottom Sheet */
-.bottom-sheet {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    border-radius: 24px 24px 0 0;
-    /* Rounded top corners */
-    padding: 16px 24px 40px 24px;
-    z-index: 1000;
-    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* The little bar at the top of the modal */
-.handle {
-    width: 40px;
-    height: 4px;
-    background: #e2e8f0;
-    border-radius: 10px;
-    margin: 0 auto 20px auto;
-}
-
-.status-badge {
-    font-size: 12px;
-    font-weight: 700;
-    color: #3b82f6;
-    background: #eff6ff;
-    padding: 4px 12px;
-    border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 16px;
-    animation: pulse 2s infinite;
-    /* Make it feel "live" */
-}
-
-.hangul-display {
-    font-size: 36px;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 10px 0;
-}
-
-.close-btn {
-    margin-top: 24px;
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 14px;
-    background: #f1f5f9;
-    color: #475569;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* Animation for sliding up */
-.slide-up-enter-active,
-.slide-up-leave-active {
-    transition: transform 0.3s ease-out;
-}
-
-.slide-up-enter-from,
-.slide-up-leave-to {
-    transform: translateY(100%);
-}
-
-@keyframes pulse {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.half-card {
-    height: 50%;
-}
-
-/* Custom styling to supplement Bootstrap */
-
-/* Blur the background when modal is open */
-/* Backdrop with Blur */
-/* Base container para sa modal transition/display */
-.modal-alphabet {
-    position: fixed;
-    /* Pinaka-importante para mag-stick sa screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1050;
-    /* Dapat mas mataas sa ibang elements */
-    display: flex;
-    /* Flexbox para sa centering */
-    align-items: center;
-    /* Vertical Center */
-    justify-content: center;
-    /* Horizontal Center */
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Backdrop color */
-    backdrop-filter: blur(10px);
-    /* Glassmorphism effect */
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-/* Siguraduhin na ang dialog ay hindi aalis sa gitna */
-.modal-alphabet .modal-dialog {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    /* O kahit anong lapad na gusto mo para sa XL */
-    margin: 1.75rem auto;
-}
-
-/* Custom Card Styling */
-.custom-card-style {
-    border: none;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    overflow: hidden;
-}
-
-/* Image behavior */
-.modal-body img {
-    width: 100%;
-    max-height: 60vh;
-    object-fit: cover;
-    display: block;
-}
-
-/* Close Button positioning */
-.custom-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 1060;
-    background-color: white;
-    border-radius: 50%;
-    border: none;
-    width: 35px;
-    height: 35px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Custom styling for the greeting card */
-.card-body-greeting {
-    background: rgba(255, 255, 255, 0.7);
-    /* Translucent White */
-    backdrop-filter: blur(15px);
-    /* Glassmorphism Blur */
-    border-radius: 24px;
-    /* Modern Extra-Rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Gradient Text for a premium feel */
-.text-gradient {
-    background: linear-gradient(90deg, #4f46e5, #6610f2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Subtle Hover effect */
-.card-body-greeting:hover {
-    transform: translateY(-2px);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08) !important;
-}
-
-/* Glassmorphism Card Effect */
-.glass-effect {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 28px;
-    /* Extra rounded for a modern feel */
-    transition: all 0.3s ease;
-}
-
-.glass-effect:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Floating Icon Styling */
-.icon-wrapper {
-    position: relative;
-    /* Keeps the wrapper a square regardless of width */
-    aspect-ratio: 1 / 1;
-
-    background: linear-gradient(145deg, #ffffff, #f5f7ff);
-    border-radius: 24px;
-    /* Modern Soft UI Roundedness */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    /* Soft Neumorphic Shadow */
-    box-shadow:
-        8px 8px 16px rgba(0, 0, 0, 0.04),
-        -4px -4px 12px rgba(255, 255, 255, 0.8);
-
-    transition: all 0.4s ease-in-out;
-}
-
-/* Glassmorphism Overlay for depth */
-.glass-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 2;
-}
-
-.greeting-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensures image fills the square without stretching */
-    border-radius: 18px;
-    z-index: 1;
-}
-
-/* Interaction: Lift and Glow */
-.card-greeting-content:hover .icon-wrapper {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.1);
-    border-color: rgba(13, 110, 253, 0.2);
-}
-
-/* Text Polish */
-.hangul-text {
-    letter-spacing: -0.5px;
-}
-
-.tracking-wider {
-    letter-spacing: 1.5px;
-    font-size: 0.75rem;
-}
 
 /* Modern Audio Button */
 .btn-audio {
-    background: #eef2ff;
-    color: #4f46e5;
+    background: var(--accent-primary);
+    color: var(--text-primary);
     border: none;
     padding: 12px;
     border-radius: 16px;
@@ -448,8 +17,8 @@
 }
 
 .btn-audio:hover {
-    background: #4f46e5;
-    color: white;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
 }
 
 .btn-audio:active {
@@ -457,8 +26,8 @@
 }
 /*mic modal */
 .custom-plain-modal {
-    background-color: #ffffff !important;
-    border: 1px solid #e0e0e0 !important;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-primary);
     border-radius: 24px !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05) !important;
 }
@@ -473,7 +42,7 @@
 /* Individual bars */
 .voice-waves span {
     width: 6px;
-    background: linear-gradient(to top, #4f46e5, #a21caf);
+    background: linear-gradient(to top, var(--accent-primary), var(--bg-primary));
     border-radius: 10px;
     animation: wave-bounce 1s ease-in-out infinite;
 }
@@ -520,8 +89,8 @@
     font-size: 0.75rem;
 }
 /* Card Container */
-.modern-explanation-card {
-    background: #ffffff;
+.explanation-card {
+    background: var(--bg-secondary);
     border-radius: 24px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.03);
@@ -532,8 +101,7 @@
 
 /* Status Section */
 .result-header {
-    background: #fdfdfd;
-    border-bottom: 1px solid #f0f0f0;
+    background: var(--accent-primary);
 }
 
 .status-indicator-ring {
@@ -548,24 +116,24 @@
 }
 
 .status-indicator-ring.correct {
-    background: #e7fcf3;
-    color: #00b058;
+    background: var(--accent-primary);
+    color: var(--text-primary);
 }
 
 .status-indicator-ring.incorrect {
-    background: #fff0f0;
-    color: #ff4d4d;
+    background: var(--accent-primary);
+    color: var(--text-primary);
 }
 
 .status-label {
     font-weight: 700;
     font-size: 0.95rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .status-subtext {
     font-size: 0.8rem;
-    color: #6c757d;
+    color: var(--text-secondary);
 }
 
 /* Transcript Area */
@@ -573,7 +141,7 @@
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 1.5px;
-    color: #adb5bd;
+    color: var(--text-primary);
 }
 
 .transcript-quote-wrapper {
@@ -586,21 +154,21 @@
     left: -5px;
     top: -5px;
     font-size: 1.5rem;
-    color: #0d6efd;
+    color: var(--text-primary);
     opacity: 0.15;
 }
 
 .transcript-text {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #2d3436;
+    color: var(--text-secondary);
     line-height: 1.4;
 }
 
 /* Button Styling */
 .btn-modern-primary {
-    background: #1a1a1a;
-    color: white;
+    background: var(--accent-primary);
+    color:var(--text-primary);
     border-radius: 12px;
     padding: 10px 24px;
     font-weight: 600;
@@ -611,5 +179,5 @@
 .btn-modern-primary:hover {
     transform: translateY(-2px);
     background: #333;
-    color: white;
+    color: var(--text-secondary);
 }

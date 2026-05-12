@@ -19,17 +19,15 @@
                             />
                         </div>
 
-                        <h1 class="h4 fw-bold text-primary mb-1 hangul-text">
+                        <h1 class="fw-bold text-accent-primary-color fs-3 mb-2">
                             {{ greetingcontent.korean }}
                         </h1>
 
-                        <h2
-                            class="h6 text-muted fw-normal mb-2 text-uppercase tracking-wider small"
-                        >
+                        <h2 class="text-primary-color">
                             {{ greetingcontent.meaning }}
                         </h2>
 
-                        <p class="x-small text-secondary mb-3 lh-sm">
+                        <p class="text-secondary-color">
                             {{ greetingcontent.usage }}
                         </p>
 
@@ -79,3 +77,5 @@ export default {
     src="../../../../css/users/partials/game/gamefinalresultmodal.css"
 ></style>
 <style scoped src="../../../../css/btn-audio.css"></style>
+<style src="../../../../css/users/partials/card/card.css"></style>
+<style src="../../../../css/users/partials/sidebar.css"></style>

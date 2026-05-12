@@ -225,7 +225,7 @@
                                                 :class="{
                                                     active:
                                                         activeMainSection ===
-                                                            'greetings' ||
+                                                            'SelfIntroduction' ||
                                                         activeMainSection ===
                                                             'basicClassroomExpressions',
                                                 }"
@@ -246,7 +246,7 @@
                                                         href="#"
                                                         @click.prevent="
                                                             goToLesson(
-                                                                'greetings',
+                                                                'SelfIntroduction',
                                                             )
                                                         "
                                                     >
@@ -573,7 +573,7 @@
                                 tag="div"
                                 class="row g-3"
                                 v-if="
-                                    activeMainSection === 'greetings' ||
+                                    activeMainSection === 'SelfIntroduction' ||
                                     activeMainSection ===
                                         'basicClassroomExpressions'
                                 "

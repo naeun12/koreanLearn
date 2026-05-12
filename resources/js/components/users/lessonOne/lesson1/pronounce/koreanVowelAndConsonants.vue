@@ -1,18 +1,18 @@
 <template>
     <div class="k-card">
         <h1
-            class="fw-black mb-3 text-header-color"
+            class="fw-black mb-3 text-accent-primary-color"
             style="letter-spacing: -2.5px; font-size: 2rem; line-height: 1"
         >
             Basic Vowel and Consonant Sounds (Korean)
             <span
-                class="text-description-color"
+                class="text-secondary-color"
                 style="letter-spacing: -2.5px; font-size: 2rem; line-height: 1"
                 >(Core Rule)</span
             >
         </h1>
         <p
-            class="lead text-description-color text-justify"
+            class="lead text-secondary-color text-justify"
             style="max-width: 2000px"
         >
             <strong>Basic Vowel and Consonant Sounds</strong> are the foundation
@@ -47,7 +47,7 @@
     >
         <div class="p-4">
             <div class="d-flex align-items-center">
-                <div class="p-2 rounded-3 me-3 text-header-color">
+                <div class="p-2 rounded-3 me-3 text-accent-primary-color">
                     <i class="bi bi-arrow-repeat fs-4"></i>
                 </div>
                 <div>
@@ -57,7 +57,7 @@
                     >
                         Examples of Basic Vowel & Consonant Sounds
                     </h3>
-                    <p class="text-description-color small mb-0">
+                    <p class="text-secondary-color small mb-0">
                         Each Korean syllable block is made by combining one
                         consonant and one vowel. The consonant gives the
                         starting sound, while the vowel creates the main voice
@@ -74,13 +74,13 @@
             <ExampleAssets :ExampleData="ExampleData" />
         </div>
         <div
-            class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white"
+            class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center"
         >
             <div class="mb-4 mb-md-0 text-center text-md-start">
-                <h3 class="fw-black mb-1">
+                <h3 class="text-title-color mb-1">
                     Master Korean Vowel & Consonant Sounds
                 </h3>
-                <p class="mb-0 opacity-75 fs-5">
+                <p class="mb-0 opacity-75 text-secondary-color">
                     Strengthen your foundation in Hangul by practicing how
                     vowels and consonants combine to form syllables. Learn how
                     each letter contributes<br />
@@ -100,7 +100,7 @@
     <GameModal
         v-model="openQuiz"
         :questions="questions"
-        :gameDescription="gameDescription"
+        :gamesecondary="gamesecondary"
         :gameTitle="gameTitle"
     />
 </template>
@@ -137,7 +137,7 @@ export default {
             isExampleModal: false,
             questions: questionData.questionsKoreanAndConsonants,
             openQuiz: false,
-            gameDescription:
+            gamesecondary:
                 "Practice Korean vowels and consonants with fun quiz questions!",
             gameTitle: "Quiz Vowel and Consonants",
         };

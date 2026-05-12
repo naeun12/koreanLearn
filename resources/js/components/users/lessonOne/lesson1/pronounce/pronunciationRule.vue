@@ -6,13 +6,13 @@
         >
             Pronunciation Rules
             <span
-                class="text-description-color"
+                class="text-primary-color"
                 style="letter-spacing: -2.5px; font-size: 2rem; line-height: 1"
                 >(Phonetic Mastery)</span
             >
         </h1>
         <p
-            class="lead text-description-color text-justify"
+            class="lead text-secondary-color text-justify"
             style="max-width: 2000px"
         >
             <strong>Advanced Phonetic Transitions</strong> govern how Korean
@@ -30,7 +30,6 @@
         <CorePrinciplesAssets
             :CorePrincipleData="CorePrincipleData"
             :btnPronunciationRuleExample="btnPronunciationRuleExample"
-            :ExampleTitle="ExampleTitle"
             :proTipTitle="proTipTitle"
             :proTipDescription="proTipDescription"
             @open-example="btnPronunciationRuleExample"
@@ -71,10 +70,10 @@
             class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white"
         >
             <div class="mb-4 mb-md-0 text-center text-md-start">
-                <h3 class="fw-black mb-1">
+                <h3 class="text-title-color mb-1">
                     Master Korean Vowel & Consonant Sounds
                 </h3>
-                <p class="mb-0 opacity-75 fs-5">
+                <p class="mb-0 opacity-75 text-description-color">
                     Strengthen your foundation in Hangul by practicing how
                     vowels and consonants combine to form syllables. Learn how
                     each letter contributes<br />

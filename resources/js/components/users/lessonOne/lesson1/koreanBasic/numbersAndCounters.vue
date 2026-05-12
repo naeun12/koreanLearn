@@ -582,10 +582,10 @@
                     </table>
                 </div>
                 <div
-                    class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center text-white"
+                    class="practice-banner mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center"
                 >
                     <div class="mb-4 mb-md-0 text-center text-md-start">
-                        <h3 class="fw-black mb-1">Time to Practice</h3>
+                        <h3 class="text-title-color mb-1">Time to Practice</h3>
                         <p class="mb-0 opacity-75 fs-5">
                             Test your skills on
                             <strong>Numbers and</strong> Counting

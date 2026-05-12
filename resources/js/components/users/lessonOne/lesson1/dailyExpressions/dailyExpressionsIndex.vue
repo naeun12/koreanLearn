@@ -1,17 +1,17 @@
 <template>
-    <div id="greetings">
-        <lessonGreetings />
+    <div id="SelfIntroduction">
+        <SelfIntroduction />
     </div>
     <div id="basicClassroomExpressions">
         <basicClassroomExpressions />
     </div>
 </template>
 <script>
-import lessonGreetings from "./lessonGreetings.vue";
+import SelfIntroduction from "./SelfIntroduction.vue";
 import basicClassroomExpressions from "./basicClassroomExpressions.vue";
 export default {
     components: {
-        lessonGreetings,
+        SelfIntroduction,
         basicClassroomExpressions,
     },
     watch: {

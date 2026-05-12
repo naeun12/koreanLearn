@@ -1,39 +1,11 @@
 <template>
     <div class="row align-items-stretch g-4">
-        <div class="col-lg-4">
-            <div
-                class="card h-100 border-0 shadow-sm rounded-4 sidebar-tips text-white overflow-hidden"
-            >
-                <div class="card-body p-4 position-relative">
-                    <div
-                        class="opacity-25 position-absolute end-0 bottom-0 display-1 fw-bold mb-n4 me-n3"
-                    >
-                        🗣️
-                    </div>
+        <TipsSidebar
+            :Tips="Tips.GreetingsData"
+            :TipTitle="TipTitle"
+            :TipDescription="TipDescription"
+        />
 
-                    <h3 class="fw-bold mb-3">
-                        <i class="bi bi-hand-index-thumb"></i> Greeting Tips
-                    </h3>
-
-                    <p class="small opacity-75">
-                        Learn how Koreans greet each other in real life—simple,
-                        natural, and easy to follow.
-                    </p>
-
-                    <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
-                        <li
-                            class="d-flex align-items-start gap-3"
-                            v-for="greeting in greetings"
-                        >
-                            <div>
-                                <i :class="greeting.icon"></i>
-                                <span class="ms-2">{{ greeting.text }}</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="col-lg-8">
             <div class="k-card">
                 <div
@@ -41,10 +13,10 @@
                 ></div>
 
                 <div class="position-relative z-1">
-                    <h1 class="display-5 fw-bold mb-3 text-gradient">
+                    <h1 class="text-accent-primary-color fs-2">
                         What is a Greeting?
                     </h1>
-                    <p class="lead text-secondary lh-base">
+                    <p class="lead text-primary-color fs-5 lh-base">
                         A greeting is more than just words it's the gateway to a
                         conversation. In Korean culture, greetings carry deep
                         significance, reflecting
@@ -59,10 +31,10 @@
 
                 <div class="usage-container p-4 p-md-5 glass-effect border-0">
                     <div class="text-center mb-5">
-                        <h1 class="display-6 fw-bold text-gradient mb-2">
+                        <h1 class="text-accent-primary-color fs-3">
                             When to Use?
                         </h1>
-                        <p class="text-secondary">
+                        <p class="text-primary-color">
                             Understanding Korean social fullGameData and
                             etiquette
                         </p>
@@ -72,16 +44,21 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="usage-card shadow-sm h-100">
                                 <div class="usage-icon bg-soft-danger">
-                                    <i class="bi bi-person-workspace"></i>
+                                    <i
+                                        class="bi bi-person-workspace icon-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">
+                                <h3
+                                    class="h6 fw-bold mt-3 text-accent-primary-color"
+                                >
                                     Teachers & Elders
                                 </h3>
-                                <p class="small text-muted mb-0">
+                                <p class="small text-secondary-color mb-0">
                                     Always use honorifics and full polite
                                     speech.
                                 </p>
-                                <span class="badge rounded-pill bg-danger mt-2"
+                                <span
+                                    class="badge text-accent-primary-color rounded-pill mt-2"
                                     >Highly Formal</span
                                 >
                             </div>
@@ -90,14 +67,21 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="usage-card shadow-sm h-100">
                                 <div class="usage-icon bg-soft-primary">
-                                    <i class="bi bi-people-fill"></i>
+                                    <i class="bi bi-people-fill icon-color"></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">Strangers</h3>
-                                <p class="small text-muted mb-0">
+                                <h3
+                                    class="h6 fw-bold mt-3 text-accent-primary-color"
+                                >
+                                    Strangers
+                                </h3>
+                                <p
+                                    class="small text-muted mb-0 text-secondary-color"
+                                >
                                     Default to <strong>안녕하세요</strong> for
                                     safety.
                                 </p>
-                                <span class="badge rounded-pill bg-primary mt-2"
+                                <span
+                                    class="badge rounded-pill text-accent-primary-color mt-2"
                                     >Polite (Jondaemal)</span
                                 >
                             </div>
@@ -105,16 +89,21 @@
 
                         <div class="col-md-6 col-lg-3">
                             <div class="usage-card shadow-sm h-100">
-                                <div class="usage-icon bg-soft-info">
-                                    <i class="bi bi-briefcase-fill"></i>
+                                <div class="bg-soft-info">
+                                    <i
+                                        class="bi bi-briefcase-fill icon-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">
+                                <h3
+                                    class="h6 fw-bold text-accent-primary-color mt-3"
+                                >
                                     Business Settings
                                 </h3>
-                                <p class="small text-muted mb-0">
+                                <p class="small text-secondary-color mb-0">
                                     Use formal endings even with colleagues.
                                 </p>
-                                <span class="badge rounded-pill bg-info mt-2"
+                                <span
+                                    class="badge rounded-pill text-accent-primary-color mt-2"
                                     >Professional</span
                                 >
                             </div>
@@ -122,15 +111,22 @@
 
                         <div class="col-md-6 col-lg-3">
                             <div class="usage-card shadow-sm h-100">
-                                <div class="usage-icon bg-soft-success">
-                                    <i class="bi bi-chat-heart-fill"></i>
+                                <div class="usage-icon">
+                                    <i
+                                        class="bi bi-chat-heart-fill icon-color"
+                                    ></i>
                                 </div>
-                                <h3 class="h6 fw-bold mt-3">Close Friends</h3>
-                                <p class="small text-muted mb-0">
+                                <h3
+                                    class="h6 fw-bold mt-3 text-accent-primary-color"
+                                >
+                                    Close Friends
+                                </h3>
+                                <p class="small mb-0 text-secondary-color">
                                     Casual <strong>안녕</strong> is acceptable
                                     here.
                                 </p>
-                                <span class="badge rounded-pill bg-success mt-2"
+                                <span
+                                    class="badge rounded-pill text-accent-primary-color mt-2"
                                     >Informal (Banmal)</span
                                 >
                             </div>
@@ -141,10 +137,10 @@
                     class="practice-section p-4 p-md-5 glass-effect border-0 mt-5"
                 >
                     <div class="text-center mb-5">
-                        <h2 class="display-6 fw-bold text-gradient">
+                        <h2 class="fs-3 fw-bold text-accent-primary-color">
                             How to Practice
                         </h2>
-                        <p class="text-secondary">
+                        <p class="text-secondary-color">
                             Follow these steps to master Korean greetings
                             naturally.
                         </p>
@@ -155,10 +151,12 @@
                             <div class="practice-card shadow-sm">
                                 <div class="step-badge">1</div>
                                 <div class="practice-icon">
-                                    <i class="bi bi-ear-fill text-primary"></i>
+                                    <i class="bi bi-ear-fill icon-color"></i>
                                 </div>
-                                <h4 class="h5 fw-bold">Listen First</h4>
-                                <p class="small text-muted">
+                                <h4 class="h5 fw-bold text-primary-color">
+                                    Listen First
+                                </h4>
+                                <p class="small text-secondary-color">
                                     Focus on the intonation and pronunciation
                                     before you try to speak.
                                 </p>
@@ -169,10 +167,14 @@
                             <div class="practice-card shadow-sm">
                                 <div class="step-badge">2</div>
                                 <div class="practice-icon">
-                                    <i class="bi bi-mic-fill text-danger"></i>
+                                    <i class="bi bi-mic-fill icon-color"></i>
                                 </div>
-                                <h4 class="h5 fw-bold">Shadow It</h4>
-                                <p class="small text-muted">
+                                <h4 class="h5 fw-bold text-primary-color">
+                                    Shadow It
+                                </h4>
+                                <p
+                                    class="small text-muted text-secondary-color"
+                                >
                                     Repeat the words out loud every day to build
                                     muscle memory.
                                 </p>
@@ -184,11 +186,13 @@
                                 <div class="step-badge">3</div>
                                 <div class="practice-icon">
                                     <i
-                                        class="bi bi-speedometer2 text-warning"
+                                        class="bi bi-speedometer2 icon-color"
                                     ></i>
                                 </div>
-                                <h4 class="h5 fw-bold">Pace Control</h4>
-                                <p class="small text-muted">
+                                <h4 class="h5 fw-bold text-primary-color">
+                                    Pace Control
+                                </h4>
+                                <p class="small text-secondary-color">
                                     Start slowly for accuracy, then gradually
                                     increase your speed.
                                 </p>
@@ -196,17 +200,17 @@
                         </div>
 
                         <div class="col-md-6 col-lg-4">
-                            <div
-                                class="practice-card shadow-sm border-primary-subtle"
-                            >
+                            <div class="practice-card shadow-sm">
                                 <div class="step-badge">4</div>
                                 <div class="practice-icon">
                                     <i
-                                        class="bi bi-chat-dots-fill text-info"
+                                        class="bi bi-chat-dots-fill icon-color"
                                     ></i>
                                 </div>
-                                <h4 class="h5 fw-bold">Real World</h4>
-                                <p class="small text-muted">
+                                <h4 class="h5 fw-bold text-primary-color">
+                                    Real World
+                                </h4>
+                                <p class="small text-secondary-color">
                                     Use these greetings in real situations to
                                     gain true confidence.
                                 </p>
@@ -214,16 +218,18 @@
                         </div>
 
                         <div class="col-md-6 col-lg-4">
-                            <div class="practice-card tip-card h-100">
+                            <div class="practice-card h-100">
                                 <div class="practice-icon">
                                     <i
-                                        class="bi bi-heart-pulse-fill text-white"
+                                        class="bi bi-heart-pulse-fill icon-color"
                                     ></i>
                                 </div>
-                                <h4 class="h5 fw-bold text-white">
+                                <h4 class="h5 fw-bold text-primary-color">
                                     Don't Worry!
                                 </h4>
-                                <p class="small text-white opacity-75">
+                                <p
+                                    class="small text-secondary-color opacity-75"
+                                >
                                     Mistakes are proof you're learning. Keep
                                     trying!
                                 </p>
@@ -235,7 +241,7 @@
         </div>
         <div class="col-12 mt-5">
             <div
-                class="reminder-banner p-4 p-md-5 overflow-hidden position-relative border-0 shadow-lg"
+                class="k-card p-4 p-md-5 overflow-hidden position-relative border-0 shadow-lg"
             >
                 <div class="blur-circle-1"></div>
                 <div class="blur-circle-2"></div>
@@ -244,18 +250,21 @@
                     <div
                         class="col-md-2 text-center text-md-start mb-3 mb-md-0"
                     >
-                        <div class="heart-wrapper shadow">
-                            <i class="bi bi-heart-fill text-white fs-1"></i>
+                        <div class="k-card shadow">
+                            <i
+                                class="bi bi-heart-fill text-header-color fs-1"
+                            ></i>
                         </div>
                     </div>
                     <div class="col-md-10">
-                        <h3 class="fw-bold text-white mb-2">
+                        <h3 class="fw-bold text-header-color fs-3 mb-2">
                             Confidence starts here.
                         </h3>
-                        <p class="lead text-white opacity-90 mb-0">
+                        <p class="lead text-title-color fs-5 opacity-90 mb-0">
                             Mastering greetings is your first major milestone in
                             speaking Korean fluently. Remember,
-                            <span class="fw-bold border-bottom border-2"
+                            <span
+                                class="fw-bold border-bottom text-header-color border-2"
                                 >small daily steps</span
                             >
                             lead to massive improvements over time.
@@ -268,7 +277,7 @@
 
     <div class="fixed-bottom p-3 d-flex justify-content-center">
         <button
-            class="btn btn-practice-bottom w-100 d-flex align-items-center justify-content-center shadow-sm"
+            class="btn btn-practice-bottom w-25 d-flex align-items-center justify-content-center shadow-sm"
             @click="btnOpenPronouncationGameModal()"
         >
             <i class="bi bi-pencil-square me-2"></i>
@@ -316,27 +325,19 @@
                     <div class="content-card mb-3">
                         <small class="label-text">Situation</small>
                         <div class="d-flex align-items-center mt-1">
-                            <h5 class="mb-0 fw-bold text-dark">
+                            <h5 class="mb-0 fw-bold text-primary-color">
                                 {{ currentQuestion.korean }}
                             </h5>
-                            <button
-                                @click="greetingVoice(currentQuestion.korean)"
-                                class="btn btn-sm btn-light ms-auto rounded-circle"
-                            >
-                                <i
-                                    class="bi bi-volume-up-fill text-primary"
-                                ></i>
-                            </button>
                         </div>
                     </div>
-                    <div class="content-card mb-4 border-primary-subtle">
-                        <small class="label-text text-primary"
+                    <div class="content-card mb-4">
+                        <small class="label-text text-primary-color"
                             >Your Task: {{ currentQuestion.english }}</small
                         >
-                        <p class="mb-0 mt-1 text-dark fw-bold fs-5">
+                        <p class="mb-0 mt-1 text-secondary-color fw-bold fs-5">
                             {{ currentQuestion.correctResponse }}
                         </p>
-                        <p class="small text-muted mb-0">
+                        <p class="small text-secondary-color mb-0">
                             {{ currentQuestion.description }}
                         </p>
                     </div>
@@ -368,16 +369,16 @@
                             class="mt-4 d-flex justify-content-center"
                         >
                             <div
-                                class="live-transcript-pill shadow-sm d-flex align-items-center px-4 py-2 border border-info rounded-pill bg-light"
+                                class="live-transcript-pill shadow-sm d-flex align-items-center px-4 py-2 border rounded-pill bg-light"
                             >
                                 <div class="mic-container me-3">
                                     <div class="pulse-ring"></div>
                                     <i
-                                        class="bi bi-mic-fill text-danger fs-5"
+                                        class="bi bi-mic-fill text-accent-primary-color fs-5"
                                     ></i>
                                 </div>
 
-                                <p class="mb-0 text-dark fw-medium">
+                                <p class="mb-0 text-primary-color fw-medium">
                                     <span
                                         v-if="!liveTranscript"
                                         class="text-muted opacity-75"
@@ -398,9 +399,11 @@
                                 class="transcript-box mb-3 d-flex align-items-center"
                             >
                                 <i
-                                    class="bi bi-mic-fill me-2 text-primary opacity-75"
+                                    class="bi bi-mic-fill me-2 text-accent-primary-color fs-2 opacity-75"
                                 ></i>
-                                <p class="mb-0 small text-muted fst-italic">
+                                <p
+                                    class="mb-0 small text-primary-color fst-italic"
+                                >
                                     I heard:
                                     <span class="text-dark fw-medium"
                                         >"{{ userTranscript }}"</span
@@ -420,14 +423,14 @@
                                         ></i>
                                     </div>
                                     <h6
-                                        class="mb-0 fw-bold text-uppercase letter-spacing-1"
+                                        class="mb-0 fw-bold text-primary-color text-uppercase letter-spacing-1"
                                     >
                                         Did you know?
                                     </h6>
                                 </div>
 
                                 <p
-                                    class="explanation-text text-secondary lh-base mb-4"
+                                    class="explanation-text text-secondary-color lh-base mb-4"
                                 >
                                     {{ currentQuestion.explaination }}
                                 </p>
@@ -440,8 +443,8 @@
                                     <span
                                         :class="
                                             isCorrect
-                                                ? 'badge bg-success-soft text-success'
-                                                : 'badge bg-danger-soft text-danger'
+                                                ? 'badge bg-success-soft text-primary-color'
+                                                : 'badge bg-danger-soft text-accent-primary-color'
                                         "
                                         class="p-2 px-3 rounded-pill"
                                     >
@@ -459,7 +462,7 @@
 
                                 <button
                                     @click="btnQuestionNext"
-                                    class="btn btn-primary rounded-pill px-4 py-2 shadow-sm d-flex align-items-center"
+                                    class="btn btn-nextquestion rounded-pill px-4 py-2 shadow-sm d-flex align-items-center"
                                 >
                                     <span>Next Question</span>
                                     <i class="bi bi-arrow-right ms-2"></i>
@@ -529,10 +532,11 @@
     </div>
 </template>
 <script>
-import greetings from "../data/greetingstip.js";
+import Tips from "../data/LessonOneData/TipsData.js";
 import greetingContent from "../data/greetingscontent.js";
 import GameData from "../data/greetinggame.js";
 import GreetingsCard from "../../../partials/cards.vue";
+import TipsSidebar from "../../../partials/TipsSidebar.vue";
 
 const SOUND_URLS = {
     correct: "/sounds/gamevisualsound/chrisiex1-correct-156911.mp3",
@@ -543,10 +547,14 @@ const SOUND_URLS = {
 export default {
     components: {
         GreetingsCard,
+        TipsSidebar,
     },
     data() {
         return {
-            greetings: greetings.Greeting,
+            Tips: Tips,
+            TipTitle: "Greeting Tips",
+            TipDescription:
+                "Learn common Korean greetings, when to use formal or casual expressions, and how pronunciation changes in everyday speech.",
             greetingContent: greetingContent.GreetingContent,
             fullList: GameData.GreetingGame,
             openPronouncationModal: false,
@@ -887,3 +895,4 @@ export default {
     scoped
     src="../../../../../../css/users/partials/card/k-card.css"
 ></style>
+<style src="../../../../../../css/users/assets/lessons/mic.css"></style>

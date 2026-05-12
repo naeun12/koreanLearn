@@ -1,4 +1,5 @@
 import ExampleModel from "../../models/LessonOneModel/ExampleModel";
+import Batchim from "../../pronounce/batchim.vue";
 export default {
     KoreanVowelAndConsonantsExamples: [
         new ExampleModel(
@@ -202,6 +203,205 @@ export default {
             " he ㅅ sound shifts to 'SH' when followed by the vowel ㅣ or 'y' sounds.",
             `<strong> Written: </strong> (시)`,
             `<strong>Pronounced: </strong>시 (Shi )`,
+        ),
+    ],
+    BatchimExamples: [
+        new ExampleModel(
+            1,
+            "No Batchim (Open Syllables)",
+            "Basic Structure: Consonant + Vowel",
+            "This type of syllable has no final consonant (Batchim), so it ends with a clear and smooth vowel sound.",
+            ` <span class="p-2 rounded-3 small"><strong>가 (ga)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>나 (na)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>다 (da)</strong></span
+            >`,
+        ),
+        new ExampleModel(
+            2,
+            "Standard Batchim (Final Consonants)",
+            "Common final consonants and their resulting sounds:",
+            "",
+            `<span class="p-2 small"><strong>ㄱ (k) → 각 (gak)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㄴ (n) → 난 (nan)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㄷ (t) → 닫 (dat)</strong></span>
+            <br>
+            <span class="p-2 rounded-3 small"><strong>ㄹ (l) → 달 (dal)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅁ (m) → 맘 (mam)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅂ (p) → 밥 (bap)</strong></span>
+            <br>
+            <span class="p-2 rounded-3 small"><strong>ㅅ (t) → 옷 (ot)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅇ (ng) → 항 (hang)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅈ (t) → 낮 (nat)</strong></span>
+            <br>
+            <span class="p-2 rounded-3 small"><strong>ㅊ (t) → 꽃 (kkot)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅋ (k) → 부엌 (bueok)</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅌ (t) → 끝 (kkeut)</strong></span>  
+            `,
+        ),
+        new ExampleModel(
+            3,
+            "Double Batchim (Complex Final Consonants)",
+            "Two consonants in final position (but only one is pronounced or changes sound):",
+            "",
+            ` <span class="p-2 rounded-3 small"><strong>읽 (ilg) → sounds like “il”</strong></span>
+               <br>
+            <span class="p-2 rounded-3 small"><strong>앉 (anj) → sounds like “an”</strong></span>
+                        <br>
+
+            <span class="p-2 rounded-3 small"><strong>삶 (salm) → sounds like “sam”</strong></span>
+               <br>
+            <span class="p-2 rounded-3 small"><strong>값 (gaps) → sounds like “gap”</strong></span>              
+             <br>
+            <span class="p-2 rounded-3 small"><strong>닭 (dak) → sound shifts to “dak”</strong></span>
+               <br>
+            <span class="p-2 rounded-3 small"><strong>흙 (heuk) → ending sound “heuk”</strong></span>
+               <br>
+            <span class="p-2 rounded-3 small"><strong>없 (eop) → ending sound “eop”</strong></span>
+            `,
+        ),
+        new ExampleModel(
+            4,
+            "Pronunciation Rule Summary",
+            "Batchim is usually pronounced in a simplified way. Only 7 main sounds are commonly heard:",
+            "",
+            ` <span class="p-2 rounded-3 small"><strong>ㄱ </strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㄴ </strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㄷ </strong></spanclass>
+            <span class="p-2 rounded-3 small"><strong>ㄹ </strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅁ </strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅂ</strong></span>
+            <span class="p-2 rounded-3 small"><strong>ㅇ</strong></span>
+               <br>
+            <span class="p-2"><strong>→ Other final consonants change to one ofthese sounds.</strong></span>
+            `,
+        ),
+    ],
+    BasicSoundsChangeExamples: [
+        new ExampleModel(
+            1,
+            "",
+            "책이 → 채기 (chae-gi)",
+            "Final consonant links to the next vowel sound.",
+            "",
+            "",
+            "chagi.mp3",
+        ),
+        new ExampleModel(
+            2,
+            "",
+            "한국어 → 한구거 (han-gu-geo)",
+            "Batchim moves smoothly to the next syllable.",
+            "",
+            "",
+            "hangugeo.mp3",
+        ),
+        new ExampleModel(
+            3,
+            "",
+            "꽃을 → 꼬츨 (kko-cheul)",
+            "Final sound connects to the following vowel.",
+            "",
+            "",
+            "kkocheul.mp3",
+        ),
+        new ExampleModel(
+            4,
+            "",
+            "합니다 → 함니다 (ham-ni-da)",
+            "ㅂ changes to ㅁ before ㄴ for easier speech.",
+            "",
+            "",
+            "hamnida.mp3",
+        ),
+        new ExampleModel(
+            5,
+            "",
+            "국물 → 궁물 (gung-mul)",
+            "ㄱ changes to ng sound before ㅁ.",
+            "",
+            "",
+            "gungmul.mp3",
+        ),
+        new ExampleModel(
+            6,
+            "",
+            "앞문 → 암문 (am-mun)",
+            "ㅍ changes to ㅁ before ㅁ.",
+            "",
+            "",
+            "ammun.mp3",
+        ),
+        new ExampleModel(
+            7,
+            "",
+            "학교 → 학꾜 (hak-kyo)",
+            "ㄱ becomes stronger after batchim.",
+            "",
+            "",
+            "hakkyo.mp3",
+        ),
+        new ExampleModel(
+            8,
+            "",
+            "입구 → 입꾸 (ip-kku)",
+            "ㄱ becomes tense after final consonant.",
+            "",
+            "",
+            "ipkku.mp3",
+        ),
+        new ExampleModel(
+            9,
+            "",
+            "국밥 → 국빱 (guk-ppap)",
+            "ㅂ becomes tense after batchim.",
+            "",
+            "",
+            "gukppap.mp3",
+        ),
+        new ExampleModel(
+            10,
+            "",
+            "설날 → 설랄 (seol-lal)",
+            "ㄴ changes to ㄹ after ㄹ.",
+            "",
+            "",
+            "seollal.mp3",
+        ),
+        new ExampleModel(
+            11,
+            "",
+            "신라 → 실라 (sil-la)",
+            "ㄴ + ㄹ becomes ㄹㄹ sound.",
+            "",
+            "",
+            "silla.mp3",
+        ),
+        new ExampleModel(
+            12,
+            "",
+            "좋아요 → 조아요 (jo-a-yo)",
+            "ㅎ becomes silent in smooth speech.",
+            "",
+            "",
+            "joayo.mp3",
+        ),
+        new ExampleModel(
+            13,
+            "",
+            "놓다 → 노타 (no-ta)",
+            "ㅎ affects the next consonant sound.",
+            "",
+            "",
+            "nota.mp3",
+        ),
+        new ExampleModel(
+            14,
+            "",
+            "많다 → 만타 (man-ta)",
+            "ㅎ changes the following sound to stronger ㅌ.",
+            "",
+            "",
+            "manta.mp3",
         ),
     ],
 };

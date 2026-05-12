@@ -2,48 +2,11 @@
     <div class="pronunciation-guide-container h-100">
         <div class="row align-items-stretch g-4">
             <!-- LEFT CARD (UNCHANGED) -->
-            <div class="col-lg-4">
-                <div
-                    class="card h-100 border-0 shadow-sm rounded-4 sidebar-tips text-white overflow-hidden"
-                >
-                    <div class="card-body p-4 position-relative">
-                        <div
-                            class="opacity-25 position-absolute end-0 bottom-0 display-1 fw-bold mb-n4 me-n3"
-                        >
-                            🗣️
-                        </div>
-
-                        <h3 class="fw-bold mb-3">Pronunciation Pro-Tips</h3>
-
-                        <p class="small opacity-75">
-                            Mastering these rules is the secret to moving from
-                            "reading letters" to "speaking Korean."
-                        </p>
-
-                        <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
-                            <li
-                                class="d-flex align-items-start gap-3"
-                                v-for="pronunciationtip in pronunciationTips"
-                            >
-                                <div
-                                    class="bg-white rounded-circle p-1 text-primary"
-                                >
-                                    <i class="bi bi-check2"></i>
-                                </div>
-                                <div>
-                                    <strong
-                                        >{{ pronunciationtip.title }}:</strong
-                                    >
-                                    {{ pronunciationtip.description }}
-                                    <p>
-                                        Example: {{ pronunciationtip.example }}
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <TipsSidebar
+                :Tips="TipsData"
+                :TipTitle="TipTitle"
+                :TipDescription="TipDescription"
+            />
 
             <!-- RIGHT CONTENT (NOW DYNAMIC) -->
             <div class="col-lg-8">
@@ -54,26 +17,30 @@
                         :key="tip.id"
                     >
                         <div
-                            class="card h-100 border-0 shadow-sm rounded-4 border-start border-4 border-info bg-white p-3 hover-lift"
+                            class="h-100 p-3 example-card-design transition-all"
                         >
                             <h6
-                                class="text-info fw-bold text-uppercase smaller-text"
+                                class="text-uppercase text-accent-primary-color"
                             >
                                 {{ tip.title }}
                             </h6>
 
-                            <p class="small text-muted">
+                            <p class="text-primary-color fs-5">
                                 {{ tip.rule }}
                             </p>
 
                             <div class="p-2 rounded-3 text-center">
-                                <span class="text-muted">{{
+                                <span class="text-secondary-color">{{
                                     tip.exampleFrom
                                 }}</span>
 
-                                <i class="bi bi-arrow-right mx-2"></i>
+                                <i
+                                    class="bi bi-arrow-right mx-2 text-secondary-color"
+                                ></i>
 
-                                <strong>{{ tip.exampleTo }}</strong>
+                                <strong class="text-secondary-color">{{
+                                    tip.exampleTo
+                                }}</strong>
                             </div>
                             <!-- 🔊 TRY TO SPEAK -->
                             <button
@@ -89,8 +56,10 @@
                                     class="btn-minimal-speak"
                                     @click="tryToSpeak(tip.speak)"
                                 >
-                                    <div class="icon-circle">
-                                        <i class="bi bi-volume-up-fill"></i>
+                                    <div class="icon-circle bg-card-speaker">
+                                        <i
+                                            class="bi bi-volume-up-fill icon-color-badge icon-color"
+                                        ></i>
                                     </div>
                                     <span>Try to Speak</span>
                                 </button>
@@ -113,7 +82,10 @@
                         <h6
                             class="modal-title text-uppercase fw-bold text-muted small"
                         >
-                            <i class="bi bi-stars me-2"></i>Korean Pronouncation
+                            <i
+                                class="bi bi-stars me-2 icon-color-badge icon-color"
+                            ></i
+                            >Korean Pronouncation
                         </h6>
                         <button
                             type="button"
@@ -153,24 +125,26 @@
                                 class="mt-4 d-flex justify-content-center"
                             >
                                 <div
-                                    class="live-transcript-pill shadow-sm d-flex align-items-center px-4 py-2 border border-info rounded-pill bg-light"
+                                    class="live-transcript-pill shadow-sm d-flex align-items-center px-4 py-2 rounded-pill"
                                 >
                                     <div class="mic-container me-3">
                                         <div class="pulse-ring"></div>
                                         <i
-                                            class="bi bi-mic-fill text-danger fs-5"
+                                            class="bi bi-mic-fill text-header-color fs-5"
                                         ></i>
                                     </div>
 
                                     <p class="mb-0 text-dark fw-medium">
                                         <span
                                             v-if="!liveTranscript"
-                                            class="text-muted opacity-75"
+                                            class="text-title-color opacity-75"
                                             >Speak now...</span
                                         >
-                                        <span v-else class="typing-effect">{{
-                                            liveTranscript
-                                        }}</span>
+                                        <span
+                                            v-else
+                                            class="typing-effect text-title-color"
+                                            >{{ liveTranscript }}</span
+                                        >
                                     </p>
                                 </div>
                             </div>
@@ -182,11 +156,11 @@
                                     class="transcript-box mb-3 d-flex align-items-center"
                                 >
                                     <i
-                                        class="bi bi-mic-fill me-2 text-primary opacity-75"
+                                        class="bi bi-mic-fill me-2 text-title-color opacity-75"
                                     ></i>
                                     <p class="mb-0 small text-muted fst-italic">
                                         I heard:
-                                        <span class="text-dark fw-medium"
+                                        <span class="text-title-color fw-medium"
                                             >"{{ userTranscript }}"</span
                                         >
                                     </p>
@@ -195,8 +169,8 @@
                                             class="mb-0 small ms-3 fw-bold"
                                             :class="
                                                 feedbackText.includes('Correct')
-                                                    ? 'text-success'
-                                                    : 'text-danger'
+                                                    ? 'text-title-color'
+                                                    : 'text-header-color'
                                             "
                                         >
                                             {{ feedbackText }}
@@ -212,18 +186,24 @@
     </div>
 </template>
 <script>
-import pronunciationTips from "../data/pronunciationTips.js";
+import TipsData from "../data/LessonOneData/TipsData.js";
+import TipsSidebar from "../../../partials/TipsSidebar.vue";
+import greetingContent from "../data/greetingscontent.js";
 import pronunciationRules from "../data/pronunciationRules.js";
 
 export default {
+    components: {
+        TipsSidebar,
+    },
     data() {
         return {
-            pronunciationTips: pronunciationTips.pronunciationTipsData,
             pronunciationRules: pronunciationRules.pronunciationRules,
-
+            TipsData: TipsData.pronunciationTipsData,
+            TipTitle: "Pronounce Tips",
+            TipDescription:
+                "Master Korean pronunciation with simple rules on consonants, vowels, sound changes, and natural speaking flow.",
             openPronouncationModal: false,
             answer: "",
-
             isListening: false,
             liveTranscript: "",
             userTranscript: "",
@@ -394,3 +374,4 @@ export default {
     scoped
     src="../../../../../../css/users/assets/lessons/lessonpronounce.css"
 ></style>
+<style scoped src="../../../../../../css/users/partials/textColors.css"></style>

@@ -1,7 +1,7 @@
 <template>
     <div class="col-12">
         <h2
-            class="h5 text-uppercase fw-bold text-muted mb-4"
+            class="h5 text-uppercase fw-bold text-accent-primary-color fs-3 mb-4"
             style="letter-spacing: 1px"
         >
             {{ ExampleTitle }}
@@ -21,12 +21,12 @@
                     }}</span>
                 </div>
                 <div>
-                    <strong class="d-block text-title-color">{{
+                    <strong class="d-block text-accent-primary-color">{{
                         corePrincipleData.title
                     }}</strong>
 
                     <span
-                        class="text-description-color small"
+                        class="text-secondary-color small"
                         v-html="corePrincipleData.description"
                     >
                     </span>
@@ -104,4 +104,4 @@ export default {
     scoped
     src="../../../../../../css/users/assets/lessons/grammarassetscss/examplebutton.css"
 ></style>
-<style src="../../../../../../css/users/partials/textColors.css"></style>
+<style scoped src="../../../../../../css/users/partials/textColors.css"></style>
