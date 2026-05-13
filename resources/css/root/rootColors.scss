@@ -20,4 +20,19 @@
     --border-soft: var(--color-warm-sand);
 
     --card-bg: var(--color-soft-highlight);
+    --background-image: url('../../../public/Images/background.png');
+}
+body.dark {
+    --bg-primary: #051626;
+    --bg-secondary: #0D2B45;
+
+    --text-primary: #E2E8F0;
+    --text-secondary: #94A3B8;
+
+    --accent-primary: #38BDF8;
+    --border-soft: #1E293B;
+
+    --card-bg: #0F172A;
+
+    --background-image: url('../../../public/Images/darkmode.png');
 }

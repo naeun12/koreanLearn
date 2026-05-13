@@ -125,7 +125,7 @@
                                         ㅏ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         a
@@ -144,7 +144,7 @@
                                         ㅑ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         ya
@@ -163,7 +163,7 @@
                                         ㅓ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         eo
@@ -182,7 +182,7 @@
                                         ㅕ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         yeo
@@ -201,7 +201,7 @@
                                         ㅗ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         o
@@ -220,7 +220,7 @@
                                         ㅛ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         yo
@@ -239,7 +239,7 @@
                                         ㅜ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         u
@@ -258,7 +258,7 @@
                                         ㅠ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         yu
@@ -277,7 +277,7 @@
                                         ㅣ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         i
@@ -296,7 +296,7 @@
                                         ㅡ
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         eu
@@ -327,7 +327,7 @@
                                         {{ row.consonant }}
                                     </div>
 
-                                    <div class="text-example-color">
+                                    <div class="text-secondary-color">
                                         {{ row.roman }}
                                     </div>
                                     <div
@@ -354,7 +354,7 @@
                                     style="line-height: 1"
                                 >
                                     <div
-                                        class="fs-5 fw-bold"
+                                        class="fs-5 fw-bold text-primary-color"
                                         :class="{
                                             'text-accent-primary-color':
                                                 row.type === 'aspirated',
@@ -363,7 +363,7 @@
                                         {{ item.char }}
                                     </div>
                                     <div
-                                        class="text-secondary-title"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ item.roman }}
@@ -384,14 +384,16 @@
                                     class="d-flex flex-column"
                                     style="line-height: 1.2"
                                 >
-                                    <span class="d-flex align-items-center">
+                                    <span
+                                        class="d-flex align-items-center text-accent-primary-color"
+                                    >
                                         Diphthongs
                                         <i
                                             class="bi bi-arrow-right-short lh-1 ms-1"
                                         ></i>
                                     </span>
                                     <span
-                                        class="d-flex align-items-center mt-1"
+                                        class="d-flex align-items-center mt-1 text-accent-primary-color"
                                     >
                                         Consonants
                                         <i
@@ -413,7 +415,7 @@
                                         {{ vowel.char }}
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ vowel.sound }}
@@ -434,7 +436,7 @@
                             <!-- CONSONANT -->
                             <td class="px-2 py-3 border-end">
                                 <div
-                                    class="d-flex flex-column align-items-center text-center"
+                                    class="d-flex flex-column align-items-center text-center text-primary-color"
                                     style="line-height: 1"
                                     :class="{
                                         'text-title-color':
@@ -445,7 +447,7 @@
                                         {{ row.consonant }}
                                     </div>
 
-                                    <div class="text-example-color">
+                                    <div class="text-secondary-color">
                                         {{ row.roman }}
                                     </div>
                                     <div
@@ -472,7 +474,7 @@
                                     style="line-height: 1"
                                 >
                                     <div
-                                        class="fs-5 fw-bold"
+                                        class="fs-5 fw-bold text-primary-color"
                                         :class="{
                                             'text-accent-primary-color':
                                                 row.type === 'aspirated',
@@ -481,7 +483,7 @@
                                         {{ item.char }}
                                     </div>
                                     <div
-                                        class="text-secondary-title"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ item.roman }}
@@ -505,14 +507,16 @@
                                     class="d-flex flex-column"
                                     style="line-height: 1.2"
                                 >
-                                    <span class="d-flex align-items-center">
+                                    <span
+                                        class="d-flex align-items-center text-accent-primary-color"
+                                    >
                                         Vowels
                                         <i
                                             class="bi bi-arrow-right-short lh-1 ms-1"
                                         ></i>
                                     </span>
                                     <span
-                                        class="d-flex align-items-center mt-1"
+                                        class="d-flex align-items-center mt-1 text-accent-primary-color"
                                     >
                                         Tense Consonants
                                         <i
@@ -536,7 +540,7 @@
                                         {{ vowel.char }}
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ vowel.sound }}
@@ -568,7 +572,7 @@
                                         {{ row.consonant }}
                                     </div>
 
-                                    <div class="text-example-color">
+                                    <div class="text-secondary-color">
                                         {{ row.roman }}
                                     </div>
                                     <div
@@ -595,7 +599,7 @@
                                     style="line-height: 1"
                                 >
                                     <div
-                                        class="fs-5 fw-bold"
+                                        class="fs-5 fw-bold text-primary-color"
                                         :class="{
                                             'text-accent-primary-color':
                                                 row.type === 'aspirated',
@@ -604,7 +608,7 @@
                                         {{ item.char }}
                                     </div>
                                     <div
-                                        class="text-secondary-title"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ item.roman }}
@@ -619,7 +623,7 @@
                     v-if="changeCombination === 'tenseAndDipthongs'"
                 >
                     <thead>
-                        <tr style="background: #f8fafc">
+                        <tr>
                             <th
                                 class="py-4 border-end text-uppercase small fw-800 text-secondary"
                                 style="letter-spacing: 1px"
@@ -628,14 +632,16 @@
                                     class="d-flex flex-column"
                                     style="line-height: 1.2"
                                 >
-                                    <span class="d-flex align-items-center">
+                                    <span
+                                        class="d-flex align-items-center text-accent-primary-color"
+                                    >
                                         Diphthongs
                                         <i
                                             class="bi bi-arrow-right-short lh-1 ms-1"
                                         ></i>
                                     </span>
                                     <span
-                                        class="d-flex align-items-center mt-1"
+                                        class="d-flex align-items-center mt-1 text-accent-primary-color"
                                     >
                                         Tense Consonants
                                         <i
@@ -657,7 +663,7 @@
                                         {{ vowel.char }}
                                     </div>
                                     <div
-                                        class="text-muted small"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ vowel.sound }}
@@ -689,7 +695,7 @@
                                         {{ row.consonant }}
                                     </div>
 
-                                    <div class="text-example-color">
+                                    <div class="text-secondary-color">
                                         {{ row.roman }}
                                     </div>
                                     <div
@@ -716,7 +722,7 @@
                                     style="line-height: 1"
                                 >
                                     <div
-                                        class="fs-5 fw-bold"
+                                        class="fs-5 fw-bold text-primary-color"
                                         :class="{
                                             'text-accent-primary-color':
                                                 row.type === 'aspirated',
@@ -725,7 +731,7 @@
                                         {{ item.char }}
                                     </div>
                                     <div
-                                        class="text-secondary-title"
+                                        class="text-secondary-color"
                                         style="font-size: 0.7rem"
                                     >
                                         {{ item.roman }}

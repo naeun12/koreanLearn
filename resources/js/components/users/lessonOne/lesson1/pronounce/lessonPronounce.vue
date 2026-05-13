@@ -374,4 +374,4 @@ export default {
     scoped
     src="../../../../../../css/users/assets/lessons/lessonpronounce.css"
 ></style>
-<style scoped src="../../../../../../css/users/partials/textColors.css"></style>
+<style src="../../../../../../css/users/partials/textColors.css"></style>

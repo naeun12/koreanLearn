@@ -143,45 +143,133 @@ export default {
         new CorePrinciplesModel(
             1,
             "Ease of Pronunciation",
-            ` <strong class="d-block text-dark">Ease of Pronunciation</strong>
-             <span class="text-secondary small"> Korean speakers naturally change sounds to make words easier and faster to say. </span>
-             <span class="d-block text-dark">Example:합니다 → 함니다</span>
-             <span class="text-secondary small">(ham-ni-da instead of hap-ni-da)</span>
-             <span class="d-block text-secondary small">Saying ㅂ + ㄴ directly is harder, so it changes smoothly.</span>`,
+            ` <strong class="d-block text-secondary-color">Ease of Pronunciation</strong>
+             <span class="text-secondary-color"> Korean speakers naturally change sounds to make words easier and faster to say. </span>
+             <span class="d-block text-secondary-color">Example:합니다 → 함니다</span>
+             <span class="text-secondary-color">(ham-ni-da instead of hap-ni-da)</span>
+             <span class="d-block text-secondary-color">Saying ㅂ + ㄴ directly is harder, so it changes smoothly.</span>`,
         ),
         new CorePrinciplesModel(
             2,
             "Smooth Sound Connection",
-            `<strong class="d-block text-dark">Smooth Sound Connection</strong>
-             <span class="text-secondary small">When a syllable ends in a consonant and the next syllable begins with a vowel,
+            `<strong class="text-secondary-color">Smooth Sound Connection</strong>
+             <span class="text-secondary-color">When a syllable ends in a consonant and the next syllable begins with a vowel,
              the final consonant often links to the next syllable.</span>
-             <strong class="d-block text-dark">Example: 한국어 → 한구거 <br />책이 → 채기</strong>
-             <span class="text-secondary small"> Sounds flow naturally between syllables.
+             <strong class="text-secondary-color">Example: 한국어 → 한구거 <br />책이 → 채기</strong>
+             <span class="text-secondary-color"> Sounds flow naturally between syllables.
              </span>`,
         ),
         new CorePrinciplesModel(
             3,
             "Neighboring Sounds Influence Each Other",
-            `<span class="text-secondary small">A sound may change because of the letter besideit.</span>
-             <strong class="d-block text-dark">Example: 국물 → 궁물 </strong>
-            <span class="text-secondary small">ㅁ affects ㄱ, making it nasal.<br /> Nearby sounds often “blend.”
+            `<span class="text-secondary-color">A sound may change because of the letter besideit.</span>
+             <strong class="text-secondary-color">Example: 국물 → 궁물 </strong>
+            <span class="text-secondary-color">ㅁ affects ㄱ, making it nasal.<br /> Nearby sounds often “blend.”
              </span>`,
         ),
         new CorePrinciplesModel(
             4,
             "Natural Speech Rhythm",
-            ` <strong class="d-block text-dark">Natural Speech Rhythm</strong>
-            <span class="text-secondary small">Some sounds become stronger or softer to match Korean speaking rhythm.</span>
-            <strong class="d-block text-dark">Example: </strong>
-            <span class="text-secondary small">학교 → 학꾜 </span>
-            <span class="text-secondary small">Tense sounds help create clearer rhythm.</span>`,
+            ` <strong class="text-secondary-color">Natural Speech Rhythm</strong>
+            <span class="text-secondary-color">Some sounds become stronger or softer to match Korean speaking rhythm.</span>
+            <strong class="text-secondary-color">Example: </strong>
+            <span class="text-secondary-color">학교 → 학꾜 </span>
+            <span class="text-secondary-color">Tense sounds help create clearer rhythm.</span>`,
         ),
         new CorePrinciplesModel(
             5,
             "Consistency in Native Speech",
-            ` <strong class="d-block text-dark">Consistency in Native Speech</strong>
-              <span class="text-secondary small">These sound changes are not random. They follow regular patterns used by native speakers.
+            ` <strong class="text-secondary-color">Consistency in Native Speech</strong>
+              <span class="text-secondary-color">These sound changes are not random. They follow regular patterns used by native speakers.
               <br />Once you learn the rules, many words become predictable.</span>`,
+        ),
+    ],
+    ToBeData: [
+        new CorePrinciplesModel(
+            1,
+            "Change of State Principle",
+            `
+            <p class="text-secondary-color">
+            Use <strong>되다 (doeda)</strong> when something changes into something else.
+            </p>
+            <ul class="text-secondary-color m-4">
+            <li>Focus: transformation or becoming</li>
+            <li>Example: <strong>학생이 되다 → to become a student</strong></li>
+            </ul>
+                `,
+        ),
+        new CorePrinciplesModel(
+            2,
+            "Identity vs Change Principle",
+            `
+            <ul class="text-secondary-color m-4">
+            <li><strong>이다 (ida)</strong> → permanent identity (is/am/are)</li>
+            <li><strong>되다 (doeda)</strong> → change into a new identity</strong></li>
+            <li><strong>Example:</strong><ul class="text-secondary-color">
+             <li><strong>나는 학생이다</strong> → I am a student</li>
+            <li><strong>나는 학생이 되었다</strong> → I became a student></li>
+            </ul></li>
+            </ul>
+                `,
+        ),
+        new CorePrinciplesModel(
+            3,
+            "Time Reference Principle",
+            `
+            <ul class="text-secondary-color m-4">
+            <li><strong>Present:</strong>되다 → becomes / is becoming</li>
+            <li><strong>Past:</strong> 되었다 → became</li>
+             <li><strong>Future:</strong> 될 것이다 → will become</li>
+            </ul>
+                `,
+        ),
+        new CorePrinciplesModel(
+            4,
+            "Future Intention Principle",
+            `
+            <p class="text-secondary-color">
+            Use <strong>(으)ㄹ 것이다</strong> to express:
+            </p>
+            <ul class="text-secondary-color m-4">
+            <li>future plans</li>
+            <li>predictions</li>
+            <li>expectations</li>
+            <li>Example: <ul class="text-secondary-color">
+                <li><strong>의사가 될 것이다</strong> → will become a doctor</li>
+            </ul></li>
+
+            </ul>
+                `,
+        ),
+        new CorePrinciplesModel(
+            5,
+            "Sentence Structure Principle",
+            `
+            <p class="text-secondary-color">
+            Basic pattern:
+            </p>
+            <p class="text-secondary-color m-3">
+            Subject + object + 이/가 + 되다 / 될 것이다
+            </p>
+            <ul class="text-secondary-color">
+            <li>Example: <ul class="text-secondary-color">
+                <li>나는 의사가 될 것이다</li>
+            </ul></li>
+            </ul>
+                `,
+        ),
+        new CorePrinciplesModel(
+            6,
+            "Context Importance Principle",
+            `
+            <p class="text-secondary-color">
+            Meaning depends on context:
+            </p>
+            <ul class="text-secondary-color m-4">
+            <li><strong>“되다”</strong> can mean become, work, or function depending on sentence</li>
+            <li>Always check surrounding words</li>
+            </ul>
+                `,
         ),
     ],
 };

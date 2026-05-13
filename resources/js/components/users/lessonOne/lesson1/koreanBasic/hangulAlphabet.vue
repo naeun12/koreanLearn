@@ -49,10 +49,10 @@
                 <div
                     class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
-                    <div class="hangul-char display-4 fw-bold mb-2">
+                    <div class="hangul-char text-primary-color fs-1">
                         {{ consonant.char }}
                     </div>
-                    <div class="text-gradient-custom fw-bold fs-5 mb-2">
+                    <div class="text-secondary-color fw-bold fs-5 mb-2">
                         {{ consonant.sound }}
                     </div>
                     <p class="description-text mb-4">
@@ -79,11 +79,11 @@
                 <div
                     class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
-                    <div class="hangul-char display-4 fw-bold mb-2">
+                    <div class="hangul-char text-primary-color fs-1">
                         {{ vowel.char }}
                     </div>
                     <div
-                        class="text-gradient-custom fw-bold fs-5 mb-2 fw-bold fs-5 mb-2"
+                        class="text-secondary-color fw-bold fs-5 mb-2 fw-bold fs-5 mb-2"
                     >
                         {{ vowel.sound }}
                     </div>
@@ -111,11 +111,11 @@
                 <div
                     class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
-                    <div class="hangul-char display-4 fw-bold mb-2">
+                    <div class="hangul-char text-primary-color fs-1">
                         {{ con.char }}
                     </div>
                     <div
-                        class="text-gradient-custom fw-bold fs-5 mb-2 fw-bold fs-5 mb-2"
+                        class="text-secondary-color fw-bold fs-5 mb-2 fw-bold fs-5 mb-2"
                     >
                         {{ con.sound }}
                     </div>
@@ -144,13 +144,15 @@
                 <div
                     class="card h-100 shadow-sm rounded-4 text-center py-4 custom-card-gradient p-3"
                 >
-                    <div class="hangul-char display-4 mb-2">
+                    <div class="hangul-char text-primary-color fs-1">
                         {{ con.char }}
                     </div>
-                    <div class="text-gradient-custom fw-bold fs-5 mb-2">
+                    <div class="text-secondary-color fw-bold fs-5 mb-2">
                         {{ con.sound }}
                     </div>
-                    <p class="con-description-pill">{{ con.description }}</p>
+                    <p class="description-text mb-4">
+                        {{ con.description }}
+                    </p>
                     <button
                         class="btn btn-audio btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
                         @click.stop="playSound(con.char)"
@@ -193,24 +195,36 @@
             <div class="tip-icon">
                 <i class="bi bi-lightbulb-fill"></i>
             </div>
-            <h5 class="mb-0 fw-bold tip-title">Pro Learning Tip</h5>
+            <h5 class="mb-0 fw-bold text-accent-primary-color fs-2">
+                Pro Learning Tip
+            </h5>
         </div>
 
         <div class="tip-body-text">
-            <p v-if="currentSection === 'vowels'" class="mb-0">
+            <p
+                v-if="currentSection === 'vowels'"
+                class="mb-0 text-primary-color"
+            >
                 Vowels cannot stand alone! Combine these with the silent
-                <span class="kr-badge-sm">ㅇ</span> to form blocks like
-                <span class="kr-badge-sm">아</span> (a) or
-                <span class="kr-badge-sm">야</span> (ya).
+                <span class="kr-badge-sm text-primary-color">ㅇ</span> to form
+                blocks like
+                <span class="kr-badge-sm text-primary-color">아</span> (a) or
+                <span class="kr-badge-sm text-primary-color">야</span> (ya).
             </p>
 
-            <p v-else-if="currentSection === 'consonants'" class="mb-0">
+            <p
+                v-else-if="currentSection === 'consonants'"
+                class="mb-0 text-primary-color"
+            >
                 The sound of these can change! For example,
-                <span class="kr-badge-sm">ㄱ</span> sounds like 'k' at the end
-                of a word but more like 'g' at the start.
+                <span class="kr-badge-sm text-primary-color">ㄱ</span> sounds
+                like 'k' at the end of a word but more like 'g' at the start.
             </p>
 
-            <p v-else-if="currentSection === 'doubleConsonants'" class="mb-0">
+            <p
+                v-else-if="currentSection === 'doubleConsonants'"
+                class="mb-0 text-primary-color"
+            >
                 These require <strong>"tenseness."</strong> Imagine you are
                 tightening your throat or stomach muscles to create a sharp,
                 forceful sound!
@@ -218,7 +232,7 @@
 
             <p
                 v-else-if="currentSection === 'aspiratedConsonants'"
-                class="mb-0"
+                class="mb-0 text-primary-color"
             >
                 These consonants are pronounced with a
                 <strong>strong burst of air</strong>. Try placing your hand in
@@ -313,3 +327,5 @@ export default {
 <style
     src="../../../../../../css/users/assets/lessons/lessonalpbhabet.css"
 ></style>
+<style src="../../../../../../css/btn-audio.css"></style>
+<style scoped src="../../../../../../css/users/partials/textColors.css"></style>

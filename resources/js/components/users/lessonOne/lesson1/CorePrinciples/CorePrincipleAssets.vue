@@ -30,11 +30,13 @@
                         v-html="corePrincipleData.description"
                     >
                     </span>
-                    <span
-                        v-html="corePrincipleData.example"
-                        class="text-example-color small"
-                    >
-                    </span>
+                    <strong>
+                        <span
+                            v-html="corePrincipleData.example"
+                            class="text-secondary-color small"
+                        >
+                        </span>
+                    </strong>
                 </div>
             </div>
         </div>
@@ -48,7 +50,7 @@
                 <div class="me-3 fs-2">💡</div>
 
                 <div>
-                    <strong class="d-block mb-1 text-pro-tip-main">{{
+                    <strong class="d-block mb-1 text-primary-color">{{
                         proTipTitle
                     }}</strong>
 

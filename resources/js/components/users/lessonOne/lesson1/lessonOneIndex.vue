@@ -291,7 +291,7 @@
                                                 :class="{
                                                     active:
                                                         activeMainSection ===
-                                                            'Greetings' ||
+                                                            'ToBeModule' ||
                                                         activeMainSection ===
                                                             'SelfIntroductions' ||
                                                         activeMainSection ===
@@ -314,7 +314,7 @@
                                                         href="#"
                                                         @click.prevent="
                                                             goToLesson(
-                                                                'Greetings',
+                                                                'ToBeModule',
                                                             )
                                                         "
                                                     >
@@ -625,13 +625,21 @@
                                 name="fade-slide"
                                 tag="div"
                                 class="row g-3"
+                                v-if="activeMainSection === 'ToBeModule'"
+                            >
+                                <CoreGrammarIndex></CoreGrammarIndex>
+                            </transition-group>
+                            <transition-group
+                                name="fade-slide"
+                                tag="div"
+                                class="row g-3"
                                 v-if="
                                     activeMainSection === 'Greetings' ||
                                     activeMainSection ===
                                         'basicClassroomExpressions'
                                 "
                             >
-                                <dailyExpressionsIndex></dailyExpressionsIndex>
+                                <pronouncationIndex></pronouncationIndex>
                             </transition-group>
 
                             <transition-group
@@ -710,6 +718,7 @@ import dailyExpressionsIndex from "../lesson1/dailyExpressions/dailyExpressionsI
 import koreanalphabet from "./data/koreanalphabet.js";
 import particleAssets from "../lesson1/particle/particle.vue";
 import verbAndSentenceIndex from "../lesson1/verbandsentence/verbAndSentenceIndex.vue";
+import CoreGrammarIndex from "./CoreGrammarModules/CoreGrammarIndex.vue";
 
 export default {
     components: {
@@ -719,6 +728,7 @@ export default {
         dailyExpressionsIndex,
         particleAssets,
         verbAndSentenceIndex,
+        CoreGrammarIndex,
     },
     data() {
         return {

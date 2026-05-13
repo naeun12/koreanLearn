@@ -896,3 +896,4 @@ export default {
     src="../../../../../../css/users/partials/card/k-card.css"
 ></style>
 <style src="../../../../../../css/users/assets/lessons/mic.css"></style>
+<style scoped src="../../../../../../css/users/partials/textColors.css"></style>

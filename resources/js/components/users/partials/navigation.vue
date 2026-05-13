@@ -106,21 +106,47 @@
                 </ul>
             </div>
         </div>
+        <button id="themeToggle" class="theme-toggle btn">🌙 Dark Mode</button>
     </nav>
 </template>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    // =========================
+    // THEME TOGGLE
+    // =========================
+    const toggleBtn = document.getElementById("themeToggle");
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                toggleBtn.innerText = "☀️ Light Mode";
+            } else {
+                toggleBtn.innerText = "🌙 Dark Mode";
+            }
+        });
+    }
+
+    // =========================
+    // ACTIVE NAV LINK
+    // =========================
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll(".nav-link, .dropdown-item");
+
     navLinks.forEach((link) => {
         const linkPath = link.getAttribute("href");
+
         if (currentPath === linkPath) {
             link.classList.add("custom-active");
+
             const parentDropdown = link.closest(".dropdown");
             if (parentDropdown) {
-                parentDropdown
-                    .querySelector(".dropdown-toggle")
-                    .classList.add("custom-active");
+                const dropdownToggle =
+                    parentDropdown.querySelector(".dropdown-toggle");
+                if (dropdownToggle) {
+                    dropdownToggle.classList.add("custom-active");
+                }
             }
         }
     });

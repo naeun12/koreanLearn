@@ -221,10 +221,7 @@
 .btn-gradient-play:active {
     transform: scale(0.95);
 }
-.hangul-char
-{
-        color: var(--text-primary);
-}
+
 .custom-card-gradient:hover .hangul-char {
             color: var(--accent-primary);
     transition: color 0.3s ease;
@@ -250,14 +247,10 @@
     margin-right: 12px;
 }
 
-/* Title color */
-.tip-title {
-    color: #1e293b !important;
-}
+
 
 /* Body text */
 .tip-body-text p {
-    color: #475569 !important;
     font-size: 0.95rem;
     line-height: 1.6;
 }

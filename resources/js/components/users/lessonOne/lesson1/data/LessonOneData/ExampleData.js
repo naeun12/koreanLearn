@@ -404,4 +404,114 @@ export default {
             "manta.mp3",
         ),
     ],
+    ToBeExamples: [
+        new ExampleModel(
+            1,
+            "",
+            "Change of State (되다)",
+            "",
+            `<ul class="text-secondary-color m-3">
+                <li><strong>학생이 되다 </strong>→ to become a student</li>
+                 <li><strong>의사가 되다 </strong>→ to become a doctor</li>
+                <li><strong>좋은 사람이 되다</strong> → to become a good person</li>
+                <li><strong>친구가 되다 </strong>→ to become friendsn</li>
+                <li><strong>선생님이 되다</strong> → to become a teacher</li>
+            </ul>
+            <p class="text-primary-color">
+            <strong>Example Sentences:</strong>
+            </p>
+            <ul class="text-secondary-color m-3">
+            <li><strong>나는 의사가 되었다 </strong>→ I became a doctor</li>
+            <li><strong>그녀는 좋은사람이 되었다 </strong> → She became a good person</li>
+            </ul>
+            `,
+            "",
+            "",
+            "",
+        ),
+        new ExampleModel(
+            2,
+            "",
+            "Identity vs Change (이다 vs 되다)",
+            "",
+            `<ul class="text-secondary-color m-3">
+                <li><strong>나는 학생이다</strong> → I am a student</li>
+                 <li><strong>나는 학생이 되었다 </strong>→ I became a student</li>
+                <li><strong>좋은 사람이 되다 </strong>→ to become a good person</li>
+                <li><strong>그는 선생님이다 </strong>→ He is a teacher</li>
+                <li><strong>그는 선생님이 될 것이다</strong> → He will become a teacher</li>
+            </ul>
+            `,
+            "",
+            "",
+            "",
+        ),
+        new ExampleModel(
+            3,
+            "",
+            "Time Reference (Present / Past / Future)",
+            "",
+            `<ul class="text-secondary-color m-3">
+                <li><strong>학생이 되다</strong> → becomes a student</li>
+                 <li><strong>학생이 되었다 </strong>→ became a student</li>
+                <li><strong>학생이 될 것이다 </strong>→ will become a student</li>
+            </ul>
+            `,
+            "",
+            "",
+            "",
+        ),
+        new ExampleModel(
+            4,
+            "",
+            "Future Intention (-(으)ㄹ 것이다)",
+            "",
+            `<ul class="text-secondary-color m-3">
+                <li><strong>나는 의사가 될 것이다</strong> → I will become a doctor</li>
+                 <li><strong>우리는 친구가 될 것이다 </strong>→ We will become friends</li>
+                <li><strong>그는 성공한 사람이 될 것이다 </strong>→ He will become a successful person</li>
+                <li><strong>그는 선생님이다 </strong>→ He is a teacher</li>
+                <li><strong>내일은 비가 올 것이다</strong> → It will rain tomorrow</li>
+            </ul>
+            `,
+            "",
+            "",
+            "",
+        ),
+        new ExampleModel(
+            5,
+            "",
+            "Sentence Structure Practice",
+            "",
+            `
+            <p class="text-primary-color"><strong>Pattern:</strong></p>
+            <p class="text-secondary-color">Subject + (이/가) + 되다 / 될 것이다</p>
+            <p class="text-primary-color">Examples:</p>
+            <ul class="text-secondary-color m-3">
+                <li><strong>나는 의사가 될 것이다</strong></li>
+                 <li><strong>우리는 좋은 팀이 될 것이다 </strong></li>
+                <li><strong>그녀는 리더가 될 것이다 </strong></li>
+            </ul>
+            `,
+            "",
+            "",
+            "",
+        ),
+        new ExampleModel(
+            6,
+            "",
+            "Hangul Bonus Example (Pronunciation Tip Integration)",
+            "Once learners understand syllable blocks, reading Korean becomes much easier because each block = one sound unit.",
+            `
+            <ul class="text-secondary-color m-3">
+                <li><strong>가 + 나 = 가나 (</strong>(Ga + Na = syllable block)</li>
+                 <li><strong>한 + 국 = 한국 </strong> (Han + Guk = Korea)</li>
+                <li><strong>학 + 생 = 학생</strong> (Hak + Saeng = student)</li>
+            </ul>
+            `,
+            "",
+            "",
+            "",
+        ),
+    ],
 };
